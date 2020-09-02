@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-button (click)="goBack()">
+              <ion-icon slot="icon-only" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </ion-button>
+
+      </ion-buttons>
+      <ion-title>Scanner</ion-title>
+      <ion-buttons slot="end">
+
+           <ion-button title="clear Map" (click)="toggleTorch()" *ngIf="torchAvailable$ | async">
+            <ion-icon slot="icon-only"  ios="ios-flash" md="md-flash"></ion-icon>
+          </ion-button>
+
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="availableDevices">
+    <select (change)="onDeviceSelectChange($event.target.value)">
+      <option value="" [selected]="!currentDevice">No Device</option>
+      <option *ngFor="let device of availableDevices" [value]="device.deviceId" [selected]="currentDevice && device.deviceId === currentDevice.deviceId">{{ device.label }}</option>
+    </select>
+  </ng-container>
+      <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice"
+      (scanSuccess)="onCodeResult($event)"
+      (scanError)="scanError($event)"
+      [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
+      (camerasFound)="onCamerasFound($event)" (torchCompatible)="onTorchCompatible($event)"></zxing-scanner>
+      
+      <ng-container *ngIf="hasPermission === undefined">
+      <ion-card>
+        <ion-card-header>
+          <h2>Waiting for permissions.</h2>
+        </ion-card-header>
+        <ion-card-content>
+          If your device does not has cameras, no permissions will be asked.
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="isFailed">
+      <ion-card>
+        <ion-card-header>
+          <h2>Failed!</h2>
+        </ion-card-header>
+        <ion-card-content>
+          {{errorMsg}}. 😪
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    <ng-container *ngIf="hasPermission === false">
+      <ion-card>
+        <ion-card-header>
+          <h2>Access Denied to Camera</h2>
+        </ion-card-header>
+        <ion-card-content>
+          You denied the camera permission, we can't scan anything without it. 😪
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    
+    <ng-container *ngIf="hasDevices === undefined">
+      <ion-card>
+        <ion-card-header>
+          <h2>Couldn't check for devices.</h2>
+        </ion-card-header>
+        <ion-card-content>
+          This may be caused by some security error.
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+    
+    <ng-container *ngIf="hasDevices === false">
+      <ion-card>
+        <ion-card-header>
+          <h2>No devices were found.</h2>
+        </ion-card-header>
+        <ion-card-content>
+          I believe your device has no media devices attached to.
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+      <ion-button (click)="fillForm()">
+          <ion-icon  name="refresh"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Settings</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+      <form *ngIf="setting_Form" [formGroup]="setting_Form" (submit)="saveSettings(setting_Form.value)">
+      <ion-card><ion-item-divider color="tertiary">Set Notification Options</ion-item-divider>
+          <ion-card-content>
+            
+              <ion-grid>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="PickUp"></ion-checkbox>  Pick Up type scan</ion-col></ion-row>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="OutforDelivery"></ion-checkbox>  Out for Delivery</ion-col></ion-row>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="Delivered"></ion-checkbox>  Delivered(includes lcoation)</ion-col></ion-row>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="NFDeliveryStaus"></ion-checkbox>  No Final Delivery Status</ion-col></ion-row>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="Damages"></ion-checkbox>  Damages</ion-col></ion-row>
+                  <ion-row><ion-col><ion-checkbox  color="tertiary" formControlName="Weather"></ion-checkbox>  Weather Delay</ion-col></ion-row>
+              </ion-grid>
+          
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+            <ion-item-divider >Other Settings</ion-item-divider>
+            <ion-card-content>
+        <ion-grid #otherSettings >
+            <ion-row><ion-col class="margincol">Auto Archive(Days)</ion-col><ion-col><ion-input type="number" formControlName="archiveDays"></ion-input></ion-col></ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+      <ion-button class="submit-btn" color="tertiary"  type="submit" expand="block" [disabled]="!setting_Form.valid">Save</ion-button>
+    </form>
+
+  </ion-content>
+  <!--<ion-footer>
+    <app-footertab></app-footertab>
+    </ion-footer>-->

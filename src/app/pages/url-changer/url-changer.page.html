@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title color="light">Choose API</ion-title>
+  
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-item>
+      <ion-label position="floating">API Type</ion-label>
+      <ion-select [value]="apiType" [(ngModel)]="apiType" okText="Okay" (ionChange)="onTypeChange()" cancelText="Dismiss">
+        <ion-select-option value="P">Production Api Url</ion-select-option>
+        <ion-select-option value="B">Beta Api Url</ion-select-option>
+        <ion-select-option value="C">Custom Api Url</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="apiUrl" placeholder="Enter API Url"></ion-input>
+      </ion-item>
+      <ion-button class="submit-btn" color="tertiary"  type="submit" expand="block" (click)="saveUrl()">Save</ion-button>
+
+</ion-content>

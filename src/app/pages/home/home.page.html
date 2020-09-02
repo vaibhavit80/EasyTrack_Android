@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    <ion-button (click)="clearTrack()">
+        <ion-icon  name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>EasyTrack</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form *ngIf="track_Form" [formGroup]="track_Form" (submit)="doTrack(track_Form.value)">
+
+         <ion-item>
+            <!-- <ion-label>Tracking#</ion-label> -->
+            <ion-input type="text" placeholder="Enter Tracking #" (input)="onSearchChange($event.target.value)"
+             (ionBlur)="fillCarrierCode(track_Form.value)" formControlName="TrackingNo" required></ion-input>
+            <ion-icon (click)="scanPGCode()" color="tertiary" name="barcode"></ion-icon>
+            <!-- <ion-buttons color="light" clear slot="end"><ion-button  color="light"  > <ion-icon (click)="scanCode()" color="tertiary" name="barcode"></ion-icon></ion-button></ion-buttons> -->
+          </ion-item>
+        
+            <ion-item>
+              <ion-label position="floating">Carrier</ion-label>
+              <ion-select [value]="carCode" okText="Okay" formControlName="Carrier" cancelText="Dismiss">
+                <ion-select-option value="U">UPS</ion-select-option>
+                <ion-select-option value="S">USPS</ion-select-option>
+                <ion-select-option value="D">DHL</ion-select-option>
+                <ion-select-option value="M">DHLGM</ion-select-option>
+                <ion-select-option value="F">FedEx Express</ion-select-option>
+                <ion-select-option value="R">FedEx Ground</ion-select-option>
+                <ion-select-option value="P">Purolator</ion-select-option>
+                <ion-select-option value="O">OnTrac</ion-select-option>
+              </ion-select>
+            </ion-item>
+        
+          <ion-item>
+              
+            <!-- <ion-label>Description</ion-label> -->
+            <ion-textarea type="text"  placeholder="Enter Description" formControlName="Description"></ion-textarea>
+            
+          </ion-item>
+          
+          <ion-item>
+            <ion-label style="z-index: 999999;">Residential Delivery</ion-label>
+            <ion-checkbox color="tertiary" formControlName="Res_Del"></ion-checkbox>
+            <ion-icon slot="end" style="z-index: 999999; cursor:pointer;height: 20px;"  (click)="resInfoAlert()" color="primary"  name="information-circle-outline"></ion-icon>
+          </ion-item>
+        <ion-button class="submit-btn" color="tertiary"  type="submit" expand="block" [disabled]="!track_Form.valid">Track</ion-button>
+      </form>
+      <app-help-fab></app-help-fab>
+</ion-content>
+<!--<ion-footer>
+<app-footertab></app-footertab>
+</ion-footer>-->

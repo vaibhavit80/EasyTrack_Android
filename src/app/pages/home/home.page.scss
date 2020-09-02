@@ -1,0 +1,10 @@
+.item-label-stacked .input-wrapper,
+.input-wrapper {
+    flex-direction: column-reverse;
+}
+.label-md[stacked] {
+    margin-top: 0;
+}
+//ion-buttons{padding-top: 20px}
+svg{height: 20px;
+    padding-top: 4px;}

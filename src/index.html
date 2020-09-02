@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Ionic App</title>
+
+    <base href="/" />
+    <!--   -->
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB34eFVxquKz4fOLjiEm1i7uG2kiXt8YCU&v=3.exp&libraries=places">
+    </script>
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script src="cordova.js"></script>
+    <script>
+        document.addEventListener('deviceready', setupOpenwith, false);
+
+        function setupOpenwith() {
+
+            // Increase verbosity if you need more logs
+            //cordova.openwith.setVerbosity(cordova.openwith.DEBUG);
+
+            // Initialize the plugin
+            cordova.openwith.init(initSuccess, initError);
+
+            function initSuccess() {
+                console.log('init success!');
+            }
+
+            function initError(err) {
+                console.log('init failed: ' + err);
+            }
+
+            // Define your file handler
+            cordova.openwith.addHandler(myHandler);
+
+            function myHandler(intent) {
+                console.log('intent received');
+                console.log('  text: ' + intent.text);
+                localStorage.setItem("intent", intent.text);
+                location.reload();
+                //alert(localStorage.getItem("intent"));
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <app-root></app-root>
+</body>
+
+</html>

@@ -1,0 +1,1008 @@
+<!doctype html><html lang=en class="plt-tablet plt-desktop md hydrated" mode=md><head><meta charset="UTF-8">
+    <title>In App Browser - Ionic Documentation</title>
+    <style s-id="sc-docs-root">.Layout{display:-ms-flexbox;display:flex;overflow-x:hidden}.Layout>stencil-route{width:100%}.Layout.is-menu-toggled{--menu-transform:translateX(calc(-1 * var(--menu-width)));--page-margin-left:0}@media (max-width:768px){.Layout{--menu-transform:translateX(calc(-1 * var(--menu-width)));--page-padding:1.5rem;--page-margin-left:0}.Layout.is-menu-toggled{--menu-transform:none;--page-transform:translateX(var(--menu-width))}.Layout.is-menu-toggled docs-page>*{opacity:.2;pointer-events:none}body.scroll-lock{overflow-y:hidden}}</style>
+    <style s-id="sc-stencil-route">stencil-route.inactive{display:none}</style>
+    <style s-id="sc-docs-header">docs-header{background-color:var(--background);-webkit-box-shadow:0 1px 3px rgba(2,8,20,.06),0 1px 2px rgba(2,8,20,.04);box-shadow:0 1px 3px rgba(2,8,20,.06),0 1px 2px rgba(2,8,20,.04);color:var(--text-color--light);display:block;font-size:14px;font-weight:500;line-height:1;position:fixed;top:0;left:0;-webkit-transform:translateY(0);transform:translateY(0);-webkit-transition:-webkit-transform .2s ease;transition:-webkit-transform .2s ease;transition:transform .2s ease;transition:transform .2s ease,-webkit-transform .2s ease;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%;white-space:nowrap;z-index:2}@media (min-width:768px){.Layout:not(.is-menu-toggled) docs-header.hidden{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@media (max-width:768px){.Layout.is-menu-toggled docs-header.hidden{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}docs-header header{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;height:var(--header-height);padding:0 1.4rem 0 .8rem}docs-header a{color:inherit;padding:10px 0}docs-header ion-icon{font-size:16px;color:#b2becd}docs-header .link-active{color:var(--text-color--dark)}@media (hover:hover){docs-header a:not(.link-active):hover{color:var(--text-color)}}docs-header docs-menu-toggle{-ms-flex:none;flex:none;margin-right:.75em}.HeaderLogo{color:var(--text-color--dark);font-family:var(--heading-font-family);height:25px;margin-right:.125em}.SectionNav stencil-route{display:-ms-flexbox;display:flex}.SectionNav .Dropdown{-ms-flex-item-align:center;align-self:center;color:var(--text-color);margin-right:.75em}.SectionNav .Dropdown-button{border:1px solid #dee3ea;border-radius:6px;color:var(--text-color--dark);padding:10px;-webkit-transition:border-color .1s ease;transition:border-color .1s ease}.SectionNav .Dropdown.is-open .Dropdown-button{border-color:var(--line-rule-color)}.SectionNav .Dropdown-panel{min-width:180px}.SectionNav .Dropdown-panel a{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}.SectionNav .Dropdown-panel svg{height:1em;width:1em}.SectionNav-tabs>*{-ms-flex-align:center;align-items:center;display:-ms-inline-flexbox;display:inline-flex;height:var(--header-height);margin-right:1em;position:relative}.SectionNav-tabs .link-active:after{background-color:currentColor;bottom:0;content:"";display:block;height:2px;left:0;position:absolute;width:100%}.UtilNav{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;font-size:12px;margin-left:auto}.UtilNav>*{margin-left:1em}.UtilNav .Dropdown.is-open{color:var(--text-color)}.UtilNav .Dropdown-button{padding:10px 0}@media (hover:hover){.UtilNav .Dropdown-button:hover{color:var(--text-color)}}.UtilNav .Dropdown-panel{font-size:14px}</style>
+    <style s-id="sc-docs-menu">docs-menu{background-color:var(--background);border-right:solid 1px var(--line-rule-color);-ms-flex-direction:column;flex-direction:column;height:100vh;left:0;position:fixed;top:0;-webkit-transition:-webkit-transform .2s cubic-bezier(.2,1,.2,1);transition:-webkit-transform .2s cubic-bezier(.2,1,.2,1);transition:transform .2s cubic-bezier(.2,1,.2,1);transition:transform .2s cubic-bezier(.2,1,.2,1),-webkit-transform .2s cubic-bezier(.2,1,.2,1);-webkit-transform:var(--menu-transform,none);transform:var(--menu-transform,none);width:var(--menu-width);z-index:1}docs-menu,docs-menu>header{display:-ms-flexbox;display:flex}docs-menu>header{-ms-flex-align:center;align-items:center;border-bottom:solid 1px var(--line-rule-color);-ms-flex:none;flex:none;height:var(--header-height);padding:0 1.4rem 0 .8rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}docs-menu docs-menu-toggle{margin-right:.75em}docs-menu .MenuLogo{color:var(--text-color--dark);font-family:var(--heading-font-family);height:25px}docs-menu>.Menu{overflow-y:auto;-webkit-overflow-scrolling:touch}docs-menu nav{padding:2rem 1.5rem}.MenuControls{border-bottom:solid 1px var(--line-rule-color);-webkit-box-shadow:0 5px 10px -10px rgba(0,0,0,.1);box-shadow:0 5px 10px -10px rgba(0,0,0,.1);font-size:13px;padding:1em}.FrameworkSelect,.FrameworkSelect .Dropdown,.FrameworkSelect .Dropdown-button{width:100%}.FrameworkSelect-framework{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex}.FrameworkSelect-icon{height:14px;width:14px;margin-right:.5em}.FrameworkSelect .Select-option{padding-left:.75em}</style>
+    <style s-id="sc-docs-menu-toggle">docs-menu-toggle{background-color:rgba(0,0,0,var(--bg-alpha,0));border-radius:50%;color:var(--text-color--light);cursor:pointer;height:40px;padding:8px;width:40px}@media (hover:hover){docs-menu-toggle:focus,docs-menu-toggle:hover{--bg-alpha:0.03;outline:none}docs-menu-toggle:active{--bg-alpha:0.06}}docs-menu-toggle svg{fill:currentColor}</style>
+    <style s-id="sc-header-mobile-collapse">header-mobile-collapse,header-mobile-collapse .header-mobile-collapse__content{-ms-flex:1;flex:1;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end;-ms-flex-align:center;align-items:center}header-mobile-collapse .ionic-sub-header__mobile-toggle{display:none;padding-top:14px;pointer-events:none;padding-left:8px}header-mobile-collapse .ionic-sub-header__mobile-toggle svg{height:20px;width:20px}header-mobile-collapse .UtilNav{margin-left:auto}header-mobile-collapse>ionic-search{padding-right:8px;padding-top:4px;display:none}header-mobile-collapse .label-sm-only .Dropdown-button-label,header-mobile-collapse .sm-only{display:none}@media (max-width:800px){header-mobile-collapse .ionic-sub-header__mobile-toggle{display:block;cursor:pointer;padding-top:14px;pointer-events:all;-webkit-transition:transform .2s ease .1s;transition:transform .2s ease .1s;-webkit-transform-origin:66% 50%;transform-origin:66% 50%}header-mobile-collapse .header-mobile-collapse__backdrop{position:fixed;top:100%;height:100vh;left:0;right:0;background:rgba(0,0,0,.1);cursor:pointer;opacity:0;pointer-events:none;-webkit-transition:opacity .4s;transition:opacity .4s}header-mobile-collapse.ionic-sub-header--mobile-active .header-mobile-collapse__backdrop{opacity:1;pointer-events:all}header-mobile-collapse>ionic-search{display:block}header-mobile-collapse .header-mobile-collapse__content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:stretch;align-items:stretch;position:fixed;width:100vw;left:0;background:#fff;-webkit-box-shadow:0 1px 3px rgba(2,8,20,.06),0 1px 2px rgba(2,8,20,.04);box-shadow:0 1px 3px rgba(2,8,20,.06),0 1px 2px rgba(2,8,20,.04);top:56px;padding:16px 16px 8px;max-height:calc(100vh - 64px);overflow:auto;pointer-events:none;opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px);-webkit-transition:opacity .2s linear,-webkit-transform .2s cubic-bezier(.36,.66,.04,1);transition:opacity .2s linear,-webkit-transform .2s cubic-bezier(.36,.66,.04,1);transition:transform .2s cubic-bezier(.36,.66,.04,1),opacity .2s linear;transition:transform .2s cubic-bezier(.36,.66,.04,1),opacity .2s linear,-webkit-transform .2s cubic-bezier(.36,.66,.04,1)}header-mobile-collapse.ionic-sub-header--mobile-active .header-mobile-collapse__content{opacity:1;pointer-events:all;-webkit-transform:translateY(0);transform:translateY(0);-webkit-transition:opacity .1s linear,-webkit-transform .25s cubic-bezier(.17,.67,.52,1);transition:opacity .1s linear,-webkit-transform .25s cubic-bezier(.17,.67,.52,1);transition:transform .25s cubic-bezier(.17,.67,.52,1),opacity .1s linear;transition:transform .25s cubic-bezier(.17,.67,.52,1),opacity .1s linear,-webkit-transform .25s cubic-bezier(.17,.67,.52,1)}header-mobile-collapse .docs-dropdown,header-mobile-collapse .SectionNav .Dropdown{-ms-flex-item-align:stretch;align-self:stretch}header-mobile-collapse .Dropdown .Dropdown-button,header-mobile-collapse .UtilNav .sm-only{width:100%;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;color:#5b708b;font-size:20px;line-height:24px;letter-spacing:-.03em;padding:13px 0 14px}header-mobile-collapse .Dropdown--left .Dropdown-button{padding-left:16px;padding-right:14px;margin-bottom:10px;padding-top:10px;height:44px;-webkit-box-shadow:0 1px 2px rgba(2,8,20,.04);box-shadow:0 1px 2px rgba(2,8,20,.04)}header-mobile-collapse .Dropdown .Dropdown-button .Dropdown-arrow{height:26px;width:20px;margin-right:-4px}header-mobile-collapse .SectionNav-tabs>*,header-mobile-collapse .SectionNav .Dropdown{margin-right:0}header-mobile-collapse .Dropdown:focus{outline:none}header-mobile-collapse .SectionNav-tabs stencil-route-link{height:45px}header-mobile-collapse .Dropdown--right .Dropdown-button{text-align:left}header-mobile-collapse .SectionNav-tabs,header-mobile-collapse .SectionNav stencil-route,header-mobile-collapse .UtilNav{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;margin-left:0;-ms-flex-align:stretch;align-items:stretch}header-mobile-collapse .UtilNav>*{margin-left:0;border-bottom:1px solid #e6e6e8}header-mobile-collapse .UtilNav>:last-child{border-bottom:none}header-mobile-collapse .Dropdown-panel{position:static;border-bottom:1px solid var(--text-color--lighter)}header-mobile-collapse .SectionNav-tabs a{font-size:20px;line-height:24px;letter-spacing:-.02em;color:#5b708b;padding-left:16px;padding-right:14px;font-weight:400}header-mobile-collapse .UtilNav a{padding:0}header-mobile-collapse .SectionNav-tabs .link-active{background:rgba(81,167,255,.12);color:#3880ff;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;width:100%;border-radius:8px}header-mobile-collapse .SectionNav-tabs .link-active:after{content:"\2713";position:static;background:none;width:auto;font-size:16px}header-mobile-collapse .SectionNav-tabs{position:relative;padding-bottom:8px;margin-bottom:18px;margin-top:5px}header-mobile-collapse .SectionNav-tabs:after{position:absolute;bottom:0;left:-16px;width:100vw;border-bottom:1px solid #e6e6e8;content:""}header-mobile-collapse .header-mobile-collapse__content ionic-search{display:none}header-mobile-collapse .UtilNav:before{content:"More";font-size:20px;line-height:24px;letter-spacing:.01em;color:#000;padding:6px 2px 8px}header-mobile-collapse .label-sm-only .Dropdown-button-label,header-mobile-collapse .sm-only{display:block}header-mobile-collapse .label-sm-only .Dropdown-icon,header-mobile-collapse .lg-only{display:none}header-mobile-collapse .label-sm-only .Dropdown-icon+.Dropdown-arrow{fill:#5b708b}header-mobile-collapse .UtilNav .sm-only .Dropdown-arrow{height:26px;width:20px;margin-right:-4px;fill:#b2becd}header-mobile-collapse .Dropdown-panel a{padding:8px;font-size:16px}header-mobile-collapse .Dropdown.is-open .Dropdown-panel{position:static}}</style>
+    <style s-id="sc-docs-dropdown">.Dropdown{display:inline-block;position:relative;z-index:1}.Dropdown-button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:none;border:none;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;line-height:inherit;padding:initial;white-space:nowrap}.Dropdown-button .Dropdown-icon{height:14px;width:22px;fill:#ced6e0}.Dropdown-button .Dropdown-icon+.Dropdown-arrow{margin-left:0;fill:#ced6e0;vertical-align:2px}.Dropdown-button:focus,.Dropdown:focus{outline:none}.Dropdown-button:hover{cursor:pointer}.Dropdown-arrow{fill:currentColor;height:.8em;margin-bottom:-.0875em;width:.8em}.Dropdown.is-open .Dropdown-arrow{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.Dropdown-panel{background-color:var(--background);border-radius:6px;border:none;-webkit-box-shadow:0 4px 12px 0 rgba(0,0,0,.08),0 2px 4px 0 rgba(0,0,0,.08);box-shadow:0 4px 12px 0 rgba(0,0,0,.08),0 2px 4px 0 rgba(0,0,0,.08);display:none;min-width:160px;overflow:hidden;pointer-events:none;position:absolute;top:100%;visibility:hidden}.Dropdown.is-open .Dropdown-panel{display:initial;pointer-events:auto;visibility:visible}.Dropdown--left .Dropdown-panel{left:0}.Dropdown--right .Dropdown-panel{right:0}.Dropdown--center .Dropdown-panel{left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%)}.Dropdown-panel a{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;padding:.5em 1em}.Dropdown-panel svg{height:1em;width:1em;margin-left:4px}@media (hover:hover){.Dropdown-panel a:hover{background-color:rgba(0,0,0,.025)}}.Dropdown-panel>section{padding:.5em 0}.Dropdown-panel>section:not(:last-child){border-bottom:solid 1px var(--line-rule-color)}</style>
+    <style s-id="sc-ionic-search">.Search__Defaults{padding-bottom:32px;max-height:calc(100vh - 160px);overflow-y:auto;border-top:1px solid #e6e7e9}.Search__Defaults:after{content:"";display:block;clear:both}.Search__Defaults__Section{padding:32px 44px 0;float:left;width:49%}.Search__Defaults__Section h4{font-size:11px;line-height:160%;letter-spacing:.08em;text-transform:uppercase;color:#92a1b3;margin-top:0;padding-top:0}.Search__Defaults__Section strong{display:inline-block;font-weight:500;color:#1a232f;font-size:14px;margin-bottom:.4em}.Search__Defaults__Section ul{padding:0;border-top:none}.Search__Defaults__Section ul a{display:inline-block;padding:11px 10px 9px 40px;margin-left:-16px;margin-right:-16px;width:calc(100% + 32px);border-radius:6px;-webkit-transition:background-color .2s;transition:background-color .2s;position:relative;color:#b2becd;font-size:12px;font-weight:400}.Search__Defaults__Section ul li a:hover{color:var(--accent-color-500)}@media (max-width:660px){.Search__Defaults__Section{width:100%;float:none}}@-webkit-keyframes ionic-search-scan{0%{left:0}to{left:100%}}@keyframes ionic-search-scan{0%{left:0}to{left:100%}}@-webkit-keyframes ionic-search-scan-mobile{0%{left:calc(0% + 8px)}to{left:calc(100% - 16px)}}@keyframes ionic-search-scan-mobile{0%{left:calc(0% + 8px)}to{left:calc(100% - 16px)}}ionic-search{display:block;display:inline-block}ionic-search .SearchBtn{-webkit-transition:opacity .2s;transition:opacity .2s}ionic-search .SearchBtn.active{cursor:default;opacity:.7}ionic-search .SearchBtn__lg{border:1px solid #e9edf3;border-radius:16px;padding:4px;display:-ms-flexbox;display:flex;min-width:180px;padding:5px 9px 7px;cursor:pointer;-webkit-transition:border-color .4s ease,box-shadow .4s;transition:border-color .4s ease,box-shadow .4s}ionic-search .SearchBtn__lg:hover{border-color:#ddd;-webkit-box-shadow:0 2px 8px rgba(0,0,0,.02);box-shadow:0 2px 8px rgba(0,0,0,.02)}ionic-search .SearchBtn__lg__icon{height:14px;fill:#b2becd;margin:2px 6px 0 1px}ionic-search .SearchBtn__lg__text{font-size:12px;line-height:14px;letter-spacing:-.03em;color:#b2becd;margin-top:2px}ionic-search .SearchBtn__lg__key{background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;font-size:11px;line-height:1em;letter-spacing:-.03em;color:#b2becd;margin-left:auto;padding:1px 5px 3px}ionic-search .SearchBtn__sm{fill:#73849a;height:20px;cursor:pointer;-webkit-transition:color .2s;transition:color .2s}ionic-search .SearchBtn__sm:hover{fill:var(--text-color)}@media (min-width:992px){ionic-search .SearchBtn__sm{display:none}}@media (max-width:991px){ionic-search .SearchBtn__lg{display:none}}ionic-search .slot.hidden{display:none}ionic-search .search-box{position:absolute;left:calc(50% - 330px);width:660px;max-width:calc(100% - 20px);top:80px;background:#fff;border-radius:10px;opacity:0;z-index:1;padding-top:2px;pointer-events:none;-webkit-box-shadow:0 8px 16px rgba(0,0,0,.08);box-shadow:0 8px 16px rgba(0,0,0,.08);-webkit-transition:opacity .2s linear;transition:opacity .2s linear}@media (max-width:660px){ionic-search .search-box{left:10px}}ionic-search .search-box.active{pointer-events:all;opacity:1}ionic-search .search-static{position:absolute;top:42px;left:15px;height:20px;z-index:2;color:#92a1b3;pointer-events:none;-webkit-transform:translate3d(0,-25px,0);transform:translate3d(0,-25px,0);-webkit-transition:transform .4s cubic-bezier(.23,1,.32,1),opacity .1s;transition:transform .4s cubic-bezier(.23,1,.32,1),opacity .1s}ionic-search .close{right:18px;top:20px;position:absolute;z-index:2;opacity:0;pointer-events:none;-webkit-transition:opacity .3s;transition:opacity .3s}ionic-search .close.active{pointer-events:all;opacity:1;cursor:pointer;-webkit-transform:none;transform:none}ionic-search input{width:100%;margin-left:0;padding-left:40px;padding-right:40px;outline:none;border:none;z-index:2;background:transparent;padding:13px 30px 15px 41px;font-size:20px;line-height:24px;letter-spacing:-.02em;position:relative;-webkit-transition:opacity .2s,transform .4s cubic-bezier(.23,1,.32,1);transition:opacity .2s,transform .4s cubic-bezier(.23,1,.32,1)}ionic-search input::-webkit-input-placeholder{color:#b2becd}ionic-search input::-moz-placeholder{color:#b2becd}ionic-search input:-ms-input-placeholder{color:#b2becd}ionic-search input::-ms-input-placeholder{color:#b2becd}ionic-search input::placeholder{color:#b2becd}ionic-search .slot .hidden{display:none}ionic-search ul{list-style:none;margin-top:0;margin-bottom:0;text-align:left;border-top:1px solid #e6e7e9;padding:20px;-webkit-transition:transform .5s cubic-bezier(.23,1,.32,1),opacity .2s;transition:transform .5s cubic-bezier(.23,1,.32,1),opacity .2s}ionic-search em,ionic-search span,ionic-search strong,ionic-search ul path{-webkit-transition:color .2s,fill .2s;transition:color .2s,fill .2s}ionic-search strong{display:block;font-weight:500;color:#1a232f;font-size:14px;margin-bottom:.4em}ionic-search span{color:#b2becd;font-size:12px;font-weight:400}ionic-search span em{color:#92a1b3}ionic-search span .no-results{padding:8px 40px;color:#2a2f38}ionic-search ul a{display:inline-block;padding:10px 20px 10px 40px;width:100%;border-radius:6px;-webkit-transition:background-color .2s;transition:background-color .2s;position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}ionic-search ul a.active,ionic-search ul a:hover{background-color:#f4faff}ionic-search ul a.active strong,ionic-search ul a:hover strong{color:#3880ff}ionic-search ul a.active span,ionic-search ul a:hover span{color:var(--accent-color-500)}ionic-search ul a.active em,ionic-search ul a:hover em{color:var(--accent-color-300)}ionic-search ul a.active svg path,ionic-search ul a:hover svg path{fill:#639cff}ionic-search ul a.active svg path:last-child,ionic-search ul a:hover svg path:last-child{fill:#97bdff}ionic-search ul a svg{position:absolute;left:12px;top:11px;height:14px;width:16px;display:block}ionic-search .searching{position:absolute;height:1px;width:8px;background:#3880ff;top:54px;left:0;-webkit-animation:ionic-search-scan 1s ease-in-out infinite;animation:ionic-search-scan 1s ease-in-out infinite}ionic-search .search-box.active .close{opacity:1;-webkit-transform:none;transform:none;-webkit-transition-delay:.4s;transition-delay:.4s}ionic-search .SearchResults{max-height:calc(100vh - 160px);overflow-y:auto}ionic-search .backdrop{background:rgba(0,12,34,.1);position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;min-height:calc(100vh + 200px);pointer-events:none;-webkit-transition:all .4s ease;transition:all .4s ease}ionic-search .backdrop.active{opacity:1;pointer-events:all}ionic-search .SearchMore__link{color:var(--text-color);padding:10px 25px;border-top:1px solid rgba(0,20,56,.06);background:#fafafa;cursor:pointer;width:100%;font-weight:600;display:block;border-radius:0 0 6px 6px;-webkit-transition:background-color .3s,color .3s;transition:background-color .3s,color .3s}ionic-search .SearchMore__link svg{fill:var(--text-color);height:1.2em;vertical-align:-3px;float:right;-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-transition:transform .3s ease;transition:transform .3s ease}ionic-search .search-box .SearchMore__link:hover{color:var(--accent-color-300);background:#f4faff}ionic-search .search-box .SearchMore__link:hover svg{fill:var(--accent-color)}ionic-search .SearchMore__list{display:none}ionic-search .SearchMore.active .SearchMore__link{border-radius:0}ionic-search .SearchMore.active .SearchMore__link svg{-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}ionic-search .SearchMore.active .SearchMore__list,ionic-search[mobile]{display:block}ionic-search[mobile] .search{color:#999;right:auto;left:0;bottom:0;font-size:28px;padding:22px;top:auto;z-index:3;position:fixed}ionic-search[mobile] .backdrop{top:0;background:rgba(0,0,0,.5);z-index:2}ionic-search[mobile] .search-box{width:auto;left:2px;right:2px;top:42px;bottom:0;padding:60px 12px 48px;position:fixed;z-index:3;background:#fff;border-top-left-radius:12px;border-top-right-radius:12px;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0);-webkit-transition:transform .4s cubic-bezier(.23,1,.32,1);transition:transform .4s cubic-bezier(.23,1,.32,1)}ionic-search[mobile] .search-box.active{-webkit-transform:none;transform:none}ionic-search[mobile] .mobile-close{-webkit-transition-delay:0;transition-delay:0;left:calc(50% - 24px);top:0;left:0;right:0;position:absolute}ionic-search[mobile] .mobile-close svg{position:absolute;top:8px;width:40px;height:40px;left:calc(50% - 20px)}ionic-search[mobile] .searching{top:113px;z-index:3;-webkit-animation:ionic-search-scan-mobile 1s ease-in-out infinite;animation:ionic-search-scan-mobile 1s ease-in-out infinite}ionic-search[mobile] ul{opacity:1;-webkit-transform:none;transform:none;z-index:3;top:auto;-webkit-box-shadow:none;box-shadow:none;width:100%;max-height:calc(100vh - 154px);overflow:touch}ionic-search[mobile] .search-static{-webkit-transform:none;transform:none;opacity:1;z-index:3;top:71px;left:22px}ionic-search[mobile] a{padding-left:20px;padding-right:20px}ionic-search[mobile] input{margin:0 0 10px;padding:10px 40px 8px;background:#eceef2;border-radius:12px;width:100%}ionic-search[mobile]~.mobile-nav__pane{min-height:100%;background:#fff;-webkit-transition:transform .4s ease,border-radius .4s step-end;transition:transform .4s ease,border-radius .4s step-end}ionic-search[mobile].active~.mobile-nav__pane{border-radius:12px;-webkit-transform:scale3d(.97,.97,1);transform:scale3d(.97,.97,1);-webkit-transition:transform .4s ease;transition:transform .4s ease}.mobile-nav{background:#000!important}</style>
+    <style s-id="sc-ion-icon">/*!@:host*/.sc-ion-icon-h{display:inline-block;width:1em;height:1em;contain:strict;fill:currentColor;-webkit-box-sizing:content-box!important;box-sizing:content-box!important}/*!@.icon-inner,svg*/.icon-inner.sc-ion-icon, svg.sc-ion-icon{display:block;height:100%;width:100%}/*!@:host(.flip-rtl) .icon-inner*/.flip-rtl.sc-ion-icon-h .icon-inner.sc-ion-icon{-webkit-transform:scaleX(-1);transform:scaleX(-1)}/*!@:host(.icon-small)*/.icon-small.sc-ion-icon-h{font-size:18px!important}/*!@:host(.icon-large)*/.icon-large.sc-ion-icon-h{font-size:32px!important}/*!@:host(.ion-color)*/.ion-color.sc-ion-icon-h{color:var(--ion-color-base)!important}/*!@:host(.ion-color-primary)*/.ion-color-primary.sc-ion-icon-h{--ion-color-base:var(--ion-color-primary,#3880ff)}/*!@:host(.ion-color-secondary)*/.ion-color-secondary.sc-ion-icon-h{--ion-color-base:var(--ion-color-secondary,#0cd1e8)}/*!@:host(.ion-color-tertiary)*/.ion-color-tertiary.sc-ion-icon-h{--ion-color-base:var(--ion-color-tertiary,#f4a942)}/*!@:host(.ion-color-success)*/.ion-color-success.sc-ion-icon-h{--ion-color-base:var(--ion-color-success,#10dc60)}/*!@:host(.ion-color-warning)*/.ion-color-warning.sc-ion-icon-h{--ion-color-base:var(--ion-color-warning,#ffce00)}/*!@:host(.ion-color-danger)*/.ion-color-danger.sc-ion-icon-h{--ion-color-base:var(--ion-color-danger,#f14141)}/*!@:host(.ion-color-light)*/.ion-color-light.sc-ion-icon-h{--ion-color-base:var(--ion-color-light,#f4f5f8)}/*!@:host(.ion-color-medium)*/.ion-color-medium.sc-ion-icon-h{--ion-color-base:var(--ion-color-medium,#989aa2)}/*!@:host(.ion-color-dark)*/.ion-color-dark.sc-ion-icon-h{--ion-color-base:var(--ion-color-dark,#222428)}</style>
+    <style s-id="sc-docs-select">.Select{cursor:pointer;display:inline-block;font-weight:500}.Select .Dropdown-button{-ms-flex-align:center;align-items:center;border:1px solid #dee3ea;border-radius:6px;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-pack:justify;justify-content:space-between;min-width:100px;padding:.5em 1em}.Select .Dropdown-panel{padding:.5em 0}.Select .Dropdown-arrow{margin-left:.5em}.Select-option{--bg-alpha:0;background-color:rgba(0,0,0,var(--bg-alpha));padding:.5em 1.5em}.Select-option:focus{--bg-alpha:0.025;outline:none}.Select-option--selected{--bg-alpha:0.05}.Select-option--selected:focus{--bg-alpha:0.075}@media (hover:hover){.Select-option:hover{--bg-alpha:0.025}.Select-option--selected:hover{--bg-alpha:0.075}}</style>
+    <style s-id="sc-docs-nav">docs-nav{display:block}docs-nav ul{list-style:none;margin:0;padding:0}docs-nav a{color:inherit;font-weight:inherit}.Nav{--item-spacing:10px;color:var(--text-color--dark);font-size:14px;font-weight:500;line-height:1.25;padding:1rem 0 2rem}.Nav-subnav{--item-spacing:6px;color:var(--text-color--light);font-size:13px}.Nav-header{font-size:12px;font-weight:600;color:#b2becd;text-transform:uppercase;letter-spacing:.06em}.Nav-header,.Nav-link{background-color:rgba(0,0,0,var(--bg-alpha,0));display:block;padding-top:var(--item-spacing);padding-right:20px;padding-bottom:var(--item-spacing);padding-left:calc(14px + var(--level, 1) * 10px)}.Nav>li{padding-bottom:16px}@media (hover:hover){.Nav-link:not(.Nav-link--active):hover{color:var(--text-color)}.Nav-link:active{background-color:#f6fbff}}.Nav-link--active{background-color:#f6fbff;border-left:2px solid currentColor;color:var(--accent-color)}.Nav-subnav .Nav-header{color:var(--text-color);font-weight:600}.Nav-link.outbound{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex}.Nav-link.outbound svg{-ms-flex:none;flex:none;margin-left:.25em}.Nav span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}@media (max-width:768px),(pointer:coarse){.Nav{--item-spacing:12px;font-size:15px}.Nav-subnav{--item-spacing:6px;font-size:14px}}</style>
+    <style s-id="sc-docs-page">.Error{-ms-flex-align:center;align-items:center;background-color:var(--offset-background);color:var(--text-color--light);display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;line-height:1;white-space:nowrap}.Error.full-screen{padding-bottom:3rem}.Error>*{margin:10px}.Error div,.Error h1{color:inherit;font-size:3rem}.Error div{text-shadow:3px 3px 3px rgba(0,0,0,.1)}.Error p{font-size:18px}docs-page{display:grid;font-size:15px;grid-template-columns:1fr minmax(0,var(--page-width,720px)) 1fr;line-height:2;margin-left:var(--page-margin-left);margin-top:var(--header-height);overflow-x:hidden;-webkit-transform:var(--page-transform,none);transform:var(--page-transform,none);-webkit-transition:-webkit-transform .2s cubic-bezier(.2,1,.2,1);transition:-webkit-transform .2s cubic-bezier(.2,1,.2,1);transition:transform .2s cubic-bezier(.2,1,.2,1);transition:transform .2s cubic-bezier(.2,1,.2,1),-webkit-transform .2s cubic-bezier(.2,1,.2,1)}@media (min-width:1234px){docs-page{grid-template-columns:1fr minmax(0,var(--page-width,720px)) 3fr}}@media (min-width:1800px){docs-page{grid-template-columns:1fr minmax(0,var(--page-width,720px)) 1fr 240px}}docs-page>main{grid-column:2;margin-bottom:3rem;padding:var(--page-padding,2rem 3rem);position:relative}docs-page docs-demo{margin-right:auto}docs-page docs-pagination{grid-column:1/-1}docs-page .full-screen{grid-column:1/-1;height:calc(100vh - var(--header-height));margin-bottom:0;overflow:hidden;padding:0}docs-page h1{margin-top:2rem;margin-bottom:1rem}docs-page h2 a[href^="#"],docs-page h3 a[href^="#"],docs-page h4 a[href^="#"],docs-page h5 a[href^="#"],docs-page h6 a[href^="#"]{color:inherit;position:relative}docs-page h2 a[href^="#"]:before,docs-page h3 a[href^="#"]:before,docs-page h4 a[href^="#"]:before,docs-page h5 a[href^="#"]:before,docs-page h6 a[href^="#"]:before{content:"#";opacity:0;padding-right:5px;position:absolute;right:100%;-webkit-transition:opacity .1s ease;transition:opacity .1s ease}docs-page h2 a[href^="#"]:hover:before,docs-page h3 a[href^="#"]:hover:before,docs-page h4 a[href^="#"]:hover:before,docs-page h5 a[href^="#"]:hover:before,docs-page h6 a[href^="#"]:hover:before{opacity:1}docs-page h2 code,docs-page h3 code,docs-page h4 code,docs-page h5 code,docs-page h6 code{background:none;font-size:inherit}docs-page aside{float:right;margin-left:20px;margin-bottom:20px}@media (min-width:1234px){docs-page main.no-demo docs-table-of-contents{position:fixed;right:0;top:100px;width:240px;-webkit-transition:transform .2s ease;transition:transform .2s ease}docs-header.hidden~stencil-route docs-page main.no-demo docs-table-of-contents{-webkit-transform:translateY(-60px);transform:translateY(-60px)}}</style>
+    <link rel=modulepreload href="/docs/build/p-ielupdor.js">
+    <link rel=modulepreload href="/docs/build/p-30a32fd8.js">
+    <link rel=modulepreload href="/docs/build/p-7c30d374.js">
+    <link rel=modulepreload href="/docs/build/p-c1ec25d3.js">
+    <link rel=modulepreload href="/docs/build/p-wbsecb29.entry.js">
+    <script type=module src="/docs/build/p-ielupdor.js" data-resources-url="/docs/build/" data-namespace=app></script>
+    <script nomodule src="/docs/build/app.js"></script>
+    <link rel=stylesheet href="/docs/build/p-7zfdalfv.css">
+    <meta name=author content=Ionic>
+    <meta name=viewport content="width=device-width, minimum-scale=1, initial-scale=1">
+    <meta name="theme-color" content=#4d8dff>
+    <link rel=manifest href="/docs/manifest.json">
+    <meta itemprop=name content="In App Browser - Ionic Documentation" class="meta-title">
+    <meta itemprop=description content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards"
+    class="meta-description">
+    <meta itemprop=image content="https://ionicframework.com/docs/assets/img/meta/open-graph.png" class="meta-image">
+    <meta name=twitter:card content=summary_large_image>
+    <meta name=twitter:site content=@ionicframework>
+    <meta name=twitter:title content="In App Browser - Ionic Documentation" class="meta-title">
+    <meta name=twitter:description content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards"
+    class="meta-description">
+    <meta name=twitter:creator content=@ionicframework>
+    <meta name=twitter:image:src content="https://ionicframework.com/docs/assets/img/meta/open-graph.png"
+    class="meta-image">
+    <meta property=og:title content="In App Browser - Ionic Documentation" class="meta-title">
+    <meta property=og:type content=article>
+    <meta property=og:url content="https://ionicframework.com/docs/native/in-app-browser" class="meta-url">
+    <meta property=og:image content="https://ionicframework.com/docs/assets/img/meta/open-graph.png"
+    class="meta-image">
+    <meta property=og:description content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards"
+    class="meta-description">
+    <meta property=og:site_name content="Ionic Docs">
+    <meta property=fb:page_id content=1321836767955949>
+    <meta property=fb:admins content=219701936>
+    <meta property=article:tag content=Ionic>
+    <meta property=article:tag content=PWA>
+    <meta property=article:tag content="hybrid app">
+    <link rel="apple-touch-icon" sizes=57x57 href="/docs/assets/img/meta/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes=60x60 href="/docs/assets/img/meta/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes=72x72 href="/docs/assets/img/meta/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes=76x76 href="/docs/assets/img/meta/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes=114x114 href="/docs/assets/img/meta/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes=120x120 href="/docs/assets/img/meta/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes=144x144 href="/docs/assets/img/meta/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes=152x152 href="/docs/assets/img/meta/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes=180x180 href="/docs/assets/img/meta/apple-touch-icon-180x180.png">
+    <link rel=icon type="image/png" href="/docs/assets/img/meta/favicon-16x16.png" sizes=16x16>
+    <link rel=icon type="image/png" href="/docs/assets/img/meta/favicon-32x32.png" sizes=32x32>
+    <link rel=icon type="image/png" href="/docs/assets/img/meta/favicon-96x96.png" sizes=96x96>
+    <link rel=alternate hreflang="x-default" href="https://ionicframework.com/docs/native/in-app-browser"
+    class="meta-url">
+    <link rel=alternate hreflang=ja href="https://ionicframework.com/jp/docs/native/in-app-browser"
+    class="meta-url">
+    <link rel=canonical href="https://ionicframework.com/docs/native/in-app-browser">
+    </head>
+    <body> <docs-root class=hydrated s-id=1><!--r.1--><stencil-router class="Layout hydrated" c-id=1.0.0.0
+    s-id=2><!--r.2--><!--o.1.1--><!--o.1.2--><!--o.1.3--><!--o.1.4--><!--s.2.0.0.0.--><stencil-route class=hydrated
+    c-id=1.1.1.0 s-id=3 style="display: none;"><!--r.3--></stencil-route><docs-header class=hydrated c-id=1.2.1.1
+    s-id=4><!--r.4--><header c-id=4.0.0.0><docs-menu-toggle role=button tabindex=0 aria-label="Toggle Menu"
+    class=hydrated c-id=4.1.1.0 s-id=5><!--r.5--><svg viewBox="0 0 512 512" c-id=5.0.0.0><path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+    c-id=5.1.1.0></path></svg></docs-menu-toggle><stencil-route-link class=hydrated c-id=4.2.1.1 s-id=6><!--r.6--><!--o.4.3--><a
+    class="link-active" href="/docs/" c-id=6.0.0.0><!--s.6.1.1.0.--><svg viewBox="0 0 78 25" fill=currentColor
+    class=HeaderLogo c-id=4.3.2.0><title c-id=4.4.3.0><!--t.4.5.4.0-->Ionic Docs</title>
+    <path d="M19.8517 8.01728C21.2289 8.01728 22.3454 6.9008 22.3454 5.52354C22.3454 4.14628 21.2289 3.02979 19.8517 3.02979C18.4744 3.02979 17.3579 4.14628 17.3579 5.52354C17.3579 6.9008 18.4744 8.01728 19.8517 8.01728Z"
+    c-id=4.6.3.1></path><path d="M22.9219 8.02656L22.8187 7.79688L22.65 7.98438C22.2422 8.44844 21.7219 8.80469 21.1453 9.02031L20.9859 9.08125L21.0516 9.23594C21.5484 10.4312 21.8016 11.6969 21.8016 12.9953C21.8016 18.4 17.4047 22.8016 11.9953 22.8016C6.58594 22.8016 2.19375 18.4047 2.19375 13C2.19375 7.59531 6.59531 3.19375 12 3.19375C13.4672 3.19375 14.8828 3.5125 16.2 4.14062L16.3547 4.21562L16.4203 4.06094C16.6594 3.49844 17.0437 2.99687 17.5266 2.60781L17.7234 2.44844L17.4984 2.33125C15.7875 1.45 13.9359 1 12 1C5.38125 1 0 6.38125 0 13C0 19.6187 5.38125 25 12 25C18.6187 25 24 19.6187 24 13C24 11.2703 23.6391 9.59687 22.9219 8.02656Z"
+    c-id=4.7.3.2></path><path d="M12.1829 7.53447C9.02353 7.43134 6.43134 10.0235 6.53447 13.1829C6.62822 16.047 8.95322 18.3767 11.8173 18.4657C14.9767 18.5688 17.5688 15.9767 17.4657 12.8173C17.372 9.95322 15.047 7.62822 12.1829 7.53447Z"
+    c-id=4.8.3.3></path><text font-size=18 font-weight=bold letter-spacing="-0.02em" c-id=4.9.3.4
+    style="white-space: pre;"><tspan x=27.5 y=19.5 c-id=4.10.4.0><!--t.4.11.5.0-->Docs</tspan></text></svg></a></stencil-route-link><header-mobile-collapse
+    class=hydrated c-id=4.12.1.2 s-id=7><!--r.7--><!--o.4.13--><!--o.4.64--><div class="header-mobile-collapse__backdrop"
+    c-id=7.0.0.0></div><ionic-search class=hydrated c-id=7.1.0.1 s-id=8><!--r.8--><div class="search-box"
+    c-id=8.0.0.0><input type=text placeholder="Search Ionic.." c-id=8.1.1.0><svg viewBox="0 0 512 512" class="search-static"
+    c-id=8.2.1.1><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=8.3.2.0></path></svg><ion-icon class="close sc-ion-icon-h md hydrated" role=img c-id=8.4.1.2 s-id=9><!--r.9--><div
+    class="icon-inner sc-ion-icon" c-id=9.0.0.0></div></ion-icon><div class=slot c-id=8.5.1.3><div class=Search__Defaults
+    c-id=8.6.2.0><div class=Search__Defaults__Section c-id=8.7.3.0><h4 c-id=8.8.4.0><!--t.8.9.5.0-->Getting Started</h4><ul
+    c-id=8.10.4.1><li c-id=8.11.5.0><a href="/docs/installation/cli" c-id=8.12.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=8.13.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.14.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.15.8.1></path></svg><strong c-id=8.16.7.1><!--t.8.17.8.0-->Installation Guide</strong><!--t.8.18.7.2--> | Installation</a></li><li
+    c-id=8.19.5.1><a href="/docs/building/running" c-id=8.20.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.21.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.22.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.23.8.1></path></svg><strong c-id=8.24.7.1><!--t.8.25.8.0-->Running an App</strong><!--t.8.26.7.2--> | Building</a></li><li
+    c-id=8.27.5.2><a href="/docs/layout/structure" c-id=8.28.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.29.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.30.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.31.8.1></path></svg><strong c-id=8.32.7.1><!--t.8.33.8.0-->App Structure</strong><!--t.8.34.7.2--> | Layout</a></li><li
+    c-id=8.35.5.3><a href="/docs/theming/basics" c-id=8.36.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.37.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.38.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.39.8.1></path></svg><strong c-id=8.40.7.1><!--t.8.41.8.0-->Theming Basics</strong><!--t.8.42.7.2--> | Theming</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=8.43.3.1><h4 c-id=8.44.4.0><!--t.8.45.5.0-->Common topics</h4><ul
+    c-id=8.46.4.1><li c-id=8.47.5.0><a href="/docs/building/testing" c-id=8.48.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=8.49.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.50.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.51.8.1></path></svg><strong c-id=8.52.7.1><!--t.8.53.8.0-->Testing</strong><!--t.8.54.7.2--> | Building</a></li><li
+    c-id=8.55.5.1><a href="/docs/building/cross-platform#storage" c-id=8.56.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=8.57.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.58.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.59.8.1></path></svg><strong c-id=8.60.7.1><!--t.8.61.8.0-->Storage</strong><!--t.8.62.7.2--> | Building</a></li><li
+    c-id=8.63.5.2><a href="/docs/lifecycle/angular" c-id=8.64.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.65.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.66.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.67.8.1></path></svg><strong c-id=8.68.7.1><!--t.8.69.8.0-->Life Cycle Events</strong><!--t.8.70.7.2--> | Angular</a></li><li
+    c-id=8.71.5.3><a href="/docs/navigation/angular" c-id=8.72.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.73.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.74.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.75.8.1></path></svg><strong c-id=8.76.7.1><!--t.8.77.8.0-->Navigation</strong><!--t.8.78.7.2--> | Angular</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=8.79.3.2><h4 c-id=8.80.4.0><!--t.8.81.5.0-->UI Components</h4><ul
+    c-id=8.82.4.1><li c-id=8.83.5.0><a href="/docs/api/button" c-id=8.84.6.0><svg viewBox="0 0 16 14" fill=none
+    c-id=8.85.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.86.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.87.8.1></path></svg><strong c-id=8.88.7.1><!--t.8.89.8.0-->ion-button</strong><!--t.8.90.7.2--> | Buttons</a></li><li
+    c-id=8.91.5.1><a href="/docs/api/card" c-id=8.92.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.93.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.94.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.95.8.1></path></svg><strong c-id=8.96.7.1><!--t.8.97.8.0-->ion-card</strong><!--t.8.98.7.2--> | Cards</a></li><li
+    c-id=8.99.5.2><a href="/docs/api/loading" c-id=8.100.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.101.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.102.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.103.8.1></path></svg><strong c-id=8.104.7.1><!--t.8.105.8.0-->ion-loading</strong><!--t.8.106.7.2--> | Progress Indicators</a></li><li
+    c-id=8.107.5.3><a href="/docs/api/tabs" c-id=8.108.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.109.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.110.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.111.8.1></path></svg><strong c-id=8.112.7.1><!--t.8.113.8.0-->ion-tabs</strong><!--t.8.114.7.2--> | Tabs</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=8.115.3.3><h4 c-id=8.116.4.0><!--t.8.117.5.0-->Native</h4><ul c-id=8.118.4.1><li
+    c-id=8.119.5.0><a href="/docs/enterprise/camera" c-id=8.120.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.121.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.122.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.123.8.1></path></svg><strong c-id=8.124.7.1><!--t.8.125.8.0-->Camera</strong><!--t.8.126.7.2--> | Native EE</a></li><li
+    c-id=8.127.5.1><a href="/docs/enterprise/identity-vault" c-id=8.128.6.0><svg viewBox="0 0 16 14" fill=none
+    c-id=8.129.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.130.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.131.8.1></path></svg><strong c-id=8.132.7.1><!--t.8.133.8.0-->Identity Vault</strong><!--t.8.134.7.2--> | Native EE</a></li><li
+    c-id=8.135.5.2><a href="/docs/native/firebase" c-id=8.136.6.0><svg viewBox="0 0 16 14" fill=none c-id=8.137.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.138.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.139.8.1></path></svg><strong c-id=8.140.7.1><!--t.8.141.8.0-->Firebase</strong><!--t.8.142.7.2--> | Native CE</a></li><li
+    c-id=8.143.5.3><a href="/docs/native/barcode-scanner" c-id=8.144.6.0><svg viewBox="0 0 16 14" fill=none
+    c-id=8.145.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=8.146.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=8.147.8.1></path></svg><strong c-id=8.148.7.1><!--t.8.149.8.0-->Barcode Scanner</strong><!--t.8.150.7.2--> | Native CE</a></li></ul></div></div></div></div><div
+    class=SearchBtn c-id=8.151.0.1><svg viewBox="0 0 512 512" class=SearchBtn__sm c-id=8.152.1.0><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=8.153.2.0></path></svg><div class=SearchBtn__lg c-id=8.154.1.1><svg viewBox="0 0 512 512" class=SearchBtn__lg__icon
+    c-id=8.155.2.0><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=8.156.3.0></path></svg><span class=SearchBtn__lg__text c-id=8.157.2.1><!--t.8.158.3.0-->Search docs</span><span
+    class=SearchBtn__lg__key c-id=8.159.2.2><!--t.8.160.3.0-->/</span></div></div><div class="backdrop null"
+    c-id=8.161.0.2></div></ionic-search><a class="ionic-sub-header__mobile-toggle" c-id=7.2.0.2><svg viewBox="0 0 4 16"
+    c-id=7.3.1.0><path d="M4 2C4 0.8999 3.1001 0 2 0C0.8999 0 0 0.8999 0 2C0 3.1001 0.8999 4 2 4C3.1001 4 4 3.1001 4 2ZM4 14C4 12.8999 3.1001 12 2 12C0.8999 12 0 12.8999 0 14C0 15.1001 0.8999 16 2 16C3.1001 16 4 15.1001 4 14ZM4 8C4 6.8999 3.1001 6 2 6C0.8999 6 0 6.8999 0 8C0 9.1001 0.8999 10 2 10C3.1001 10 4 9.1001 4 8Z"
+    fill=#5B708B c-id=7.4.2.0></path></svg></a><div class="header-mobile-collapse__content" c-id=7.5.0.3><!--s.7.6.1.0.--><nav
+    class=SectionNav c-id=4.13.2.0><stencil-route-switch class=hydrated c-id=4.14.3.0 s-id=10><!--r.10--><!--o.4.15--><!--o.4.26--><!--o.4.37--><!--s.10.0.0.0.--><stencil-route
+    class=hydrated c-id=4.15.4.0 s-id=11 style="display: none;"><!--r.11--><docs-dropdown tabindex=0 class="Dropdown Dropdown--left hydrated"
+    c-id=4.16.5.0 s-id=12><!--r.12--><!--o.4.17--><button tabindex="-1" class="Dropdown-button"
+    aria-haspopup=menu aria-expanded=false c-id=12.0.0.0><span class="Dropdown-button-label" c-id=12.1.1.0><!--t.12.2.2.0-->Appflow</span><svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=12.3.1.1><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=12.4.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=12.5.0.1><!--s.12.6.1.0.--><section
+    c-id=4.17.6.0><stencil-route-link class=hydrated c-id=4.18.7.0 s-id=13><!--r.13--><!--o.4.19--><a class="link-active"
+    href="/docs/" c-id=13.0.0.0><!--s.13.1.1.0.--><!--t.4.19.8.0-->Framework </a></stencil-route-link><stencil-route-link
+    class=hydrated c-id=4.20.7.1 s-id=14><!--r.14--><!--o.4.21--><!--o.4.22--><a href="/docs/appflow" c-id=14.0.0.0><!--s.14.1.1.0.--><!--t.4.21.8.0-->Appflow
+    <svg viewBox="0 0 512 512" c-id=4.22.8.1><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"
+    c-id=4.23.9.0></path></svg></a></stencil-route-link><stencil-route-link class=hydrated c-id=4.24.7.2
+    s-id=15><!--r.15--><!--o.4.25--><a href="/docs/studio" c-id=15.0.0.0><!--s.15.1.1.0.--><!--t.4.25.8.0-->Studio
+    </a></stencil-route-link></section></div></docs-dropdown></stencil-route><stencil-route class=hydrated
+    c-id=4.26.4.1 s-id=16 style="display: none;"><!--r.16--><docs-dropdown tabindex=0 class="Dropdown Dropdown--left hydrated"
+    c-id=4.27.5.0 s-id=17><!--r.17--><!--o.4.28--><button tabindex="-1" class="Dropdown-button"
+    aria-haspopup=menu aria-expanded=false c-id=17.0.0.0><span class="Dropdown-button-label" c-id=17.1.1.0><!--t.17.2.2.0-->Studio</span><svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=17.3.1.1><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=17.4.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=17.5.0.1><!--s.17.6.1.0.--><section
+    c-id=4.28.6.0><stencil-route-link class=hydrated c-id=4.29.7.0 s-id=18><!--r.18--><!--o.4.30--><a class="link-active"
+    href="/docs/" c-id=18.0.0.0><!--s.18.1.1.0.--><!--t.4.30.8.0-->Framework </a></stencil-route-link><stencil-route-link
+    class=hydrated c-id=4.31.7.1 s-id=19><!--r.19--><!--o.4.32--><a href="/docs/appflow" c-id=19.0.0.0><!--s.19.1.1.0.--><!--t.4.32.8.0-->Appflow
+    </a></stencil-route-link><stencil-route-link class=hydrated c-id=4.33.7.2 s-id=20><!--r.20--><!--o.4.34--><!--o.4.35--><a
+    href="/docs/studio" c-id=20.0.0.0><!--s.20.1.1.0.--><!--t.4.34.8.0-->Studio <svg viewBox="0 0 512 512"
+    c-id=4.35.8.1><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z" c-id=4.36.9.0></path></svg></a></stencil-route-link></section></div></docs-dropdown></stencil-route><stencil-route
+    class=hydrated c-id=4.37.4.2 s-id=21><!--r.21--><docs-dropdown tabindex=0 class="Dropdown Dropdown--left hydrated"
+    c-id=4.38.5.0 s-id=22><!--r.22--><!--o.4.39--><!--o.4.48--><button tabindex="-1" class="Dropdown-button"
+    aria-haspopup=menu aria-expanded=false c-id=22.0.0.0><span class="Dropdown-button-label" c-id=22.1.1.0><!--t.22.2.2.0-->Framework</span><svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=22.3.1.1><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=22.4.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=22.5.0.1><!--s.22.6.1.0.--><section
+    c-id=4.39.6.0><stencil-route-link class=hydrated c-id=4.40.7.0 s-id=23><!--r.23--><!--o.4.41--><!--o.4.42--><a
+    class="link-active" href="/docs/" c-id=23.0.0.0><!--s.23.1.1.0.--><!--t.4.41.8.0-->Framework <svg viewBox="0 0 512 512"
+    c-id=4.42.8.1><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z" c-id=4.43.9.0></path></svg></a></stencil-route-link><stencil-route-link
+    class=hydrated c-id=4.44.7.1 s-id=24><!--r.24--><!--o.4.45--><a href="/docs/appflow" c-id=24.0.0.0><!--s.24.1.1.0.--><!--t.4.45.8.0-->Appflow
+    </a></stencil-route-link><stencil-route-link class=hydrated c-id=4.46.7.2 s-id=25><!--r.25--><!--o.4.47--><a
+    href="/docs/studio" c-id=25.0.0.0><!--s.25.1.1.0.--><!--t.4.47.8.0-->Studio </a></stencil-route-link></section><section
+    c-id=4.48.6.1><a href="https://ionicframework.com/docs/v3" c-id=4.49.7.0><!--t.4.50.8.0-->Framework v3</a><a
+    href="https://stenciljs.com" c-id=4.51.7.1><!--t.4.52.8.0-->Stencil</a><a href="https://capacitor.ionicframework.com"
+    c-id=4.53.7.2><!--t.4.54.8.0-->Capacitor</a></section></div></docs-dropdown><div class="SectionNav-tabs"
+    c-id=4.55.5.1><stencil-route-link class=hydrated c-id=4.56.6.0 s-id=26><!--r.26--><!--o.4.57--><a href="/docs/"
+    c-id=26.0.0.0><!--s.26.1.1.0.--><!--t.4.57.7.0-->Guide</a></stencil-route-link><stencil-route-link class=hydrated
+    c-id=4.58.6.1 s-id=27><!--r.27--><!--o.4.59--><a href="/docs/components" c-id=27.0.0.0><!--s.27.1.1.0.--><!--t.4.59.7.0-->Components</a></stencil-route-link><stencil-route-link
+    class=hydrated c-id=4.60.6.2 s-id=28><!--r.28--><!--o.4.61--><a href="/docs/cli" c-id=28.0.0.0><!--s.28.1.1.0.--><!--t.4.61.7.0-->CLI</a></stencil-route-link><stencil-route-link
+    class=hydrated c-id=4.62.6.3 s-id=29><!--r.29--><!--o.4.63--><a class="link-active" href="/docs/native"
+    c-id=29.0.0.0><!--s.29.1.1.0.--><!--t.4.63.7.0-->Native</a></stencil-route-link></div></stencil-route></stencil-route-switch></nav><nav
+    class=UtilNav c-id=4.64.2.1><ionic-search class=hydrated c-id=4.65.3.0 s-id=30><!--r.30--><div class="search-box"
+    c-id=30.0.0.0><input type=text placeholder="Search Ionic.." c-id=30.1.1.0><svg viewBox="0 0 512 512"
+    class="search-static" c-id=30.2.1.1><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=30.3.2.0></path></svg><ion-icon class="close sc-ion-icon-h md hydrated" role=img c-id=30.4.1.2 s-id=31><!--r.31--><div
+    class="icon-inner sc-ion-icon" c-id=31.0.0.0></div></ion-icon><div class=slot c-id=30.5.1.3><div class=Search__Defaults
+    c-id=30.6.2.0><div class=Search__Defaults__Section c-id=30.7.3.0><h4 c-id=30.8.4.0><!--t.30.9.5.0-->Getting Started</h4><ul
+    c-id=30.10.4.1><li c-id=30.11.5.0><a href="/docs/installation/cli" c-id=30.12.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=30.13.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.14.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.15.8.1></path></svg><strong c-id=30.16.7.1><!--t.30.17.8.0-->Installation Guide</strong><!--t.30.18.7.2--> | Installation</a></li><li
+    c-id=30.19.5.1><a href="/docs/building/running" c-id=30.20.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.21.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.22.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.23.8.1></path></svg><strong c-id=30.24.7.1><!--t.30.25.8.0-->Running an App</strong><!--t.30.26.7.2--> | Building</a></li><li
+    c-id=30.27.5.2><a href="/docs/layout/structure" c-id=30.28.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.29.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.30.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.31.8.1></path></svg><strong c-id=30.32.7.1><!--t.30.33.8.0-->App Structure</strong><!--t.30.34.7.2--> | Layout</a></li><li
+    c-id=30.35.5.3><a href="/docs/theming/basics" c-id=30.36.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.37.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.38.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.39.8.1></path></svg><strong c-id=30.40.7.1><!--t.30.41.8.0-->Theming Basics</strong><!--t.30.42.7.2--> | Theming</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=30.43.3.1><h4 c-id=30.44.4.0><!--t.30.45.5.0-->Common topics</h4><ul
+    c-id=30.46.4.1><li c-id=30.47.5.0><a href="/docs/building/testing" c-id=30.48.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=30.49.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.50.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.51.8.1></path></svg><strong c-id=30.52.7.1><!--t.30.53.8.0-->Testing</strong><!--t.30.54.7.2--> | Building</a></li><li
+    c-id=30.55.5.1><a href="/docs/building/cross-platform#storage" c-id=30.56.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=30.57.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.58.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.59.8.1></path></svg><strong c-id=30.60.7.1><!--t.30.61.8.0-->Storage</strong><!--t.30.62.7.2--> | Building</a></li><li
+    c-id=30.63.5.2><a href="/docs/lifecycle/angular" c-id=30.64.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.65.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.66.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.67.8.1></path></svg><strong c-id=30.68.7.1><!--t.30.69.8.0-->Life Cycle Events</strong><!--t.30.70.7.2--> | Angular</a></li><li
+    c-id=30.71.5.3><a href="/docs/navigation/angular" c-id=30.72.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.73.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.74.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.75.8.1></path></svg><strong c-id=30.76.7.1><!--t.30.77.8.0-->Navigation</strong><!--t.30.78.7.2--> | Angular</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=30.79.3.2><h4 c-id=30.80.4.0><!--t.30.81.5.0-->UI Components</h4><ul
+    c-id=30.82.4.1><li c-id=30.83.5.0><a href="/docs/api/button" c-id=30.84.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=30.85.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.86.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.87.8.1></path></svg><strong c-id=30.88.7.1><!--t.30.89.8.0-->ion-button</strong><!--t.30.90.7.2--> | Buttons</a></li><li
+    c-id=30.91.5.1><a href="/docs/api/card" c-id=30.92.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.93.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.94.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.95.8.1></path></svg><strong c-id=30.96.7.1><!--t.30.97.8.0-->ion-card</strong><!--t.30.98.7.2--> | Cards</a></li><li
+    c-id=30.99.5.2><a href="/docs/api/loading" c-id=30.100.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.101.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.102.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.103.8.1></path></svg><strong c-id=30.104.7.1><!--t.30.105.8.0-->ion-loading</strong><!--t.30.106.7.2--> | Progress Indicators</a></li><li
+    c-id=30.107.5.3><a href="/docs/api/tabs" c-id=30.108.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.109.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.110.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.111.8.1></path></svg><strong c-id=30.112.7.1><!--t.30.113.8.0-->ion-tabs</strong><!--t.30.114.7.2--> | Tabs</a></li></ul></div><div
+    class=Search__Defaults__Section c-id=30.115.3.3><h4 c-id=30.116.4.0><!--t.30.117.5.0-->Native</h4><ul
+    c-id=30.118.4.1><li c-id=30.119.5.0><a href="/docs/enterprise/camera" c-id=30.120.6.0><svg viewBox="0 0 16 14"
+    fill=none c-id=30.121.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.122.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.123.8.1></path></svg><strong c-id=30.124.7.1><!--t.30.125.8.0-->Camera</strong><!--t.30.126.7.2--> | Native EE</a></li><li
+    c-id=30.127.5.1><a href="/docs/enterprise/identity-vault" c-id=30.128.6.0><svg viewBox="0 0 16 14" fill=none
+    c-id=30.129.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.130.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.131.8.1></path></svg><strong c-id=30.132.7.1><!--t.30.133.8.0-->Identity Vault</strong><!--t.30.134.7.2--> | Native EE</a></li><li
+    c-id=30.135.5.2><a href="/docs/native/firebase" c-id=30.136.6.0><svg viewBox="0 0 16 14" fill=none c-id=30.137.7.0><path
+    d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.138.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.139.8.1></path></svg><strong c-id=30.140.7.1><!--t.30.141.8.0-->Firebase</strong><!--t.30.142.7.2--> | Native CE</a></li><li
+    c-id=30.143.5.3><a href="/docs/native/barcode-scanner" c-id=30.144.6.0><svg viewBox="0 0 16 14" fill=none
+    c-id=30.145.7.0><path d="M0 0.21875C0 0.21875 1.5 -0.273438 4 0.21875C6.5 0.710938 8 2.1875 8 2.1875V14C8 14 6 13.0156 4 12.5234C2 12.0312 0 12.0312 0 12.0312V0.21875Z"
+    fill=#73849A c-id=30.146.8.0></path><path d="M16 0.21875C16 0.21875 14.5 -0.273438 12 0.21875C9.5 0.710938 8 2.1875 8 2.1875V14C8 14 10 13.0156 12 12.5234C14 12.0312 16 12.0312 16 12.0312V0.21875Z"
+    fill=#B2BECD c-id=30.147.8.1></path></svg><strong c-id=30.148.7.1><!--t.30.149.8.0-->Barcode Scanner</strong><!--t.30.150.7.2--> | Native CE</a></li></ul></div></div></div></div><div
+    class=SearchBtn c-id=30.151.0.1><svg viewBox="0 0 512 512" class=SearchBtn__sm c-id=30.152.1.0><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=30.153.2.0></path></svg><div class=SearchBtn__lg c-id=30.154.1.1><svg viewBox="0 0 512 512" class=SearchBtn__lg__icon
+    c-id=30.155.2.0><path d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+    c-id=30.156.3.0></path></svg><span class=SearchBtn__lg__text c-id=30.157.2.1><!--t.30.158.3.0-->Search docs</span><span
+    class=SearchBtn__lg__key c-id=30.159.2.2><!--t.30.160.3.0-->/</span></div></div><div class="backdrop null"
+    c-id=30.161.0.2></div></ionic-search><docs-dropdown tabindex=0 class="Dropdown Dropdown--right hydrated"
+    c-id=4.66.3.1 s-id=32><!--r.32--><!--o.4.67--><!--o.4.70--><!--o.4.79--><button tabindex="-1" class="Dropdown-button"
+    aria-haspopup=menu aria-expanded=false c-id=32.0.0.0><span class="Dropdown-button-label" c-id=32.1.1.0><!--t.32.2.2.0-->Community</span><svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=32.3.1.1><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=32.4.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=32.5.0.1><!--s.32.6.1.0.--><section
+    c-id=4.67.4.0><a href="https://ionicframework.com/community" target=_blank c-id=4.68.5.0><!--t.4.69.6.0-->Community Hub</a></section><section
+    c-id=4.70.4.1><a href="https://forum.ionicframework.com/" target=_blank c-id=4.71.5.0><!--t.4.72.6.0-->Forum</a><a
+    href="http://ionicworldwide.herokuapp.com/" target=_blank c-id=4.73.5.1><!--t.4.74.6.0-->Slack</a><a
+    href="https://spectrum.chat/ionic" target=_blank c-id=4.75.5.2><!--t.4.76.6.0-->Spectrum</a><a href="https://www.meetup.com/topics/ionic-framework/"
+    target=_blank c-id=4.77.5.3><!--t.4.78.6.0-->Meetups</a></section><section c-id=4.79.4.2><a href="https://blog.ionicframework.com/"
+    target=_blank c-id=4.80.5.0><!--t.4.81.6.0-->Blog</a><a href="https://twitter.com/ionicframework" target=_blank
+    c-id=4.82.5.1><!--t.4.83.6.0-->Twitter</a><a href="https://shop.ionicframework.com/" target=_blank c-id=4.84.5.2><!--t.4.85.6.0-->Swag</a></section></div></docs-dropdown><docs-dropdown
+    tabindex=0 class="Dropdown Dropdown--right hydrated" c-id=4.86.3.2 s-id=33><!--r.33--><!--o.4.87--><!--o.4.90--><button
+    tabindex="-1" class="Dropdown-button" aria-haspopup=menu aria-expanded=false c-id=33.0.0.0><span class="Dropdown-button-label"
+    c-id=33.1.1.0><!--t.33.2.2.0-->Support</span><svg viewBox="0 0 512 512" class="Dropdown-arrow" c-id=33.3.1.1><path
+    d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=33.4.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=33.5.0.1><!--s.33.6.1.0.--><section
+    c-id=4.87.4.0><a href="https://ionicframework.com/support" target=_blank c-id=4.88.5.0><!--t.4.89.6.0-->Help Center</a></section><section
+    c-id=4.90.4.1><a href="https://ionic.zendesk.com/" target=_blank c-id=4.91.5.0><!--t.4.92.6.0-->Customer Support</a><a
+    href="https://ionicframework.com/advisory" target=_blank c-id=4.93.5.1><!--t.4.94.6.0-->Enterprise Advisory</a></section></div></docs-dropdown><docs-dropdown
+    class="label-sm-only Dropdown Dropdown--right hydrated" tabindex=0 c-id=4.95.3.3 s-id=34><!--r.34--><!--o.4.96--><!--o.4.103--><!--o.4.106--><button
+    tabindex="-1" class="Dropdown-button" aria-haspopup=menu aria-expanded=false c-id=34.0.0.0><span class="Dropdown-button-label"
+    c-id=34.1.1.0><!--t.34.2.2.0-->Translations</span><svg viewBox="0 0 22 14" fill=none class="Dropdown-icon"
+    c-id=34.3.1.1><path d="M19.3213 13.9999H22.0001L17.039 1.21558H14.2346L9.2832 13.9999H11.8072L13.0064 10.7307H18.1415L19.3213 13.9999ZM15.5014 3.65195H15.6658L17.5613 8.92339H13.5866L15.5014 3.65195Z"
+    fill=#B2BECD c-id=34.4.2.0></path><path d="M0 1.10938H12.4318L11.5697 3.32812H0V1.10938Z" fill=#B2BECD
+    c-id=34.5.2.1></path><path fill-rule=evenodd clip-rule=evenodd d="M8.75268 1.11609C8.75268 1.11609 8.75268 1.11712 9.89332 1.11712C11.034 1.11712 11.034 1.11822 11.034 1.11822L11.034 1.11939L11.034 1.12198L11.0339 1.12805L11.0337 1.14382C11.0335 1.15593 11.0332 1.17122 11.0325 1.1896C11.0313 1.22637 11.029 1.27554 11.0248 1.33642C11.0164 1.45817 11.0003 1.62689 10.9695 1.83709C10.9081 2.25748 10.7879 2.84428 10.5533 3.55314C10.083 4.97375 9.15623 6.87412 7.33744 8.89844L7.30893 8.93017L2.7154 13.3124L1.24023 11.7004L5.63338 7.45082C7.21765 5.67868 7.9949 4.05478 8.37789 2.89777C8.57098 2.31443 8.66471 1.84706 8.71016 1.53633C8.73288 1.38097 8.74352 1.2649 8.74847 1.19324C8.75095 1.15741 8.752 1.13272 8.75243 1.11981L8.75272 1.10938L8.7527 1.11094L8.75269 1.11345L8.75268 1.11609Z"
+    fill=#B2BECD c-id=34.6.2.2></path><rect x=5.5166 width=2.20704 height=1.10937 fill=#B2BECD c-id=34.7.2.3></rect><path
+    d="M4.17075 7.9686C3.09555 6.69872 2.39593 5.48407 1.94141 4.4375H4.40026C4.76103 5.09472 5.24197 5.81584 5.88345 6.5682L5.93101 6.62398L5.96524 6.67692C5.96787 6.68067 5.97319 6.68816 5.98137 6.69921C6.0017 6.72667 6.03969 6.77615 6.09781 6.8448C6.21395 6.98199 6.41098 7.19635 6.70864 7.46479C7.19301 7.9016 8.18265 8.61127 9.29424 9.23901L8.50109 11.2671C6.94927 10.5044 5.9002 9.71638 5.23489 9.11639C4.86256 8.78062 4.5965 8.49477 4.41706 8.28281C4.32738 8.17688 4.25946 8.08955 4.21081 8.02383C4.19559 8.00327 4.18226 7.98483 4.17075 7.9686Z"
+    fill=#B2BECD c-id=34.8.2.4></path></svg><svg viewBox="0 0 512 512" class="Dropdown-arrow" c-id=34.9.1.2><path
+    d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=34.10.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=34.11.0.1><!--s.34.12.1.0.--><section
+    c-id=4.96.4.0><a href="https://ionicframework.com/en/docs/" class="link-active" c-id=4.97.5.0><!--t.4.98.6.0-->English<svg
+    viewBox="0 0 512 512" width=14 c-id=4.99.6.1><path d="M186.301 339.893L96 249.461l-32 30.507L186.301 402 448 140.506 416 110z"
+    c-id=4.100.7.0></path></svg></a><a href="https://ionicframework.com/jp/docs/" target=_blank c-id=4.101.5.1><!--t.4.102.6.0-->日本語</a></section><section
+    c-id=4.103.4.1><a href="https://ionicframework.com/translate" target=_blank c-id=4.104.5.0><!--t.4.105.6.0-->Translate</a></section><div
+    c-id=4.106.4.2 style="display: none;"><a href="/docs/zh" c-id=4.107.5.0><!--t.4.108.6.0-->Chinese</a><a
+    href="/docs/fr" c-id=4.109.5.1><!--t.4.110.6.0-->French</a><a href="/docs/pt" c-id=4.111.5.2><!--t.4.112.6.0-->Portuguese</a><a
+    href="/docs/es" c-id=4.113.5.3><!--t.4.114.6.0-->Spanish</a></div></div></docs-dropdown><a href="https://github.com/ionic-team/ionic"
+    target=_blank c-id=4.115.3.4><ion-icon class="lg-only sc-ion-icon-h md hydrated" role=img c-id=4.116.4.0
+    s-id=35><!--r.35--><div class="icon-inner sc-ion-icon" c-id=35.0.0.0></div></ion-icon><span class="sm-only"
+    c-id=4.117.4.1><!--t.4.118.5.0-->GitHub <svg viewBox="0 0 512 512" class="Dropdown-arrow" c-id=4.119.5.1><path
+    d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"
+    c-id=4.120.6.0></path></svg></span></a><a href="https://twitter.com/ionicframework" target=_blank c-id=4.121.3.5><ion-icon
+    class="lg-only sc-ion-icon-h md hydrated" role=img c-id=4.122.4.0 s-id=36><!--r.36--><div class="icon-inner sc-ion-icon"
+    c-id=36.0.0.0></div></ion-icon><span class="sm-only" c-id=4.123.4.1><!--t.4.124.5.0-->Twitter <svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=4.125.5.1><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"
+    c-id=4.126.6.0></path></svg></span></a></nav></div></header-mobile-collapse></header></docs-header><docs-menu
+    class=hydrated c-id=1.3.1.2 s-id=37><!--r.37--><header c-id=37.0.0.0><docs-menu-toggle role=button
+    tabindex=0 aria-label="Toggle Menu" class=hydrated c-id=37.1.1.0 s-id=38><!--r.38--><svg viewBox="0 0 512 512"
+    c-id=38.0.0.0><path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+    c-id=38.1.1.0></path></svg></docs-menu-toggle><stencil-route-link class=hydrated c-id=37.2.1.1 s-id=39><!--r.39--><!--o.37.3--><a
+    class="link-active" href="/docs/" c-id=39.0.0.0><!--s.39.1.1.0.--><svg viewBox="0 0 78 25" fill=currentColor
+    class=MenuLogo c-id=37.3.2.0><title c-id=37.4.3.0><!--t.37.5.4.0-->Ionic Docs</title>
+    <path d="M19.8517 8.01728C21.2289 8.01728 22.3454 6.9008 22.3454 5.52354C22.3454 4.14628 21.2289 3.02979 19.8517 3.02979C18.4744 3.02979 17.3579 4.14628 17.3579 5.52354C17.3579 6.9008 18.4744 8.01728 19.8517 8.01728Z"
+    c-id=37.6.3.1></path><path d="M22.9219 8.02656L22.8187 7.79688L22.65 7.98438C22.2422 8.44844 21.7219 8.80469 21.1453 9.02031L20.9859 9.08125L21.0516 9.23594C21.5484 10.4312 21.8016 11.6969 21.8016 12.9953C21.8016 18.4 17.4047 22.8016 11.9953 22.8016C6.58594 22.8016 2.19375 18.4047 2.19375 13C2.19375 7.59531 6.59531 3.19375 12 3.19375C13.4672 3.19375 14.8828 3.5125 16.2 4.14062L16.3547 4.21562L16.4203 4.06094C16.6594 3.49844 17.0437 2.99687 17.5266 2.60781L17.7234 2.44844L17.4984 2.33125C15.7875 1.45 13.9359 1 12 1C5.38125 1 0 6.38125 0 13C0 19.6187 5.38125 25 12 25C18.6187 25 24 19.6187 24 13C24 11.2703 23.6391 9.59687 22.9219 8.02656Z"
+    c-id=37.7.3.2></path><path d="M12.1829 7.53447C9.02353 7.43134 6.43134 10.0235 6.53447 13.1829C6.62822 16.047 8.95322 18.3767 11.8173 18.4657C14.9767 18.5688 17.5688 15.9767 17.4657 12.8173C17.372 9.95322 15.047 7.62822 12.1829 7.53447Z"
+    c-id=37.8.3.3></path><text font-size=18 font-weight=bold letter-spacing="-0.02em" c-id=37.9.3.4
+    style="white-space: pre;"><tspan x=27.5 y=19.5 c-id=37.10.4.0><!--t.37.11.5.0-->Docs</tspan></text></svg></a></stencil-route-link></header><stencil-route-switch
+    class=hydrated c-id=37.12.0.1 s-id=40><!--r.40--><!--o.37.13--><!--o.37.14--><!--o.37.15--><!--s.40.0.0.0.--><stencil-route
+    class=hydrated c-id=37.13.1.0 s-id=41 style="display: none;"><!--r.41--></stencil-route><stencil-route
+    class=hydrated c-id=37.14.1.1 s-id=42 style="display: none;"><!--r.42--></stencil-route><stencil-route
+    class=hydrated c-id=37.15.1.2 s-id=43><!--r.43--><section class=MenuControls c-id=37.16.2.0><docs-select
+    class="FrameworkSelect Select hydrated" c-id=37.17.3.0 s-id=44><!--r.44--><docs-dropdown tabindex=0 class="Dropdown Dropdown--left hydrated"
+    c-id=44.0.0.0 s-id=45><!--r.45--><!--o.44.1--><!--o.44.8--><!--o.44.15--><!--o.44.23--><button tabindex="-1"
+    class="Dropdown-button" aria-haspopup=menu aria-expanded=false c-id=45.0.0.0><span class="Dropdown-button-label"
+    c-id=45.1.1.0><div class="FrameworkSelect-framework" c-id=45.2.2.0><svg viewBox="0 0 14 14" fill=none
+    class="FrameworkSelect-icon" c-id=45.3.3.0><path d="M5.674 7h2.651L7 4.208 5.674 7z" fill=#E13535 c-id=45.4.4.0></path><path
+    d="M7 0L0 2.5 1.441 11 7 14l5.555-3L14 2.5 7 0zm2.75 10l-.83-1.75H5.08L4.25 10H3l4-8.75L11 10H9.75z"
+    fill=#E13535 c-id=45.5.4.1></path></svg><span c-id=45.6.3.1><!--t.45.7.4.0-->Angular</span></div></span><svg
+    viewBox="0 0 512 512" class="Dropdown-arrow" c-id=45.8.1.1><path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"
+    c-id=45.9.2.0></path></svg></button><div role=menu class="Dropdown-panel" c-id=45.10.0.1><!--s.45.11.1.0.--><div
+    class="Select-option Select-option--selected" role=menuitemradio aria-checked=true tabindex=0 c-id=44.1.1.0><div
+    class="FrameworkSelect-framework" c-id=44.2.2.0><svg viewBox="0 0 14 14" fill=none class="FrameworkSelect-icon"
+    c-id=44.3.3.0><path d="M5.674 7h2.651L7 4.208 5.674 7z" fill=#E13535 c-id=44.4.4.0></path><path d="M7 0L0 2.5 1.441 11 7 14l5.555-3L14 2.5 7 0zm2.75 10l-.83-1.75H5.08L4.25 10H3l4-8.75L11 10H9.75z"
+    fill=#E13535 c-id=44.5.4.1></path></svg><span c-id=44.6.3.1><!--t.44.7.4.0-->Angular</span></div></div><div
+    class="Select-option" role=menuitemradio aria-checked=false tabindex=0 c-id=44.8.1.1><div class="FrameworkSelect-framework"
+    c-id=44.9.2.0><svg viewBox="0 0 13 13" fill=none class="FrameworkSelect-icon" c-id=44.10.3.0><path fill=#FFD12F
+    d="M0 0h13v13H0z" c-id=44.11.4.0></path><path d="M7.357 6.114H6.286v3.018c0 .747-.242.956-.662.956-.197 0-.374-.036-.512-.087L5 10.885c.197.072.499.115.735.115.965 0 1.622-.481 1.622-1.86V6.113zM9.694 6C8.657 6 8 6.625 8 7.451c0 .711.506 1.157 1.24 1.444.532.201.743.381.743.675 0 .324-.243.532-.703.532-.427 0-.814-.151-1.077-.302L8 10.698c.25.15.716.302 1.221.302C10.435 11 11 10.31 11 9.498c0-.69-.361-1.135-1.142-1.45-.578-.245-.82-.381-.82-.69 0-.245.21-.467.643-.467.426 0 .72.152.89.245l.257-.909C10.56 6.103 10.198 6 9.694 6z"
+    fill=#0E151F c-id=44.12.4.1></path></svg><span c-id=44.13.3.1><!--t.44.14.4.0-->JavaScript</span></div></div><div
+    class="Select-option" role=menuitemradio aria-checked=false tabindex=0 c-id=44.15.1.2><div class="FrameworkSelect-framework"
+    c-id=44.16.2.0><svg viewBox="0 0 14 14" fill=none class="FrameworkSelect-icon" c-id=44.17.3.0><circle cx=7
+    cy=7 r=7 fill=#1A232F c-id=44.18.4.0></circle><path d="M7.891 7c0 .497-.399.9-.89.9a.895.895 0 0 1-.892-.9c0-.497.399-.9.891-.9s.891.403.891.9z"
+    fill=#5ADBFF c-id=44.19.4.1></path><path fill-rule=evenodd clip-rule=evenodd d="M6.564 3.223c.144.118.29.25.436.393a6.61 6.61 0 0 1 .436-.393c.371-.305.74-.529 1.085-.641.345-.113.689-.12.979.049.29.169.456.473.531.83.076.358.069.793-.007 1.27-.03.185-.07.377-.12.577.197.056.382.117.555.184.448.172.825.383 1.093.628.27.245.448.542.448.88 0 .338-.179.635-.448.88-.268.245-.645.456-1.093.628a6.559 6.559 0 0 1-.554.184c.05.2.09.392.119.577.076.477.083.912.008 1.27-.076.357-.242.661-.532.83-.29.17-.634.162-.98.05-.344-.113-.713-.337-1.084-.642A6.635 6.635 0 0 1 7 10.384a6.635 6.635 0 0 1-.436.393c-.371.305-.74.529-1.085.641-.345.113-.689.12-.979-.049-.29-.169-.456-.473-.532-.83-.075-.358-.068-.793.008-1.27.03-.185.07-.377.12-.577a6.55 6.55 0 0 1-.555-.184c-.448-.172-.825-.383-1.093-.628C2.178 7.635 2 7.338 2 7c0-.338.179-.635.448-.88.268-.245.645-.456 1.093-.628a6.55 6.55 0 0 1 .554-.184c-.05-.2-.09-.392-.119-.577-.076-.477-.083-.912-.008-1.27.076-.357.242-.661.532-.83.29-.17.634-.162.98-.05.344.113.713.337 1.084.642zm3.042.33c-.06-.285-.177-.457-.323-.542-.147-.086-.353-.102-.628-.012-.276.09-.598.28-.945.564-.134.11-.27.232-.407.367.287.312.572.669.847 1.06.474.045.922.116 1.333.21a6.26 6.26 0 0 0 .111-.539c.071-.446.073-.822.012-1.107zm-3.316.01c.134.11.27.232.407.367a10.49 10.49 0 0 0-.847 1.06c-.474.045-.922.116-1.333.21a6.26 6.26 0 0 1-.112-.539c-.07-.446-.072-.822-.011-1.107.06-.286.177-.458.323-.543.147-.086.353-.102.628-.012.276.09.598.28.945.564zm2.177 1.904c.316.04.617.092.897.156a9.763 9.763 0 0 1-.315.862 12.941 12.941 0 0 0-.582-1.018zm1.32.263c-.125.406-.289.834-.488 1.27.2.436.363.864.488 1.27.184-.053.357-.11.517-.172.418-.161.742-.348.957-.544.215-.196.304-.383.304-.554 0-.17-.089-.358-.304-.554-.215-.196-.538-.383-.957-.544a6.117 6.117 0 0 0-.517-.172zm-1.394.458c.156.273.298.544.426.812a12.345 12.345 0 0 1-.91 1.59 12.086 12.086 0 0 1-1.818 0A12.323 12.323 0 0 1 5.18 7a12.345 12.345 0 0 1 .91-1.59 12.086 12.086 0 0 1 1.818 0c.166.246.328.506.484.778zm.377 1.843c-.099.172-.2.34-.303.502.316-.04.617-.092.897-.156a9.763 9.763 0 0 0-.315-.862c-.088.172-.18.344-.28.516zM7 9.062c.197 0 .391-.005.582-.013A9.686 9.686 0 0 1 7 9.755a9.688 9.688 0 0 1-.582-.706c.19.008.385.013.582.013zm1.15-.053c-.275.392-.56.749-.847 1.061.137.135.273.257.407.367.347.284.669.474.945.564.275.09.481.074.628-.012.146-.085.263-.257.323-.543.061-.285.06-.661-.011-1.107a6.26 6.26 0 0 0-.112-.539c-.411.094-.86.165-1.333.21zm-2.3 0c.275.392.56.749.847 1.061a6.17 6.17 0 0 1-.407.367c-.347.284-.669.474-.945.564-.275.09-.481.074-.628-.012-.146-.085-.263-.257-.323-.543-.061-.285-.06-.661.011-1.107a6.26 6.26 0 0 1 .112-.539c.411.094.86.165 1.333.21zm-.317-.476a9.539 9.539 0 0 1-.897-.156c.086-.277.19-.565.315-.862a12.941 12.941 0 0 0 .582 1.018zM5.23 5.97c-.098.172-.191.344-.28.516a9.763 9.763 0 0 1-.314-.862c.28-.064.58-.116.897-.156-.103.162-.204.33-.303.502zM4.213 8.27c.125-.406.289-.834.488-1.27a10.567 10.567 0 0 1-.488-1.27c-.184.053-.357.11-.517.172-.419.161-.742.348-.957.544-.215.196-.304.383-.304.554 0 .17.089.358.304.554.215.196.538.383.957.544.16.062.333.12.517.172zM7 4.938a12.7 12.7 0 0 0-.582.013c.192-.256.387-.492.582-.706.195.214.39.45.582.706A12.698 12.698 0 0 0 7 4.938z"
+    fill=#5ADBFF c-id=44.20.4.2></path></svg><span c-id=44.21.3.1><!--t.44.22.4.0-->React</span></div></div><div
+    class="Select-option" role=menuitemradio aria-checked=false tabindex=0 c-id=44.23.1.3><div class="FrameworkSelect-framework"
+    c-id=44.24.2.0><svg viewBox="0 0 14 13" fill=none class="FrameworkSelect-icon" c-id=44.25.3.0><path d="M8.618 0L7 3.005 5.382 0H0l7 13 7-13H8.618z"
+    fill=#4DB684 c-id=44.26.4.0></path><path d="M8.618 0L7 3.005 5.382 0h-2.58L7 7.8 11.198 0h-2.58z" fill=#36495D
+    c-id=44.27.4.1></path></svg><span c-id=44.28.3.1><!--t.44.29.4.0-->Vue</span></div></div></div></docs-dropdown></docs-select></section></stencil-route></stencil-route-switch><stencil-route-switch
+    class="Menu hydrated" c-id=37.18.0.2 s-id=46><!--r.46--><!--o.37.19--><!--o.37.20--><!--o.37.21--><!--o.37.22--><!--o.37.23--><!--o.37.24--><!--o.37.25--><!--o.37.26--><!--s.46.0.0.0.--><stencil-route
+    class=hydrated c-id=37.19.1.0 s-id=47 style="display: none;"><!--r.47--></stencil-route><stencil-route
+    class=hydrated c-id=37.20.1.1 s-id=48 style="display: none;"><!--r.48--></stencil-route><stencil-route
+    class=hydrated c-id=37.21.1.2 s-id=49 style="display: none;"><!--r.49--></stencil-route><stencil-route
+    class=hydrated c-id=37.22.1.3 s-id=50><!--r.50--><docs-nav role=navigation class=hydrated c-id=50.0.0.0
+    s-id=51><!--r.51--><ul class=Nav c-id=51.0.0.0><li c-id=51.1.1.0><stencil-route-link class=hydrated c-id=51.2.2.0
+    s-id=52><!--r.52--><!--o.51.3--><a class="Nav-link" href="/docs/native/overview" c-id=52.0.0.0><!--s.52.1.1.0.--><span
+    c-id=51.3.3.0><!--t.51.4.4.0-->Community Edition</span></a></stencil-route-link></li><li c-id=51.5.1.1><stencil-route-link
+    class=hydrated c-id=51.6.2.0 s-id=53><!--r.53--><!--o.51.7--><a class="Nav-link" href="/docs/enterprise"
+    c-id=53.0.0.0><!--s.53.1.1.0.--><span c-id=51.7.3.0><!--t.51.8.4.0-->Enterprise Edition</span></a></stencil-route-link></li><li
+    c-id=51.9.1.2><section c-id=51.10.2.0><header class="Nav-header" c-id=51.11.3.0><!--t.51.12.4.0-->Community Plugins</header><ul
+    class="Nav-subnav" c-id=51.13.3.1 style="--level: 1;"><li c-id=51.14.4.0><stencil-route-link class=hydrated
+    c-id=51.15.5.0 s-id=54><!--r.54--><!--o.51.16--><a class="Nav-link" href="/docs/native/three-dee-touch"
+    c-id=54.0.0.0><!--s.54.1.1.0.--><span c-id=51.16.6.0><!--t.51.17.7.0-->3D Touch</span></a></stencil-route-link></li><li
+    c-id=51.18.4.1><stencil-route-link class=hydrated c-id=51.19.5.0 s-id=55><!--r.55--><!--o.51.20--><a
+    class="Nav-link" href="/docs/native/abbyy-rtr" c-id=55.0.0.0><!--s.55.1.1.0.--><span c-id=51.20.6.0><!--t.51.21.7.0-->ABBYY Real-Time Recognition</span></a></stencil-route-link></li><li
+    c-id=51.22.4.2><stencil-route-link class=hydrated c-id=51.23.5.0 s-id=56><!--r.56--><!--o.51.24--><a
+    class="Nav-link" href="/docs/native/aes-256" c-id=56.0.0.0><!--s.56.1.1.0.--><span c-id=51.24.6.0><!--t.51.25.7.0-->AES256</span></a></stencil-route-link></li><li
+    c-id=51.26.4.3><stencil-route-link class=hydrated c-id=51.27.5.0 s-id=57><!--r.57--><!--o.51.28--><a
+    class="Nav-link" href="/docs/native/action-sheet" c-id=57.0.0.0><!--s.57.1.1.0.--><span c-id=51.28.6.0><!--t.51.29.7.0-->Action Sheet</span></a></stencil-route-link></li><li
+    c-id=51.30.4.4><stencil-route-link class=hydrated c-id=51.31.5.0 s-id=58><!--r.58--><!--o.51.32--><a
+    class="Nav-link" href="/docs/native/admob-free" c-id=58.0.0.0><!--s.58.1.1.0.--><span c-id=51.32.6.0><!--t.51.33.7.0-->AdMob Free</span></a></stencil-route-link></li><li
+    c-id=51.34.4.5><stencil-route-link class=hydrated c-id=51.35.5.0 s-id=59><!--r.59--><!--o.51.36--><a
+    class="Nav-link" href="/docs/native/admob-plus" c-id=59.0.0.0><!--s.59.1.1.0.--><span c-id=51.36.6.0><!--t.51.37.7.0-->AdMob Plus</span></a></stencil-route-link></li><li
+    c-id=51.38.4.6><stencil-route-link class=hydrated c-id=51.39.5.0 s-id=60><!--r.60--><!--o.51.40--><a
+    class="Nav-link" href="/docs/native/admob-pro" c-id=60.0.0.0><!--s.60.1.1.0.--><span c-id=51.40.6.0><!--t.51.41.7.0-->AdMob Pro</span></a></stencil-route-link></li><li
+    c-id=51.42.4.7><stencil-route-link class=hydrated c-id=51.43.5.0 s-id=61><!--r.61--><!--o.51.44--><a
+    class="Nav-link" href="/docs/native/adjust" c-id=61.0.0.0><!--s.61.1.1.0.--><span c-id=51.44.6.0><!--t.51.45.7.0-->Adjust</span></a></stencil-route-link></li><li
+    c-id=51.46.4.8><stencil-route-link class=hydrated c-id=51.47.5.0 s-id=62><!--r.62--><!--o.51.48--><a
+    class="Nav-link" href="/docs/native/admob" c-id=62.0.0.0><!--s.62.1.1.0.--><span c-id=51.48.6.0><!--t.51.49.7.0-->Admob</span></a></stencil-route-link></li><li
+    c-id=51.50.4.9><stencil-route-link class=hydrated c-id=51.51.5.0 s-id=63><!--r.63--><!--o.51.52--><a
+    class="Nav-link" href="/docs/native/alipay" c-id=63.0.0.0><!--s.63.1.1.0.--><span c-id=51.52.6.0><!--t.51.53.7.0-->Alipay</span></a></stencil-route-link></li><li
+    c-id=51.54.4.10><stencil-route-link class=hydrated c-id=51.55.5.0 s-id=64><!--r.64--><!--o.51.56--><a
+    class="Nav-link" href="/docs/native/analytics-firebase" c-id=64.0.0.0><!--s.64.1.1.0.--><span c-id=51.56.6.0><!--t.51.57.7.0-->Analytics Firebase</span></a></stencil-route-link></li><li
+    c-id=51.58.4.11><stencil-route-link class=hydrated c-id=51.59.5.0 s-id=65><!--r.65--><!--o.51.60--><a
+    class="Nav-link" href="/docs/native/android-exoplayer" c-id=65.0.0.0><!--s.65.1.1.0.--><span c-id=51.60.6.0><!--t.51.61.7.0-->Android ExoPlayer</span></a></stencil-route-link></li><li
+    c-id=51.62.4.12><stencil-route-link class=hydrated c-id=51.63.5.0 s-id=66><!--r.66--><!--o.51.64--><a
+    class="Nav-link" href="/docs/native/android-fingerprint-auth" c-id=66.0.0.0><!--s.66.1.1.0.--><span c-id=51.64.6.0><!--t.51.65.7.0-->Android Fingerprint Auth</span></a></stencil-route-link></li><li
+    c-id=51.66.4.13><stencil-route-link class=hydrated c-id=51.67.5.0 s-id=67><!--r.67--><!--o.51.68--><a
+    class="Nav-link" href="/docs/native/android-full-screen" c-id=67.0.0.0><!--s.67.1.1.0.--><span c-id=51.68.6.0><!--t.51.69.7.0-->Android Full Screen</span></a></stencil-route-link></li><li
+    c-id=51.70.4.14><stencil-route-link class=hydrated c-id=51.71.5.0 s-id=68><!--r.68--><!--o.51.72--><a
+    class="Nav-link" href="/docs/native/android-permissions" c-id=68.0.0.0><!--s.68.1.1.0.--><span c-id=51.72.6.0><!--t.51.73.7.0-->Android Permissions</span></a></stencil-route-link></li><li
+    c-id=51.74.4.15><stencil-route-link class=hydrated c-id=51.75.5.0 s-id=69><!--r.69--><!--o.51.76--><a
+    class="Nav-link" href="/docs/native/fabric" c-id=69.0.0.0><!--s.69.1.1.0.--><span c-id=51.76.6.0><!--t.51.77.7.0-->Answers</span></a></stencil-route-link></li><li
+    c-id=51.78.4.16><stencil-route-link class=hydrated c-id=51.79.5.0 s-id=70><!--r.70--><!--o.51.80--><a
+    class="Nav-link" href="/docs/native/anyline" c-id=70.0.0.0><!--s.70.1.1.0.--><span c-id=51.80.6.0><!--t.51.81.7.0-->Anyline</span></a></stencil-route-link></li><li
+    c-id=51.82.4.17><stencil-route-link class=hydrated c-id=51.83.5.0 s-id=71><!--r.71--><!--o.51.84--><a
+    class="Nav-link" href="/docs/native/app-availability" c-id=71.0.0.0><!--s.71.1.1.0.--><span c-id=51.84.6.0><!--t.51.85.7.0-->App Availability</span></a></stencil-route-link></li><li
+    c-id=51.86.4.18><stencil-route-link class=hydrated c-id=51.87.5.0 s-id=72><!--r.72--><!--o.51.88--><a
+    class="Nav-link" href="/docs/native/app-center-analytics" c-id=72.0.0.0><!--s.72.1.1.0.--><span c-id=51.88.6.0><!--t.51.89.7.0-->App Center Analytics</span></a></stencil-route-link></li><li
+    c-id=51.90.4.19><stencil-route-link class=hydrated c-id=51.91.5.0 s-id=73><!--r.73--><!--o.51.92--><a
+    class="Nav-link" href="/docs/native/app-center-crashes" c-id=73.0.0.0><!--s.73.1.1.0.--><span c-id=51.92.6.0><!--t.51.93.7.0-->App Center Crashes</span></a></stencil-route-link></li><li
+    c-id=51.94.4.20><stencil-route-link class=hydrated c-id=51.95.5.0 s-id=74><!--r.74--><!--o.51.96--><a
+    class="Nav-link" href="/docs/native/app-center-push" c-id=74.0.0.0><!--s.74.1.1.0.--><span c-id=51.96.6.0><!--t.51.97.7.0-->App Center Push</span></a></stencil-route-link></li><li
+    c-id=51.98.4.21><stencil-route-link class=hydrated c-id=51.99.5.0 s-id=75><!--r.75--><!--o.51.100--><a
+    class="Nav-link" href="/docs/native/app-launcher" c-id=75.0.0.0><!--s.75.1.1.0.--><span c-id=51.100.6.0><!--t.51.101.7.0-->App Launcher</span></a></stencil-route-link></li><li
+    c-id=51.102.4.22><stencil-route-link class=hydrated c-id=51.103.5.0 s-id=76><!--r.76--><!--o.51.104--><a
+    class="Nav-link" href="/docs/native/app-minimize" c-id=76.0.0.0><!--s.76.1.1.0.--><span c-id=51.104.6.0><!--t.51.105.7.0-->App Minimize</span></a></stencil-route-link></li><li
+    c-id=51.106.4.23><stencil-route-link class=hydrated c-id=51.107.5.0 s-id=77><!--r.77--><!--o.51.108--><a
+    class="Nav-link" href="/docs/native/app-preferences" c-id=77.0.0.0><!--s.77.1.1.0.--><span c-id=51.108.6.0><!--t.51.109.7.0-->App Preferences</span></a></stencil-route-link></li><li
+    c-id=51.110.4.24><stencil-route-link class=hydrated c-id=51.111.5.0 s-id=78><!--r.78--><!--o.51.112--><a
+    class="Nav-link" href="/docs/native/app-rate" c-id=78.0.0.0><!--s.78.1.1.0.--><span c-id=51.112.6.0><!--t.51.113.7.0-->App Rate</span></a></stencil-route-link></li><li
+    c-id=51.114.4.25><stencil-route-link class=hydrated c-id=51.115.5.0 s-id=79><!--r.79--><!--o.51.116--><a
+    class="Nav-link" href="/docs/native/app-update" c-id=79.0.0.0><!--s.79.1.1.0.--><span c-id=51.116.6.0><!--t.51.117.7.0-->App Update</span></a></stencil-route-link></li><li
+    c-id=51.118.4.26><stencil-route-link class=hydrated c-id=51.119.5.0 s-id=80><!--r.80--><!--o.51.120--><a
+    class="Nav-link" href="/docs/native/app-version" c-id=80.0.0.0><!--s.80.1.1.0.--><span c-id=51.120.6.0><!--t.51.121.7.0-->App Version</span></a></stencil-route-link></li><li
+    c-id=51.122.4.27><stencil-route-link class=hydrated c-id=51.123.5.0 s-id=81><!--r.81--><!--o.51.124--><a
+    class="Nav-link" href="/docs/native/apple-pay" c-id=81.0.0.0><!--s.81.1.1.0.--><span c-id=51.124.6.0><!--t.51.125.7.0-->Apple Pay</span></a></stencil-route-link></li><li
+    c-id=51.126.4.28><stencil-route-link class=hydrated c-id=51.127.5.0 s-id=82><!--r.82--><!--o.51.128--><a
+    class="Nav-link" href="/docs/native/apple-wallet" c-id=82.0.0.0><!--s.82.1.1.0.--><span c-id=51.128.6.0><!--t.51.129.7.0-->Apple Wallet</span></a></stencil-route-link></li><li
+    c-id=51.130.4.29><stencil-route-link class=hydrated c-id=51.131.5.0 s-id=83><!--r.83--><!--o.51.132--><a
+    class="Nav-link" href="/docs/native/appodeal" c-id=83.0.0.0><!--s.83.1.1.0.--><span c-id=51.132.6.0><!--t.51.133.7.0-->Appodeal</span></a></stencil-route-link></li><li
+    c-id=51.134.4.30><stencil-route-link class=hydrated c-id=51.135.5.0 s-id=84><!--r.84--><!--o.51.136--><a
+    class="Nav-link" href="/docs/native/appsflyer" c-id=84.0.0.0><!--s.84.1.1.0.--><span c-id=51.136.6.0><!--t.51.137.7.0-->Appsflyer</span></a></stencil-route-link></li><li
+    c-id=51.138.4.31><stencil-route-link class=hydrated c-id=51.139.5.0 s-id=85><!--r.85--><!--o.51.140--><a
+    class="Nav-link" href="/docs/native/audio-management" c-id=85.0.0.0><!--s.85.1.1.0.--><span c-id=51.140.6.0><!--t.51.141.7.0-->Audio Management</span></a></stencil-route-link></li><li
+    c-id=51.142.4.32><stencil-route-link class=hydrated c-id=51.143.5.0 s-id=86><!--r.86--><!--o.51.144--><a
+    class="Nav-link" href="/docs/native/autostart" c-id=86.0.0.0><!--s.86.1.1.0.--><span c-id=51.144.6.0><!--t.51.145.7.0-->Autostart</span></a></stencil-route-link></li><li
+    c-id=51.146.4.33><stencil-route-link class=hydrated c-id=51.147.5.0 s-id=87><!--r.87--><!--o.51.148--><a
+    class="Nav-link" href="/docs/native/ble" c-id=87.0.0.0><!--s.87.1.1.0.--><span c-id=51.148.6.0><!--t.51.149.7.0-->BLE</span></a></stencil-route-link></li><li
+    c-id=51.150.4.34><stencil-route-link class=hydrated c-id=51.151.5.0 s-id=88><!--r.88--><!--o.51.152--><a
+    class="Nav-link" href="/docs/native/background-fetch" c-id=88.0.0.0><!--s.88.1.1.0.--><span c-id=51.152.6.0><!--t.51.153.7.0-->Background Fetch</span></a></stencil-route-link></li><li
+    c-id=51.154.4.35><stencil-route-link class=hydrated c-id=51.155.5.0 s-id=89><!--r.89--><!--o.51.156--><a
+    class="Nav-link" href="/docs/native/background-geolocation" c-id=89.0.0.0><!--s.89.1.1.0.--><span c-id=51.156.6.0><!--t.51.157.7.0-->Background Geolocation</span></a></stencil-route-link></li><li
+    c-id=51.158.4.36><stencil-route-link class=hydrated c-id=51.159.5.0 s-id=90><!--r.90--><!--o.51.160--><a
+    class="Nav-link" href="/docs/native/background-mode" c-id=90.0.0.0><!--s.90.1.1.0.--><span c-id=51.160.6.0><!--t.51.161.7.0-->Background Mode</span></a></stencil-route-link></li><li
+    c-id=51.162.4.37><stencil-route-link class=hydrated c-id=51.163.5.0 s-id=91><!--r.91--><!--o.51.164--><a
+    class="Nav-link" href="/docs/native/backlight" c-id=91.0.0.0><!--s.91.1.1.0.--><span c-id=51.164.6.0><!--t.51.165.7.0-->Backlight</span></a></stencil-route-link></li><li
+    c-id=51.166.4.38><stencil-route-link class=hydrated c-id=51.167.5.0 s-id=92><!--r.92--><!--o.51.168--><a
+    class="Nav-link" href="/docs/native/badge" c-id=92.0.0.0><!--s.92.1.1.0.--><span c-id=51.168.6.0><!--t.51.169.7.0-->Badge</span></a></stencil-route-link></li><li
+    c-id=51.170.4.39><stencil-route-link class=hydrated c-id=51.171.5.0 s-id=93><!--r.93--><!--o.51.172--><a
+    class="Nav-link" href="/docs/native/baidu-push" c-id=93.0.0.0><!--s.93.1.1.0.--><span c-id=51.172.6.0><!--t.51.173.7.0-->Baidu Push</span></a></stencil-route-link></li><li
+    c-id=51.174.4.40><stencil-route-link class=hydrated c-id=51.175.5.0 s-id=94><!--r.94--><!--o.51.176--><a
+    class="Nav-link" href="/docs/native/barcode-scanner" c-id=94.0.0.0><!--s.94.1.1.0.--><span c-id=51.176.6.0><!--t.51.177.7.0-->Barcode Scanner</span></a></stencil-route-link></li><li
+    c-id=51.178.4.41><stencil-route-link class=hydrated c-id=51.179.5.0 s-id=95><!--r.95--><!--o.51.180--><a
+    class="Nav-link" href="/docs/native/base64-to-gallery" c-id=95.0.0.0><!--s.95.1.1.0.--><span c-id=51.180.6.0><!--t.51.181.7.0-->Base64 To Gallery</span></a></stencil-route-link></li><li
+    c-id=51.182.4.42><stencil-route-link class=hydrated c-id=51.183.5.0 s-id=96><!--r.96--><!--o.51.184--><a
+    class="Nav-link" href="/docs/native/base64" c-id=96.0.0.0><!--s.96.1.1.0.--><span c-id=51.184.6.0><!--t.51.185.7.0-->Base64</span></a></stencil-route-link></li><li
+    c-id=51.186.4.43><stencil-route-link class=hydrated c-id=51.187.5.0 s-id=97><!--r.97--><!--o.51.188--><a
+    class="Nav-link" href="/docs/native/battery-status" c-id=97.0.0.0><!--s.97.1.1.0.--><span c-id=51.188.6.0><!--t.51.189.7.0-->Battery Status</span></a></stencil-route-link></li><li
+    c-id=51.190.4.44><stencil-route-link class=hydrated c-id=51.191.5.0 s-id=98><!--r.98--><!--o.51.192--><a
+    class="Nav-link" href="/docs/native/biocatch" c-id=98.0.0.0><!--s.98.1.1.0.--><span c-id=51.192.6.0><!--t.51.193.7.0-->BioCatch</span></a></stencil-route-link></li><li
+    c-id=51.194.4.45><stencil-route-link class=hydrated c-id=51.195.5.0 s-id=99><!--r.99--><!--o.51.196--><a
+    class="Nav-link" href="/docs/native/biometric-wrapper" c-id=99.0.0.0><!--s.99.1.1.0.--><span c-id=51.196.6.0><!--t.51.197.7.0-->BiometricWrapper</span></a></stencil-route-link></li><li
+    c-id=51.198.4.46><stencil-route-link class=hydrated c-id=51.199.5.0 s-id=100><!--r.100--><!--o.51.200--><a
+    class="Nav-link" href="/docs/native/blinkid" c-id=100.0.0.0><!--s.100.1.1.0.--><span c-id=51.200.6.0><!--t.51.201.7.0-->BlinkId</span></a></stencil-route-link></li><li
+    c-id=51.202.4.47><stencil-route-link class=hydrated c-id=51.203.5.0 s-id=101><!--r.101--><!--o.51.204--><a
+    class="Nav-link" href="/docs/native/blinkup" c-id=101.0.0.0><!--s.101.1.1.0.--><span c-id=51.204.6.0><!--t.51.205.7.0-->BlinkUp</span></a></stencil-route-link></li><li
+    c-id=51.206.4.48><stencil-route-link class=hydrated c-id=51.207.5.0 s-id=102><!--r.102--><!--o.51.208--><a
+    class="Nav-link" href="/docs/native/bluetooth-serial" c-id=102.0.0.0><!--s.102.1.1.0.--><span c-id=51.208.6.0><!--t.51.209.7.0-->Bluetooth Serial</span></a></stencil-route-link></li><li
+    c-id=51.210.4.49><stencil-route-link class=hydrated c-id=51.211.5.0 s-id=103><!--r.103--><!--o.51.212--><a
+    class="Nav-link" href="/docs/native/bluetooth-le" c-id=103.0.0.0><!--s.103.1.1.0.--><span c-id=51.212.6.0><!--t.51.213.7.0-->BluetoothLE</span></a></stencil-route-link></li><li
+    c-id=51.214.4.50><stencil-route-link class=hydrated c-id=51.215.5.0 s-id=104><!--r.104--><!--o.51.216--><a
+    class="Nav-link" href="/docs/native/braintree" c-id=104.0.0.0><!--s.104.1.1.0.--><span c-id=51.216.6.0><!--t.51.217.7.0-->Braintree</span></a></stencil-route-link></li><li
+    c-id=51.218.4.51><stencil-route-link class=hydrated c-id=51.219.5.0 s-id=105><!--r.105--><!--o.51.220--><a
+    class="Nav-link" href="/docs/native/branch-io" c-id=105.0.0.0><!--s.105.1.1.0.--><span c-id=51.220.6.0><!--t.51.221.7.0-->BranchIo</span></a></stencil-route-link></li><li
+    c-id=51.222.4.52><stencil-route-link class=hydrated c-id=51.223.5.0 s-id=106><!--r.106--><!--o.51.224--><a
+    class="Nav-link" href="/docs/native/brightness" c-id=106.0.0.0><!--s.106.1.1.0.--><span c-id=51.224.6.0><!--t.51.225.7.0-->Brightness</span></a></stencil-route-link></li><li
+    c-id=51.226.4.53><stencil-route-link class=hydrated c-id=51.227.5.0 s-id=107><!--r.107--><!--o.51.228--><a
+    class="Nav-link" href="/docs/native/broadcaster" c-id=107.0.0.0><!--s.107.1.1.0.--><span c-id=51.228.6.0><!--t.51.229.7.0-->Broadcaster</span></a></stencil-route-link></li><li
+    c-id=51.230.4.54><stencil-route-link class=hydrated c-id=51.231.5.0 s-id=108><!--r.108--><!--o.51.232--><a
+    class="Nav-link" href="/docs/native/browser-tab" c-id=108.0.0.0><!--s.108.1.1.0.--><span c-id=51.232.6.0><!--t.51.233.7.0-->Browser Tab</span></a></stencil-route-link></li><li
+    c-id=51.234.4.55><stencil-route-link class=hydrated c-id=51.235.5.0 s-id=109><!--r.109--><!--o.51.236--><a
+    class="Nav-link" href="/docs/native/calendar" c-id=109.0.0.0><!--s.109.1.1.0.--><span c-id=51.236.6.0><!--t.51.237.7.0-->Calendar</span></a></stencil-route-link></li><li
+    c-id=51.238.4.56><stencil-route-link class=hydrated c-id=51.239.5.0 s-id=110><!--r.110--><!--o.51.240--><a
+    class="Nav-link" href="/docs/native/call-directory" c-id=110.0.0.0><!--s.110.1.1.0.--><span c-id=51.240.6.0><!--t.51.241.7.0-->Call Directory</span></a></stencil-route-link></li><li
+    c-id=51.242.4.57><stencil-route-link class=hydrated c-id=51.243.5.0 s-id=111><!--r.111--><!--o.51.244--><a
+    class="Nav-link" href="/docs/native/call-log" c-id=111.0.0.0><!--s.111.1.1.0.--><span c-id=51.244.6.0><!--t.51.245.7.0-->Call Log</span></a></stencil-route-link></li><li
+    c-id=51.246.4.58><stencil-route-link class=hydrated c-id=51.247.5.0 s-id=112><!--r.112--><!--o.51.248--><a
+    class="Nav-link" href="/docs/native/call-number" c-id=112.0.0.0><!--s.112.1.1.0.--><span c-id=51.248.6.0><!--t.51.249.7.0-->Call Number</span></a></stencil-route-link></li><li
+    c-id=51.250.4.59><stencil-route-link class=hydrated c-id=51.251.5.0 s-id=113><!--r.113--><!--o.51.252--><a
+    class="Nav-link" href="/docs/native/camera-preview" c-id=113.0.0.0><!--s.113.1.1.0.--><span c-id=51.252.6.0><!--t.51.253.7.0-->Camera Preview</span></a></stencil-route-link></li><li
+    c-id=51.254.4.60><stencil-route-link class=hydrated c-id=51.255.5.0 s-id=114><!--r.114--><!--o.51.256--><a
+    class="Nav-link" href="/docs/native/camera" c-id=114.0.0.0><!--s.114.1.1.0.--><span c-id=51.256.6.0><!--t.51.257.7.0-->Camera</span></a></stencil-route-link></li><li
+    c-id=51.258.4.61><stencil-route-link class=hydrated c-id=51.259.5.0 s-id=115><!--r.115--><!--o.51.260--><a
+    class="Nav-link" href="/docs/native/card-io" c-id=115.0.0.0><!--s.115.1.1.0.--><span c-id=51.260.6.0><!--t.51.261.7.0-->Card IO</span></a></stencil-route-link></li><li
+    c-id=51.262.4.62><stencil-route-link class=hydrated c-id=51.263.5.0 s-id=116><!--r.116--><!--o.51.264--><a
+    class="Nav-link" href="/docs/native/chooser" c-id=116.0.0.0><!--s.116.1.1.0.--><span c-id=51.264.6.0><!--t.51.265.7.0-->Chooser</span></a></stencil-route-link></li><li
+    c-id=51.266.4.63><stencil-route-link class=hydrated c-id=51.267.5.0 s-id=117><!--r.117--><!--o.51.268--><a
+    class="Nav-link" href="/docs/native/class-kit" c-id=117.0.0.0><!--s.117.1.1.0.--><span c-id=51.268.6.0><!--t.51.269.7.0-->Class Kit</span></a></stencil-route-link></li><li
+    c-id=51.270.4.64><stencil-route-link class=hydrated c-id=51.271.5.0 s-id=118><!--r.118--><!--o.51.272--><a
+    class="Nav-link" href="/docs/native/clevertap" c-id=118.0.0.0><!--s.118.1.1.0.--><span c-id=51.272.6.0><!--t.51.273.7.0-->CleverTap</span></a></stencil-route-link></li><li
+    c-id=51.274.4.65><stencil-route-link class=hydrated c-id=51.275.5.0 s-id=119><!--r.119--><!--o.51.276--><a
+    class="Nav-link" href="/docs/native/clipboard" c-id=119.0.0.0><!--s.119.1.1.0.--><span c-id=51.276.6.0><!--t.51.277.7.0-->Clipboard</span></a></stencil-route-link></li><li
+    c-id=51.278.4.66><stencil-route-link class=hydrated c-id=51.279.5.0 s-id=120><!--r.120--><!--o.51.280--><a
+    class="Nav-link" href="/docs/native/cloud-settings" c-id=120.0.0.0><!--s.120.1.1.0.--><span c-id=51.280.6.0><!--t.51.281.7.0-->Cloud Settings</span></a></stencil-route-link></li><li
+    c-id=51.282.4.67><stencil-route-link class=hydrated c-id=51.283.5.0 s-id=121><!--r.121--><!--o.51.284--><a
+    class="Nav-link" href="/docs/native/code-push" c-id=121.0.0.0><!--s.121.1.1.0.--><span c-id=51.284.6.0><!--t.51.285.7.0-->Code Push</span></a></stencil-route-link></li><li
+    c-id=51.286.4.68><stencil-route-link class=hydrated c-id=51.287.5.0 s-id=122><!--r.122--><!--o.51.288--><a
+    class="Nav-link" href="/docs/native/colored-browser-tabs" c-id=122.0.0.0><!--s.122.1.1.0.--><span c-id=51.288.6.0><!--t.51.289.7.0-->Colored Browser Tabs</span></a></stencil-route-link></li><li
+    c-id=51.290.4.69><stencil-route-link class=hydrated c-id=51.291.5.0 s-id=123><!--r.123--><!--o.51.292--><a
+    class="Nav-link" href="/docs/native/contacts" c-id=123.0.0.0><!--s.123.1.1.0.--><span c-id=51.292.6.0><!--t.51.293.7.0-->Contacts</span></a></stencil-route-link></li><li
+    c-id=51.294.4.70><stencil-route-link class=hydrated c-id=51.295.5.0 s-id=124><!--r.124--><!--o.51.296--><a
+    class="Nav-link" href="/docs/native/couchbase-lite" c-id=124.0.0.0><!--s.124.1.1.0.--><span c-id=51.296.6.0><!--t.51.297.7.0-->Couchbase Lite</span></a></stencil-route-link></li><li
+    c-id=51.298.4.71><stencil-route-link class=hydrated c-id=51.299.5.0 s-id=125><!--r.125--><!--o.51.300--><a
+    class="Nav-link" href="/docs/native/crop" c-id=125.0.0.0><!--s.125.1.1.0.--><span c-id=51.300.6.0><!--t.51.301.7.0-->Crop</span></a></stencil-route-link></li><li
+    c-id=51.302.4.72><stencil-route-link class=hydrated c-id=51.303.5.0 s-id=126><!--r.126--><!--o.51.304--><a
+    class="Nav-link" href="/docs/native/db-meter" c-id=126.0.0.0><!--s.126.1.1.0.--><span c-id=51.304.6.0><!--t.51.305.7.0-->DB Meter</span></a></stencil-route-link></li><li
+    c-id=51.306.4.73><stencil-route-link class=hydrated c-id=51.307.5.0 s-id=127><!--r.127--><!--o.51.308--><a
+    class="Nav-link" href="/docs/native/dns" c-id=127.0.0.0><!--s.127.1.1.0.--><span c-id=51.308.6.0><!--t.51.309.7.0-->DNS</span></a></stencil-route-link></li><li
+    c-id=51.310.4.74><stencil-route-link class=hydrated c-id=51.311.5.0 s-id=128><!--r.128--><!--o.51.312--><a
+    class="Nav-link" href="/docs/native/date-picker" c-id=128.0.0.0><!--s.128.1.1.0.--><span c-id=51.312.6.0><!--t.51.313.7.0-->Date Picker</span></a></stencil-route-link></li><li
+    c-id=51.314.4.75><stencil-route-link class=hydrated c-id=51.315.5.0 s-id=129><!--r.129--><!--o.51.316--><a
+    class="Nav-link" href="/docs/native/deeplinks" c-id=129.0.0.0><!--s.129.1.1.0.--><span c-id=51.316.6.0><!--t.51.317.7.0-->Deeplinks</span></a></stencil-route-link></li><li
+    c-id=51.318.4.76><stencil-route-link class=hydrated c-id=51.319.5.0 s-id=130><!--r.130--><!--o.51.320--><a
+    class="Nav-link" href="/docs/native/device-accounts" c-id=130.0.0.0><!--s.130.1.1.0.--><span c-id=51.320.6.0><!--t.51.321.7.0-->Device Accounts</span></a></stencil-route-link></li><li
+    c-id=51.322.4.77><stencil-route-link class=hydrated c-id=51.323.5.0 s-id=131><!--r.131--><!--o.51.324--><a
+    class="Nav-link" href="/docs/native/device-feedback" c-id=131.0.0.0><!--s.131.1.1.0.--><span c-id=51.324.6.0><!--t.51.325.7.0-->Device Feedback</span></a></stencil-route-link></li><li
+    c-id=51.326.4.78><stencil-route-link class=hydrated c-id=51.327.5.0 s-id=132><!--r.132--><!--o.51.328--><a
+    class="Nav-link" href="/docs/native/device-motion" c-id=132.0.0.0><!--s.132.1.1.0.--><span c-id=51.328.6.0><!--t.51.329.7.0-->Device Motion</span></a></stencil-route-link></li><li
+    c-id=51.330.4.79><stencil-route-link class=hydrated c-id=51.331.5.0 s-id=133><!--r.133--><!--o.51.332--><a
+    class="Nav-link" href="/docs/native/device-orientation" c-id=133.0.0.0><!--s.133.1.1.0.--><span c-id=51.332.6.0><!--t.51.333.7.0-->Device Orientation</span></a></stencil-route-link></li><li
+    c-id=51.334.4.80><stencil-route-link class=hydrated c-id=51.335.5.0 s-id=134><!--r.134--><!--o.51.336--><a
+    class="Nav-link" href="/docs/native/magnetometer" c-id=134.0.0.0><!--s.134.1.1.0.--><span c-id=51.336.6.0><!--t.51.337.7.0-->Device eMagnetometer</span></a></stencil-route-link></li><li
+    c-id=51.338.4.81><stencil-route-link class=hydrated c-id=51.339.5.0 s-id=135><!--r.135--><!--o.51.340--><a
+    class="Nav-link" href="/docs/native/device" c-id=135.0.0.0><!--s.135.1.1.0.--><span c-id=51.340.6.0><!--t.51.341.7.0-->Device</span></a></stencil-route-link></li><li
+    c-id=51.342.4.82><stencil-route-link class=hydrated c-id=51.343.5.0 s-id=136><!--r.136--><!--o.51.344--><a
+    class="Nav-link" href="/docs/native/diagnostic" c-id=136.0.0.0><!--s.136.1.1.0.--><span c-id=51.344.6.0><!--t.51.345.7.0-->Diagnostic</span></a></stencil-route-link></li><li
+    c-id=51.346.4.83><stencil-route-link class=hydrated c-id=51.347.5.0 s-id=137><!--r.137--><!--o.51.348--><a
+    class="Nav-link" href="/docs/native/dialogs" c-id=137.0.0.0><!--s.137.1.1.0.--><span c-id=51.348.6.0><!--t.51.349.7.0-->Dialogs</span></a></stencil-route-link></li><li
+    c-id=51.350.4.84><stencil-route-link class=hydrated c-id=51.351.5.0 s-id=138><!--r.138--><!--o.51.352--><a
+    class="Nav-link" href="/docs/native/document-scanner" c-id=138.0.0.0><!--s.138.1.1.0.--><span c-id=51.352.6.0><!--t.51.353.7.0-->Document Scanner</span></a></stencil-route-link></li><li
+    c-id=51.354.4.85><stencil-route-link class=hydrated c-id=51.355.5.0 s-id=139><!--r.139--><!--o.51.356--><a
+    class="Nav-link" href="/docs/native/document-viewer" c-id=139.0.0.0><!--s.139.1.1.0.--><span c-id=51.356.6.0><!--t.51.357.7.0-->Document Viewer</span></a></stencil-route-link></li><li
+    c-id=51.358.4.86><stencil-route-link class=hydrated c-id=51.359.5.0 s-id=140><!--r.140--><!--o.51.360--><a
+    class="Nav-link" href="/docs/native/downloader" c-id=140.0.0.0><!--s.140.1.1.0.--><span c-id=51.360.6.0><!--t.51.361.7.0-->Downloader</span></a></stencil-route-link></li><li
+    c-id=51.362.4.87><stencil-route-link class=hydrated c-id=51.363.5.0 s-id=141><!--r.141--><!--o.51.364--><a
+    class="Nav-link" href="/docs/native/email-composer" c-id=141.0.0.0><!--s.141.1.1.0.--><span c-id=51.364.6.0><!--t.51.365.7.0-->Email Composer</span></a></stencil-route-link></li><li
+    c-id=51.366.4.88><stencil-route-link class=hydrated c-id=51.367.5.0 s-id=142><!--r.142--><!--o.51.368--><a
+    class="Nav-link" href="/docs/native/estimote-beacons" c-id=142.0.0.0><!--s.142.1.1.0.--><span c-id=51.368.6.0><!--t.51.369.7.0-->Estimote Beacons</span></a></stencil-route-link></li><li
+    c-id=51.370.4.89><stencil-route-link class=hydrated c-id=51.371.5.0 s-id=143><!--r.143--><!--o.51.372--><a
+    class="Nav-link" href="/docs/native/extended-device-information" c-id=143.0.0.0><!--s.143.1.1.0.--><span
+    c-id=51.372.6.0><!--t.51.373.7.0-->Extended Device Information</span></a></stencil-route-link></li><li
+    c-id=51.374.4.90><stencil-route-link class=hydrated c-id=51.375.5.0 s-id=144><!--r.144--><!--o.51.376--><a
+    class="Nav-link" href="/docs/native/fcm" c-id=144.0.0.0><!--s.144.1.1.0.--><span c-id=51.376.6.0><!--t.51.377.7.0-->FCM</span></a></stencil-route-link></li><li
+    c-id=51.378.4.91><stencil-route-link class=hydrated c-id=51.379.5.0 s-id=145><!--r.145--><!--o.51.380--><a
+    class="Nav-link" href="/docs/native/ftp" c-id=145.0.0.0><!--s.145.1.1.0.--><span c-id=51.380.6.0><!--t.51.381.7.0-->FTP</span></a></stencil-route-link></li><li
+    c-id=51.382.4.92><stencil-route-link class=hydrated c-id=51.383.5.0 s-id=146><!--r.146--><!--o.51.384--><a
+    class="Nav-link" href="/docs/native/facebook" c-id=146.0.0.0><!--s.146.1.1.0.--><span c-id=51.384.6.0><!--t.51.385.7.0-->Facebook</span></a></stencil-route-link></li><li
+    c-id=51.386.4.93><stencil-route-link class=hydrated c-id=51.387.5.0 s-id=147><!--r.147--><!--o.51.388--><a
+    class="Nav-link" href="/docs/native/file-chooser" c-id=147.0.0.0><!--s.147.1.1.0.--><span c-id=51.388.6.0><!--t.51.389.7.0-->File Chooser</span></a></stencil-route-link></li><li
+    c-id=51.390.4.94><stencil-route-link class=hydrated c-id=51.391.5.0 s-id=148><!--r.148--><!--o.51.392--><a
+    class="Nav-link" href="/docs/native/file-encryption" c-id=148.0.0.0><!--s.148.1.1.0.--><span c-id=51.392.6.0><!--t.51.393.7.0-->File Encryption</span></a></stencil-route-link></li><li
+    c-id=51.394.4.95><stencil-route-link class=hydrated c-id=51.395.5.0 s-id=149><!--r.149--><!--o.51.396--><a
+    class="Nav-link" href="/docs/native/file-opener" c-id=149.0.0.0><!--s.149.1.1.0.--><span c-id=51.396.6.0><!--t.51.397.7.0-->File Opener</span></a></stencil-route-link></li><li
+    c-id=51.398.4.96><stencil-route-link class=hydrated c-id=51.399.5.0 s-id=150><!--r.150--><!--o.51.400--><a
+    class="Nav-link" href="/docs/native/file-path" c-id=150.0.0.0><!--s.150.1.1.0.--><span c-id=51.400.6.0><!--t.51.401.7.0-->File Path</span></a></stencil-route-link></li><li
+    c-id=51.402.4.97><stencil-route-link class=hydrated c-id=51.403.5.0 s-id=151><!--r.151--><!--o.51.404--><a
+    class="Nav-link" href="/docs/native/file-transfer" c-id=151.0.0.0><!--s.151.1.1.0.--><span c-id=51.404.6.0><!--t.51.405.7.0-->File Transfer</span></a></stencil-route-link></li><li
+    c-id=51.406.4.98><stencil-route-link class=hydrated c-id=51.407.5.0 s-id=152><!--r.152--><!--o.51.408--><a
+    class="Nav-link" href="/docs/native/file" c-id=152.0.0.0><!--s.152.1.1.0.--><span c-id=51.408.6.0><!--t.51.409.7.0-->File</span></a></stencil-route-link></li><li
+    c-id=51.410.4.99><stencil-route-link class=hydrated c-id=51.411.5.0 s-id=153><!--r.153--><!--o.51.412--><a
+    class="Nav-link" href="/docs/native/fingerprint-aio" c-id=153.0.0.0><!--s.153.1.1.0.--><span c-id=51.412.6.0><!--t.51.413.7.0-->Fingerprint AIO</span></a></stencil-route-link></li><li
+    c-id=51.414.4.100><stencil-route-link class=hydrated c-id=51.415.5.0 s-id=154><!--r.154--><!--o.51.416--><a
+    class="Nav-link" href="/docs/native/firebase-analytics" c-id=154.0.0.0><!--s.154.1.1.0.--><span c-id=51.416.6.0><!--t.51.417.7.0-->Firebase Analytics</span></a></stencil-route-link></li><li
+    c-id=51.418.4.101><stencil-route-link class=hydrated c-id=51.419.5.0 s-id=155><!--r.155--><!--o.51.420--><a
+    class="Nav-link" href="/docs/native/firebase-authentication" c-id=155.0.0.0><!--s.155.1.1.0.--><span c-id=51.420.6.0><!--t.51.421.7.0-->Firebase Authentication</span></a></stencil-route-link></li><li
+    c-id=51.422.4.102><stencil-route-link class=hydrated c-id=51.423.5.0 s-id=156><!--r.156--><!--o.51.424--><a
+    class="Nav-link" href="/docs/native/firebase-config" c-id=156.0.0.0><!--s.156.1.1.0.--><span c-id=51.424.6.0><!--t.51.425.7.0-->Firebase Config</span></a></stencil-route-link></li><li
+    c-id=51.426.4.103><stencil-route-link class=hydrated c-id=51.427.5.0 s-id=157><!--r.157--><!--o.51.428--><a
+    class="Nav-link" href="/docs/native/firebase-crashlytics" c-id=157.0.0.0><!--s.157.1.1.0.--><span c-id=51.428.6.0><!--t.51.429.7.0-->Firebase Crashlytics</span></a></stencil-route-link></li><li
+    c-id=51.430.4.104><stencil-route-link class=hydrated c-id=51.431.5.0 s-id=158><!--r.158--><!--o.51.432--><a
+    class="Nav-link" href="/docs/native/firebase-dynamic-links" c-id=158.0.0.0><!--s.158.1.1.0.--><span c-id=51.432.6.0><!--t.51.433.7.0-->Firebase Dynamic Links</span></a></stencil-route-link></li><li
+    c-id=51.434.4.105><stencil-route-link class=hydrated c-id=51.435.5.0 s-id=159><!--r.159--><!--o.51.436--><a
+    class="Nav-link" href="/docs/native/firebase-messaging" c-id=159.0.0.0><!--s.159.1.1.0.--><span c-id=51.436.6.0><!--t.51.437.7.0-->Firebase Messaging</span></a></stencil-route-link></li><li
+    c-id=51.438.4.106><stencil-route-link class=hydrated c-id=51.439.5.0 s-id=160><!--r.160--><!--o.51.440--><a
+    class="Nav-link" href="/docs/native/firebase-x" c-id=160.0.0.0><!--s.160.1.1.0.--><span c-id=51.440.6.0><!--t.51.441.7.0-->Firebase X</span></a></stencil-route-link></li><li
+    c-id=51.442.4.107><stencil-route-link class=hydrated c-id=51.443.5.0 s-id=161><!--r.161--><!--o.51.444--><a
+    class="Nav-link" href="/docs/native/firebase" c-id=161.0.0.0><!--s.161.1.1.0.--><span c-id=51.444.6.0><!--t.51.445.7.0-->Firebase</span></a></stencil-route-link></li><li
+    c-id=51.446.4.108><stencil-route-link class=hydrated c-id=51.447.5.0 s-id=162><!--r.162--><!--o.51.448--><a
+    class="Nav-link" href="/docs/native/firebase-crash" c-id=162.0.0.0><!--s.162.1.1.0.--><span c-id=51.448.6.0><!--t.51.449.7.0-->FirebaseCrash</span></a></stencil-route-link></li><li
+    c-id=51.450.4.109><stencil-route-link class=hydrated c-id=51.451.5.0 s-id=163><!--r.163--><!--o.51.452--><a
+    class="Nav-link" href="/docs/native/flashlight" c-id=163.0.0.0><!--s.163.1.1.0.--><span c-id=51.452.6.0><!--t.51.453.7.0-->Flashlight</span></a></stencil-route-link></li><li
+    c-id=51.454.4.110><stencil-route-link class=hydrated c-id=51.455.5.0 s-id=164><!--r.164--><!--o.51.456--><a
+    class="Nav-link" href="/docs/native/flurry-analytics" c-id=164.0.0.0><!--s.164.1.1.0.--><span c-id=51.456.6.0><!--t.51.457.7.0-->Flurry Analytics</span></a></stencil-route-link></li><li
+    c-id=51.458.4.111><stencil-route-link class=hydrated c-id=51.459.5.0 s-id=165><!--r.165--><!--o.51.460--><a
+    class="Nav-link" href="/docs/native/foreground-service" c-id=165.0.0.0><!--s.165.1.1.0.--><span c-id=51.460.6.0><!--t.51.461.7.0-->Foreground Service</span></a></stencil-route-link></li><li
+    c-id=51.462.4.112><stencil-route-link class=hydrated c-id=51.463.5.0 s-id=166><!--r.166--><!--o.51.464--><a
+    class="Nav-link" href="/docs/native/full-screen-image" c-id=166.0.0.0><!--s.166.1.1.0.--><span c-id=51.464.6.0><!--t.51.465.7.0-->Full Screen Image</span></a></stencil-route-link></li><li
+    c-id=51.466.4.113><stencil-route-link class=hydrated c-id=51.467.5.0 s-id=167><!--r.167--><!--o.51.468--><a
+    class="Nav-link" href="/docs/native/gao-de-location" c-id=167.0.0.0><!--s.167.1.1.0.--><span c-id=51.468.6.0><!--t.51.469.7.0-->Gao De Location</span></a></stencil-route-link></li><li
+    c-id=51.470.4.114><stencil-route-link class=hydrated c-id=51.471.5.0 s-id=168><!--r.168--><!--o.51.472--><a
+    class="Nav-link" href="/docs/native/geofence" c-id=168.0.0.0><!--s.168.1.1.0.--><span c-id=51.472.6.0><!--t.51.473.7.0-->Geofence</span></a></stencil-route-link></li><li
+    c-id=51.474.4.115><stencil-route-link class=hydrated c-id=51.475.5.0 s-id=169><!--r.169--><!--o.51.476--><a
+    class="Nav-link" href="/docs/native/geolocation" c-id=169.0.0.0><!--s.169.1.1.0.--><span c-id=51.476.6.0><!--t.51.477.7.0-->Geolocation</span></a></stencil-route-link></li><li
+    c-id=51.478.4.116><stencil-route-link class=hydrated c-id=51.479.5.0 s-id=170><!--r.170--><!--o.51.480--><a
+    class="Nav-link" href="/docs/native/globalization" c-id=170.0.0.0><!--s.170.1.1.0.--><span c-id=51.480.6.0><!--t.51.481.7.0-->Globalization</span></a></stencil-route-link></li><li
+    c-id=51.482.4.117><stencil-route-link class=hydrated c-id=51.483.5.0 s-id=171><!--r.171--><!--o.51.484--><a
+    class="Nav-link" href="/docs/native/google-analytics" c-id=171.0.0.0><!--s.171.1.1.0.--><span c-id=51.484.6.0><!--t.51.485.7.0-->Google Analytics</span></a></stencil-route-link></li><li
+    c-id=51.486.4.118><a href="https://github.com/ionic-team/ionic-native-google-maps" target=_blank class="Nav-link outbound"
+    c-id=51.487.5.0><span c-id=51.488.6.0><!--t.51.489.7.0-->Google Maps</span><!--t.51.490.6.1--> <svg
+    viewBox="0 0 512 512" c-id=51.491.6.2><path d="M405.34 405.332H106.66V106.668H240V64H106.66C83.191 64 64 83.197 64 106.668v298.664C64 428.803 83.191 448 106.66 448h298.68c23.469 0 42.66-19.197 42.66-42.668V272h-42.66v133.332zM288 64v42.668h87.474L159.999 322.133l29.866 29.866 215.476-215.47V224H448V64H288z"
+    c-id=51.492.7.0></path></svg></a></li><li c-id=51.493.4.119><stencil-route-link class=hydrated c-id=51.494.5.0
+    s-id=172><!--r.172--><!--o.51.495--><a class="Nav-link" href="/docs/native/google-nearby" c-id=172.0.0.0><!--s.172.1.1.0.--><span
+    c-id=51.495.6.0><!--t.51.496.7.0-->Google Nearby</span></a></stencil-route-link></li><li c-id=51.497.4.120><stencil-route-link
+    class=hydrated c-id=51.498.5.0 s-id=173><!--r.173--><!--o.51.499--><a class="Nav-link" href="/docs/native/google-play-games-services"
+    c-id=173.0.0.0><!--s.173.1.1.0.--><span c-id=51.499.6.0><!--t.51.500.7.0-->Google Play Games Services</span></a></stencil-route-link></li><li
+    c-id=51.501.4.121><stencil-route-link class=hydrated c-id=51.502.5.0 s-id=174><!--r.174--><!--o.51.503--><a
+    class="Nav-link" href="/docs/native/google-plus" c-id=174.0.0.0><!--s.174.1.1.0.--><span c-id=51.503.6.0><!--t.51.504.7.0-->Google Plus</span></a></stencil-route-link></li><li
+    c-id=51.505.4.122><stencil-route-link class=hydrated c-id=51.506.5.0 s-id=175><!--r.175--><!--o.51.507--><a
+    class="Nav-link" href="/docs/native/gyroscope" c-id=175.0.0.0><!--s.175.1.1.0.--><span c-id=51.507.6.0><!--t.51.508.7.0-->Gyroscope</span></a></stencil-route-link></li><li
+    c-id=51.509.4.123><stencil-route-link class=hydrated c-id=51.510.5.0 s-id=176><!--r.176--><!--o.51.511--><a
+    class="Nav-link" href="/docs/native/http" c-id=176.0.0.0><!--s.176.1.1.0.--><span c-id=51.511.6.0><!--t.51.512.7.0-->HTTP</span></a></stencil-route-link></li><li
+    c-id=51.513.4.124><stencil-route-link class=hydrated c-id=51.514.5.0 s-id=177><!--r.177--><!--o.51.515--><a
+    class="Nav-link" href="/docs/native/header-color" c-id=177.0.0.0><!--s.177.1.1.0.--><span c-id=51.515.6.0><!--t.51.516.7.0-->Header Color</span></a></stencil-route-link></li><li
+    c-id=51.517.4.125><stencil-route-link class=hydrated c-id=51.518.5.0 s-id=178><!--r.178--><!--o.51.519--><a
+    class="Nav-link" href="/docs/native/health-kit" c-id=178.0.0.0><!--s.178.1.1.0.--><span c-id=51.519.6.0><!--t.51.520.7.0-->Health Kit</span></a></stencil-route-link></li><li
+    c-id=51.521.4.126><stencil-route-link class=hydrated c-id=51.522.5.0 s-id=179><!--r.179--><!--o.51.523--><a
+    class="Nav-link" href="/docs/native/health" c-id=179.0.0.0><!--s.179.1.1.0.--><span c-id=51.523.6.0><!--t.51.524.7.0-->Health</span></a></stencil-route-link></li><li
+    c-id=51.525.4.127><stencil-route-link class=hydrated c-id=51.526.5.0 s-id=180><!--r.180--><!--o.51.527--><a
+    class="Nav-link" href="/docs/native/hot-code-push" c-id=180.0.0.0><!--s.180.1.1.0.--><span c-id=51.527.6.0><!--t.51.528.7.0-->Hot Code Push</span></a></stencil-route-link></li><li
+    c-id=51.529.4.128><stencil-route-link class=hydrated c-id=51.530.5.0 s-id=181><!--r.181--><!--o.51.531--><a
+    class="Nav-link" href="/docs/native/hotspot" c-id=181.0.0.0><!--s.181.1.1.0.--><span c-id=51.531.6.0><!--t.51.532.7.0-->Hotspot</span></a></stencil-route-link></li><li
+    c-id=51.533.4.129><stencil-route-link class=hydrated c-id=51.534.5.0 s-id=182><!--r.182--><!--o.51.535--><a
+    class="Nav-link" href="/docs/native/httpd" c-id=182.0.0.0><!--s.182.1.1.0.--><span c-id=51.535.6.0><!--t.51.536.7.0-->Httpd</span></a></stencil-route-link></li><li
+    c-id=51.537.4.130><stencil-route-link class=hydrated c-id=51.538.5.0 s-id=183><!--r.183--><!--o.51.539--><a
+    class="Nav-link" href="/docs/native/hyper-track" c-id=183.0.0.0><!--s.183.1.1.0.--><span c-id=51.539.6.0><!--t.51.540.7.0-->HyperTrack</span></a></stencil-route-link></li><li
+    c-id=51.541.4.131><stencil-route-link class=hydrated c-id=51.542.5.0 s-id=184><!--r.184--><!--o.51.543--><a
+    class="Nav-link" href="/docs/native/ibeacon" c-id=184.0.0.0><!--s.184.1.1.0.--><span c-id=51.543.6.0><!--t.51.544.7.0-->IBeacon</span></a></stencil-route-link></li><li
+    c-id=51.545.4.132><stencil-route-link class=hydrated c-id=51.546.5.0 s-id=185><!--r.185--><!--o.51.547--><a
+    class="Nav-link" href="/docs/native/image-picker" c-id=185.0.0.0><!--s.185.1.1.0.--><span c-id=51.547.6.0><!--t.51.548.7.0-->Image Picker</span></a></stencil-route-link></li><li
+    c-id=51.549.4.133><stencil-route-link class=hydrated c-id=51.550.5.0 s-id=186><!--r.186--><!--o.51.551--><a
+    class="Nav-link" href="/docs/native/image-resizer" c-id=186.0.0.0><!--s.186.1.1.0.--><span c-id=51.551.6.0><!--t.51.552.7.0-->Image Resizer</span></a></stencil-route-link></li><li
+    c-id=51.553.4.134><stencil-route-link class=hydrated c-id=51.554.5.0 s-id=187><!--r.187--><!--o.51.555--><a
+    class="Nav-link--active Nav-link" href="/docs/native/in-app-browser" c-id=187.0.0.0><!--s.187.1.1.0.--><span
+    c-id=51.555.6.0><!--t.51.556.7.0-->In App Browser</span></a></stencil-route-link></li><li c-id=51.557.4.135><stencil-route-link
+    class=hydrated c-id=51.558.5.0 s-id=188><!--r.188--><!--o.51.559--><a class="Nav-link" href="/docs/native/in-app-purchase-2"
+    c-id=188.0.0.0><!--s.188.1.1.0.--><span c-id=51.559.6.0><!--t.51.560.7.0-->In App Purchase 2</span></a></stencil-route-link></li><li
+    c-id=51.561.4.136><stencil-route-link class=hydrated c-id=51.562.5.0 s-id=189><!--r.189--><!--o.51.563--><a
+    class="Nav-link" href="/docs/native/in-app-purchase" c-id=189.0.0.0><!--s.189.1.1.0.--><span c-id=51.563.6.0><!--t.51.564.7.0-->In App Purchase</span></a></stencil-route-link></li><li
+    c-id=51.565.4.137><stencil-route-link class=hydrated c-id=51.566.5.0 s-id=190><!--r.190--><!--o.51.567--><a
+    class="Nav-link" href="/docs/native/in-app-review" c-id=190.0.0.0><!--s.190.1.1.0.--><span c-id=51.567.6.0><!--t.51.568.7.0-->In App Review</span></a></stencil-route-link></li><li
+    c-id=51.569.4.138><stencil-route-link class=hydrated c-id=51.570.5.0 s-id=191><!--r.191--><!--o.51.571--><a
+    class="Nav-link" href="/docs/native/index-app-content" c-id=191.0.0.0><!--s.191.1.1.0.--><span c-id=51.571.6.0><!--t.51.572.7.0-->Index App Content</span></a></stencil-route-link></li><li
+    c-id=51.573.4.139><stencil-route-link class=hydrated c-id=51.574.5.0 s-id=192><!--r.192--><!--o.51.575--><a
+    class="Nav-link" href="/docs/native/insomnia" c-id=192.0.0.0><!--s.192.1.1.0.--><span c-id=51.575.6.0><!--t.51.576.7.0-->Insomnia</span></a></stencil-route-link></li><li
+    c-id=51.577.4.140><stencil-route-link class=hydrated c-id=51.578.5.0 s-id=193><!--r.193--><!--o.51.579--><a
+    class="Nav-link" href="/docs/native/instagram" c-id=193.0.0.0><!--s.193.1.1.0.--><span c-id=51.579.6.0><!--t.51.580.7.0-->Instagram</span></a></stencil-route-link></li><li
+    c-id=51.581.4.141><stencil-route-link class=hydrated c-id=51.582.5.0 s-id=194><!--r.194--><!--o.51.583--><a
+    class="Nav-link" href="/docs/native/intel-security" c-id=194.0.0.0><!--s.194.1.1.0.--><span c-id=51.583.6.0><!--t.51.584.7.0-->Intel Security</span></a></stencil-route-link></li><li
+    c-id=51.585.4.142><stencil-route-link class=hydrated c-id=51.586.5.0 s-id=195><!--r.195--><!--o.51.587--><a
+    class="Nav-link" href="/docs/native/intercom" c-id=195.0.0.0><!--s.195.1.1.0.--><span c-id=51.587.6.0><!--t.51.588.7.0-->Intercom</span></a></stencil-route-link></li><li
+    c-id=51.589.4.143><stencil-route-link class=hydrated c-id=51.590.5.0 s-id=196><!--r.196--><!--o.51.591--><a
+    class="Nav-link" href="/docs/native/ionic-webview" c-id=196.0.0.0><!--s.196.1.1.0.--><span c-id=51.591.6.0><!--t.51.592.7.0-->Ionic Webview</span></a></stencil-route-link></li><li
+    c-id=51.593.4.144><stencil-route-link class=hydrated c-id=51.594.5.0 s-id=197><!--r.197--><!--o.51.595--><a
+    class="Nav-link" href="/docs/native/is-debug" c-id=197.0.0.0><!--s.197.1.1.0.--><span c-id=51.595.6.0><!--t.51.596.7.0-->Is Debug</span></a></stencil-route-link></li><li
+    c-id=51.597.4.145><stencil-route-link class=hydrated c-id=51.598.5.0 s-id=198><!--r.198--><!--o.51.599--><a
+    class="Nav-link" href="/docs/native/jins-meme" c-id=198.0.0.0><!--s.198.1.1.0.--><span c-id=51.599.6.0><!--t.51.600.7.0-->Jins Meme</span></a></stencil-route-link></li><li
+    c-id=51.601.4.146><stencil-route-link class=hydrated c-id=51.602.5.0 s-id=199><!--r.199--><!--o.51.603--><a
+    class="Nav-link" href="/docs/native/keyboard" c-id=199.0.0.0><!--s.199.1.1.0.--><span c-id=51.603.6.0><!--t.51.604.7.0-->Keyboard</span></a></stencil-route-link></li><li
+    c-id=51.605.4.147><stencil-route-link class=hydrated c-id=51.606.5.0 s-id=200><!--r.200--><!--o.51.607--><a
+    class="Nav-link" href="/docs/native/keychain-touch-id" c-id=200.0.0.0><!--s.200.1.1.0.--><span c-id=51.607.6.0><!--t.51.608.7.0-->Keychain Touch Id</span></a></stencil-route-link></li><li
+    c-id=51.609.4.148><stencil-route-link class=hydrated c-id=51.610.5.0 s-id=201><!--r.201--><!--o.51.611--><a
+    class="Nav-link" href="/docs/native/keychain" c-id=201.0.0.0><!--s.201.1.1.0.--><span c-id=51.611.6.0><!--t.51.612.7.0-->Keychain</span></a></stencil-route-link></li><li
+    c-id=51.613.4.149><stencil-route-link class=hydrated c-id=51.614.5.0 s-id=202><!--r.202--><!--o.51.615--><a
+    class="Nav-link" href="/docs/native/last-cam" c-id=202.0.0.0><!--s.202.1.1.0.--><span c-id=51.615.6.0><!--t.51.616.7.0-->LastCam</span></a></stencil-route-link></li><li
+    c-id=51.617.4.150><stencil-route-link class=hydrated c-id=51.618.5.0 s-id=203><!--r.203--><!--o.51.619--><a
+    class="Nav-link" href="/docs/native/launch-navigator" c-id=203.0.0.0><!--s.203.1.1.0.--><span c-id=51.619.6.0><!--t.51.620.7.0-->Launch Navigator</span></a></stencil-route-link></li><li
+    c-id=51.621.4.151><stencil-route-link class=hydrated c-id=51.622.5.0 s-id=204><!--r.204--><!--o.51.623--><a
+    class="Nav-link" href="/docs/native/launch-review" c-id=204.0.0.0><!--s.204.1.1.0.--><span c-id=51.623.6.0><!--t.51.624.7.0-->Launch Review</span></a></stencil-route-link></li><li
+    c-id=51.625.4.152><stencil-route-link class=hydrated c-id=51.626.5.0 s-id=205><!--r.205--><!--o.51.627--><a
+    class="Nav-link" href="/docs/native/line-login" c-id=205.0.0.0><!--s.205.1.1.0.--><span c-id=51.627.6.0><!--t.51.628.7.0-->Line Login</span></a></stencil-route-link></li><li
+    c-id=51.629.4.153><stencil-route-link class=hydrated c-id=51.630.5.0 s-id=206><!--r.206--><!--o.51.631--><a
+    class="Nav-link" href="/docs/native/local-notifications" c-id=206.0.0.0><!--s.206.1.1.0.--><span c-id=51.631.6.0><!--t.51.632.7.0-->Local Notifications</span></a></stencil-route-link></li><li
+    c-id=51.633.4.154><stencil-route-link class=hydrated c-id=51.634.5.0 s-id=207><!--r.207--><!--o.51.635--><a
+    class="Nav-link" href="/docs/native/location-accuracy" c-id=207.0.0.0><!--s.207.1.1.0.--><span c-id=51.635.6.0><!--t.51.636.7.0-->Location Accuracy</span></a></stencil-route-link></li><li
+    c-id=51.637.4.155><stencil-route-link class=hydrated c-id=51.638.5.0 s-id=208><!--r.208--><!--o.51.639--><a
+    class="Nav-link" href="/docs/native/lottie-splash-screen" c-id=208.0.0.0><!--s.208.1.1.0.--><span c-id=51.639.6.0><!--t.51.640.7.0-->Lottie Splash Screen</span></a></stencil-route-link></li><li
+    c-id=51.641.4.156><stencil-route-link class=hydrated c-id=51.642.5.0 s-id=209><!--r.209--><!--o.51.643--><a
+    class="Nav-link" href="/docs/native/luxand" c-id=209.0.0.0><!--s.209.1.1.0.--><span c-id=51.643.6.0><!--t.51.644.7.0-->Luxand</span></a></stencil-route-link></li><li
+    c-id=51.645.4.157><stencil-route-link class=hydrated c-id=51.646.5.0 s-id=210><!--r.210--><!--o.51.647--><a
+    class="Nav-link" href="/docs/native/ms-adal" c-id=210.0.0.0><!--s.210.1.1.0.--><span c-id=51.647.6.0><!--t.51.648.7.0-->MS ADAL</span></a></stencil-route-link></li><li
+    c-id=51.649.4.158><stencil-route-link class=hydrated c-id=51.650.5.0 s-id=211><!--r.211--><!--o.51.651--><a
+    class="Nav-link" href="/docs/native/market" c-id=211.0.0.0><!--s.211.1.1.0.--><span c-id=51.651.6.0><!--t.51.652.7.0-->Market</span></a></stencil-route-link></li><li
+    c-id=51.653.4.159><stencil-route-link class=hydrated c-id=51.654.5.0 s-id=212><!--r.212--><!--o.51.655--><a
+    class="Nav-link" href="/docs/native/media-capture" c-id=212.0.0.0><!--s.212.1.1.0.--><span c-id=51.655.6.0><!--t.51.656.7.0-->Media Capture</span></a></stencil-route-link></li><li
+    c-id=51.657.4.160><stencil-route-link class=hydrated c-id=51.658.5.0 s-id=213><!--r.213--><!--o.51.659--><a
+    class="Nav-link" href="/docs/native/media" c-id=213.0.0.0><!--s.213.1.1.0.--><span c-id=51.659.6.0><!--t.51.660.7.0-->Media</span></a></stencil-route-link></li><li
+    c-id=51.661.4.161><stencil-route-link class=hydrated c-id=51.662.5.0 s-id=214><!--r.214--><!--o.51.663--><a
+    class="Nav-link" href="/docs/native/mixpanel" c-id=214.0.0.0><!--s.214.1.1.0.--><span c-id=51.663.6.0><!--t.51.664.7.0-->Mixpanel</span></a></stencil-route-link></li><li
+    c-id=51.665.4.162><stencil-route-link class=hydrated c-id=51.666.5.0 s-id=215><!--r.215--><!--o.51.667--><a
+    class="Nav-link" href="/docs/native/mobile-accessibility" c-id=215.0.0.0><!--s.215.1.1.0.--><span c-id=51.667.6.0><!--t.51.668.7.0-->Mobile Accessibility</span></a></stencil-route-link></li><li
+    c-id=51.669.4.163><stencil-route-link class=hydrated c-id=51.670.5.0 s-id=216><!--r.216--><!--o.51.671--><a
+    class="Nav-link" href="/docs/native/music-controls" c-id=216.0.0.0><!--s.216.1.1.0.--><span c-id=51.671.6.0><!--t.51.672.7.0-->Music Controls</span></a></stencil-route-link></li><li
+    c-id=51.673.4.164><stencil-route-link class=hydrated c-id=51.674.5.0 s-id=217><!--r.217--><!--o.51.675--><a
+    class="Nav-link" href="/docs/native/nfc" c-id=217.0.0.0><!--s.217.1.1.0.--><span c-id=51.675.6.0><!--t.51.676.7.0-->NFC</span></a></stencil-route-link></li><li
+    c-id=51.677.4.165><stencil-route-link class=hydrated c-id=51.678.5.0 s-id=218><!--r.218--><!--o.51.679--><a
+    class="Nav-link" href="/docs/native/native-audio" c-id=218.0.0.0><!--s.218.1.1.0.--><span c-id=51.679.6.0><!--t.51.680.7.0-->Native Audio</span></a></stencil-route-link></li><li
+    c-id=51.681.4.166><stencil-route-link class=hydrated c-id=51.682.5.0 s-id=219><!--r.219--><!--o.51.683--><a
+    class="Nav-link" href="/docs/native/native-geocoder" c-id=219.0.0.0><!--s.219.1.1.0.--><span c-id=51.683.6.0><!--t.51.684.7.0-->Native Geocoder</span></a></stencil-route-link></li><li
+    c-id=51.685.4.167><stencil-route-link class=hydrated c-id=51.686.5.0 s-id=220><!--r.220--><!--o.51.687--><a
+    class="Nav-link" href="/docs/native/native-keyboard" c-id=220.0.0.0><!--s.220.1.1.0.--><span c-id=51.687.6.0><!--t.51.688.7.0-->Native Keyboard</span></a></stencil-route-link></li><li
+    c-id=51.689.4.168><stencil-route-link class=hydrated c-id=51.690.5.0 s-id=221><!--r.221--><!--o.51.691--><a
+    class="Nav-link" href="/docs/native/native-page-transitions" c-id=221.0.0.0><!--s.221.1.1.0.--><span c-id=51.691.6.0><!--t.51.692.7.0-->Native Page Transitions</span></a></stencil-route-link></li><li
+    c-id=51.693.4.169><stencil-route-link class=hydrated c-id=51.694.5.0 s-id=222><!--r.222--><!--o.51.695--><a
+    class="Nav-link" href="/docs/native/native-ringtones" c-id=222.0.0.0><!--s.222.1.1.0.--><span c-id=51.695.6.0><!--t.51.696.7.0-->Native Ringtones</span></a></stencil-route-link></li><li
+    c-id=51.697.4.170><stencil-route-link class=hydrated c-id=51.698.5.0 s-id=223><!--r.223--><!--o.51.699--><a
+    class="Nav-link" href="/docs/native/native-storage" c-id=223.0.0.0><!--s.223.1.1.0.--><span c-id=51.699.6.0><!--t.51.700.7.0-->Native Storage</span></a></stencil-route-link></li><li
+    c-id=51.701.4.171><stencil-route-link class=hydrated c-id=51.702.5.0 s-id=224><!--r.224--><!--o.51.703--><a
+    class="Nav-link" href="/docs/native/navigation-bar" c-id=224.0.0.0><!--s.224.1.1.0.--><span c-id=51.703.6.0><!--t.51.704.7.0-->Navigation Bar</span></a></stencil-route-link></li><li
+    c-id=51.705.4.172><stencil-route-link class=hydrated c-id=51.706.5.0 s-id=225><!--r.225--><!--o.51.707--><a
+    class="Nav-link" href="/docs/native/network-interface" c-id=225.0.0.0><!--s.225.1.1.0.--><span c-id=51.707.6.0><!--t.51.708.7.0-->Network Interface</span></a></stencil-route-link></li><li
+    c-id=51.709.4.173><stencil-route-link class=hydrated c-id=51.710.5.0 s-id=226><!--r.226--><!--o.51.711--><a
+    class="Nav-link" href="/docs/native/network" c-id=226.0.0.0><!--s.226.1.1.0.--><span c-id=51.711.6.0><!--t.51.712.7.0-->Network</span></a></stencil-route-link></li><li
+    c-id=51.713.4.174><stencil-route-link class=hydrated c-id=51.714.5.0 s-id=227><!--r.227--><!--o.51.715--><a
+    class="Nav-link" href="/docs/native/ocr" c-id=227.0.0.0><!--s.227.1.1.0.--><span c-id=51.715.6.0><!--t.51.716.7.0-->OCR</span></a></stencil-route-link></li><li
+    c-id=51.717.4.175><stencil-route-link class=hydrated c-id=51.718.5.0 s-id=228><!--r.228--><!--o.51.719--><a
+    class="Nav-link" href="/docs/native/onesignal" c-id=228.0.0.0><!--s.228.1.1.0.--><span c-id=51.719.6.0><!--t.51.720.7.0-->OneSignal</span></a></stencil-route-link></li><li
+    c-id=51.721.4.176><stencil-route-link class=hydrated c-id=51.722.5.0 s-id=229><!--r.229--><!--o.51.723--><a
+    class="Nav-link" href="/docs/native/open-native-settings" c-id=229.0.0.0><!--s.229.1.1.0.--><span c-id=51.723.6.0><!--t.51.724.7.0-->Open Native Settings</span></a></stencil-route-link></li><li
+    c-id=51.725.4.177><stencil-route-link class=hydrated c-id=51.726.5.0 s-id=230><!--r.230--><!--o.51.727--><a
+    class="Nav-link" href="/docs/native/openalpr" c-id=230.0.0.0><!--s.230.1.1.0.--><span c-id=51.727.6.0><!--t.51.728.7.0-->OpenALPR</span></a></stencil-route-link></li><li
+    c-id=51.729.4.178><stencil-route-link class=hydrated c-id=51.730.5.0 s-id=231><!--r.231--><!--o.51.731--><a
+    class="Nav-link" href="/docs/native/paypal" c-id=231.0.0.0><!--s.231.1.1.0.--><span c-id=51.731.6.0><!--t.51.732.7.0-->PayPal</span></a></stencil-route-link></li><li
+    c-id=51.733.4.179><stencil-route-link class=hydrated c-id=51.734.5.0 s-id=232><!--r.232--><!--o.51.735--><a
+    class="Nav-link" href="/docs/native/pedometer" c-id=232.0.0.0><!--s.232.1.1.0.--><span c-id=51.735.6.0><!--t.51.736.7.0-->Pedometer</span></a></stencil-route-link></li><li
+    c-id=51.737.4.180><stencil-route-link class=hydrated c-id=51.738.5.0 s-id=233><!--r.233--><!--o.51.739--><a
+    class="Nav-link" href="/docs/native/phonegap-local-notification" c-id=233.0.0.0><!--s.233.1.1.0.--><span
+    c-id=51.739.6.0><!--t.51.740.7.0-->Phonegap Local Notification</span></a></stencil-route-link></li><li
+    c-id=51.741.4.181><stencil-route-link class=hydrated c-id=51.742.5.0 s-id=234><!--r.234--><!--o.51.743--><a
+    class="Nav-link" href="/docs/native/photo-library" c-id=234.0.0.0><!--s.234.1.1.0.--><span c-id=51.743.6.0><!--t.51.744.7.0-->Photo Library</span></a></stencil-route-link></li><li
+    c-id=51.745.4.182><stencil-route-link class=hydrated c-id=51.746.5.0 s-id=235><!--r.235--><!--o.51.747--><a
+    class="Nav-link" href="/docs/native/photo-viewer" c-id=235.0.0.0><!--s.235.1.1.0.--><span c-id=51.747.6.0><!--t.51.748.7.0-->Photo Viewer</span></a></stencil-route-link></li><li
+    c-id=51.749.4.183><stencil-route-link class=hydrated c-id=51.750.5.0 s-id=236><!--r.236--><!--o.51.751--><a
+    class="Nav-link" href="/docs/native/pin-check" c-id=236.0.0.0><!--s.236.1.1.0.--><span c-id=51.751.6.0><!--t.51.752.7.0-->Pin Check</span></a></stencil-route-link></li><li
+    c-id=51.753.4.184><stencil-route-link class=hydrated c-id=51.754.5.0 s-id=237><!--r.237--><!--o.51.755--><a
+    class="Nav-link" href="/docs/native/pin-dialog" c-id=237.0.0.0><!--s.237.1.1.0.--><span c-id=51.755.6.0><!--t.51.756.7.0-->Pin Dialog</span></a></stencil-route-link></li><li
+    c-id=51.757.4.185><stencil-route-link class=hydrated c-id=51.758.5.0 s-id=238><!--r.238--><!--o.51.759--><a
+    class="Nav-link" href="/docs/native/pinterest" c-id=238.0.0.0><!--s.238.1.1.0.--><span c-id=51.759.6.0><!--t.51.760.7.0-->Pinterest</span></a></stencil-route-link></li><li
+    c-id=51.761.4.186><stencil-route-link class=hydrated c-id=51.762.5.0 s-id=239><!--r.239--><!--o.51.763--><a
+    class="Nav-link" href="/docs/native/power-management" c-id=239.0.0.0><!--s.239.1.1.0.--><span c-id=51.763.6.0><!--t.51.764.7.0-->Power Management</span></a></stencil-route-link></li><li
+    c-id=51.765.4.187><stencil-route-link class=hydrated c-id=51.766.5.0 s-id=240><!--r.240--><!--o.51.767--><a
+    class="Nav-link" href="/docs/native/preview-any-file" c-id=240.0.0.0><!--s.240.1.1.0.--><span c-id=51.767.6.0><!--t.51.768.7.0-->PreviewAnyFile</span></a></stencil-route-link></li><li
+    c-id=51.769.4.188><stencil-route-link class=hydrated c-id=51.770.5.0 s-id=241><!--r.241--><!--o.51.771--><a
+    class="Nav-link" href="/docs/native/printer" c-id=241.0.0.0><!--s.241.1.1.0.--><span c-id=51.771.6.0><!--t.51.772.7.0-->Printer</span></a></stencil-route-link></li><li
+    c-id=51.773.4.189><stencil-route-link class=hydrated c-id=51.774.5.0 s-id=242><!--r.242--><!--o.51.775--><a
+    class="Nav-link" href="/docs/native/pro" c-id=242.0.0.0><!--s.242.1.1.0.--><span c-id=51.775.6.0><!--t.51.776.7.0-->Pro</span></a></stencil-route-link></li><li
+    c-id=51.777.4.190><stencil-route-link class=hydrated c-id=51.778.5.0 s-id=243><!--r.243--><!--o.51.779--><a
+    class="Nav-link" href="/docs/native/purchases" c-id=243.0.0.0><!--s.243.1.1.0.--><span c-id=51.779.6.0><!--t.51.780.7.0-->Purchases</span></a></stencil-route-link></li><li
+    c-id=51.781.4.191><stencil-route-link class=hydrated c-id=51.782.5.0 s-id=244><!--r.244--><!--o.51.783--><a
+    class="Nav-link" href="/docs/native/push" c-id=244.0.0.0><!--s.244.1.1.0.--><span c-id=51.783.6.0><!--t.51.784.7.0-->Push</span></a></stencil-route-link></li><li
+    c-id=51.785.4.192><stencil-route-link class=hydrated c-id=51.786.5.0 s-id=245><!--r.245--><!--o.51.787--><a
+    class="Nav-link" href="/docs/native/qqsdk" c-id=245.0.0.0><!--s.245.1.1.0.--><span c-id=51.787.6.0><!--t.51.788.7.0-->QQSDK</span></a></stencil-route-link></li><li
+    c-id=51.789.4.193><stencil-route-link class=hydrated c-id=51.790.5.0 s-id=246><!--r.246--><!--o.51.791--><a
+    class="Nav-link" href="/docs/native/qr-scanner" c-id=246.0.0.0><!--s.246.1.1.0.--><span c-id=51.791.6.0><!--t.51.792.7.0-->QR Scanner</span></a></stencil-route-link></li><li
+    c-id=51.793.4.194><stencil-route-link class=hydrated c-id=51.794.5.0 s-id=247><!--r.247--><!--o.51.795--><a
+    class="Nav-link" href="/docs/native/quikkly" c-id=247.0.0.0><!--s.247.1.1.0.--><span c-id=51.795.6.0><!--t.51.796.7.0-->QuikklyPlugin</span></a></stencil-route-link></li><li
+    c-id=51.797.4.195><stencil-route-link class=hydrated c-id=51.798.5.0 s-id=248><!--r.248--><!--o.51.799--><a
+    class="Nav-link" href="/docs/native/regula-document-reader" c-id=248.0.0.0><!--s.248.1.1.0.--><span c-id=51.799.6.0><!--t.51.800.7.0-->Regula Document Reader</span></a></stencil-route-link></li><li
+    c-id=51.801.4.196><stencil-route-link class=hydrated c-id=51.802.5.0 s-id=249><!--r.249--><!--o.51.803--><a
+    class="Nav-link" href="/docs/native/rollbar" c-id=249.0.0.0><!--s.249.1.1.0.--><span c-id=51.803.6.0><!--t.51.804.7.0-->Rollbar</span></a></stencil-route-link></li><li
+    c-id=51.805.4.197><stencil-route-link class=hydrated c-id=51.806.5.0 s-id=250><!--r.250--><!--o.51.807--><a
+    class="Nav-link" href="/docs/native/sms" c-id=250.0.0.0><!--s.250.1.1.0.--><span c-id=51.807.6.0><!--t.51.808.7.0-->SMS</span></a></stencil-route-link></li><li
+    c-id=51.809.4.198><stencil-route-link class=hydrated c-id=51.810.5.0 s-id=251><!--r.251--><!--o.51.811--><a
+    class="Nav-link" href="/docs/native/sqlite-porter" c-id=251.0.0.0><!--s.251.1.1.0.--><span c-id=51.811.6.0><!--t.51.812.7.0-->SQLite Porter</span></a></stencil-route-link></li><li
+    c-id=51.813.4.199><stencil-route-link class=hydrated c-id=51.814.5.0 s-id=252><!--r.252--><!--o.51.815--><a
+    class="Nav-link" href="/docs/native/sqlite" c-id=252.0.0.0><!--s.252.1.1.0.--><span c-id=51.815.6.0><!--t.51.816.7.0-->SQLite</span></a></stencil-route-link></li><li
+    c-id=51.817.4.200><stencil-route-link class=hydrated c-id=51.818.5.0 s-id=253><!--r.253--><!--o.51.819--><a
+    class="Nav-link" href="/docs/native/ssh-connect" c-id=253.0.0.0><!--s.253.1.1.0.--><span c-id=51.819.6.0><!--t.51.820.7.0-->SSH Connect</span></a></stencil-route-link></li><li
+    c-id=51.821.4.201><stencil-route-link class=hydrated c-id=51.822.5.0 s-id=254><!--r.254--><!--o.51.823--><a
+    class="Nav-link" href="/docs/native/safari-view-controller" c-id=254.0.0.0><!--s.254.1.1.0.--><span c-id=51.823.6.0><!--t.51.824.7.0-->Safari View Controller</span></a></stencil-route-link></li><li
+    c-id=51.825.4.202><stencil-route-link class=hydrated c-id=51.826.5.0 s-id=255><!--r.255--><!--o.51.827--><a
+    class="Nav-link" href="/docs/native/screen-orientation" c-id=255.0.0.0><!--s.255.1.1.0.--><span c-id=51.827.6.0><!--t.51.828.7.0-->Screen Orientation</span></a></stencil-route-link></li><li
+    c-id=51.829.4.203><stencil-route-link class=hydrated c-id=51.830.5.0 s-id=256><!--r.256--><!--o.51.831--><a
+    class="Nav-link" href="/docs/native/screenshot" c-id=256.0.0.0><!--s.256.1.1.0.--><span c-id=51.831.6.0><!--t.51.832.7.0-->Screenshot</span></a></stencil-route-link></li><li
+    c-id=51.833.4.204><stencil-route-link class=hydrated c-id=51.834.5.0 s-id=257><!--r.257--><!--o.51.835--><a
+    class="Nav-link" href="/docs/native/secure-storage" c-id=257.0.0.0><!--s.257.1.1.0.--><span c-id=51.835.6.0><!--t.51.836.7.0-->Secure Storage</span></a></stencil-route-link></li><li
+    c-id=51.837.4.205><stencil-route-link class=hydrated c-id=51.838.5.0 s-id=258><!--r.258--><!--o.51.839--><a
+    class="Nav-link" href="/docs/native/sensors" c-id=258.0.0.0><!--s.258.1.1.0.--><span c-id=51.839.6.0><!--t.51.840.7.0-->Sensors</span></a></stencil-route-link></li><li
+    c-id=51.841.4.206><stencil-route-link class=hydrated c-id=51.842.5.0 s-id=259><!--r.259--><!--o.51.843--><a
+    class="Nav-link" href="/docs/native/serial" c-id=259.0.0.0><!--s.259.1.1.0.--><span c-id=51.843.6.0><!--t.51.844.7.0-->Serial</span></a></stencil-route-link></li><li
+    c-id=51.845.4.207><stencil-route-link class=hydrated c-id=51.846.5.0 s-id=260><!--r.260--><!--o.51.847--><a
+    class="Nav-link" href="/docs/native/shake" c-id=260.0.0.0><!--s.260.1.1.0.--><span c-id=51.847.6.0><!--t.51.848.7.0-->Shake</span></a></stencil-route-link></li><li
+    c-id=51.849.4.208><stencil-route-link class=hydrated c-id=51.850.5.0 s-id=261><!--r.261--><!--o.51.851--><a
+    class="Nav-link" href="/docs/native/sim" c-id=261.0.0.0><!--s.261.1.1.0.--><span c-id=51.851.6.0><!--t.51.852.7.0-->Sim</span></a></stencil-route-link></li><li
+    c-id=51.853.4.209><stencil-route-link class=hydrated c-id=51.854.5.0 s-id=262><!--r.262--><!--o.51.855--><a
+    class="Nav-link" href="/docs/native/siri-shortcuts" c-id=262.0.0.0><!--s.262.1.1.0.--><span c-id=51.855.6.0><!--t.51.856.7.0-->Siri Shortcuts</span></a></stencil-route-link></li><li
+    c-id=51.857.4.210><stencil-route-link class=hydrated c-id=51.858.5.0 s-id=263><!--r.263--><!--o.51.859--><a
+    class="Nav-link" href="/docs/native/smartlook" c-id=263.0.0.0><!--s.263.1.1.0.--><span c-id=51.859.6.0><!--t.51.860.7.0-->Smartlook</span></a></stencil-route-link></li><li
+    c-id=51.861.4.211><stencil-route-link class=hydrated c-id=51.862.5.0 s-id=264><!--r.264--><!--o.51.863--><a
+    class="Nav-link" href="/docs/native/sms-retriever" c-id=264.0.0.0><!--s.264.1.1.0.--><span c-id=51.863.6.0><!--t.51.864.7.0-->Sms Retriever</span></a></stencil-route-link></li><li
+    c-id=51.865.4.212><stencil-route-link class=hydrated c-id=51.866.5.0 s-id=265><!--r.265--><!--o.51.867--><a
+    class="Nav-link" href="/docs/native/social-sharing" c-id=265.0.0.0><!--s.265.1.1.0.--><span c-id=51.867.6.0><!--t.51.868.7.0-->Social Sharing</span></a></stencil-route-link></li><li
+    c-id=51.869.4.213><stencil-route-link class=hydrated c-id=51.870.5.0 s-id=266><!--r.266--><!--o.51.871--><a
+    class="Nav-link" href="/docs/native/speech-recognition" c-id=266.0.0.0><!--s.266.1.1.0.--><span c-id=51.871.6.0><!--t.51.872.7.0-->Speech Recognition</span></a></stencil-route-link></li><li
+    c-id=51.873.4.214><stencil-route-link class=hydrated c-id=51.874.5.0 s-id=267><!--r.267--><!--o.51.875--><a
+    class="Nav-link" href="/docs/native/speechkit" c-id=267.0.0.0><!--s.267.1.1.0.--><span c-id=51.875.6.0><!--t.51.876.7.0-->SpeechKit</span></a></stencil-route-link></li><li
+    c-id=51.877.4.215><stencil-route-link class=hydrated c-id=51.878.5.0 s-id=268><!--r.268--><!--o.51.879--><a
+    class="Nav-link" href="/docs/native/spinner-dialog" c-id=268.0.0.0><!--s.268.1.1.0.--><span c-id=51.879.6.0><!--t.51.880.7.0-->Spinner Dialog</span></a></stencil-route-link></li><li
+    c-id=51.881.4.216><stencil-route-link class=hydrated c-id=51.882.5.0 s-id=269><!--r.269--><!--o.51.883--><a
+    class="Nav-link" href="/docs/native/splash-screen" c-id=269.0.0.0><!--s.269.1.1.0.--><span c-id=51.883.6.0><!--t.51.884.7.0-->Splash Screen</span></a></stencil-route-link></li><li
+    c-id=51.885.4.217><stencil-route-link class=hydrated c-id=51.886.5.0 s-id=270><!--r.270--><!--o.51.887--><a
+    class="Nav-link" href="/docs/native/spotify-auth" c-id=270.0.0.0><!--s.270.1.1.0.--><span c-id=51.887.6.0><!--t.51.888.7.0-->Spotify Auth</span></a></stencil-route-link></li><li
+    c-id=51.889.4.218><stencil-route-link class=hydrated c-id=51.890.5.0 s-id=271><!--r.271--><!--o.51.891--><a
+    class="Nav-link" href="/docs/native/sqlite-db-copy" c-id=271.0.0.0><!--s.271.1.1.0.--><span c-id=51.891.6.0><!--t.51.892.7.0-->Sqlite Db Copy</span></a></stencil-route-link></li><li
+    c-id=51.893.4.219><stencil-route-link class=hydrated c-id=51.894.5.0 s-id=272><!--r.272--><!--o.51.895--><a
+    class="Nav-link" href="/docs/native/star-prnt" c-id=272.0.0.0><!--s.272.1.1.0.--><span c-id=51.895.6.0><!--t.51.896.7.0-->StarPRNT</span></a></stencil-route-link></li><li
+    c-id=51.897.4.220><stencil-route-link class=hydrated c-id=51.898.5.0 s-id=273><!--r.273--><!--o.51.899--><a
+    class="Nav-link" href="/docs/native/status-bar" c-id=273.0.0.0><!--s.273.1.1.0.--><span c-id=51.899.6.0><!--t.51.900.7.0-->Status Bar</span></a></stencil-route-link></li><li
+    c-id=51.901.4.221><stencil-route-link class=hydrated c-id=51.902.5.0 s-id=274><!--r.274--><!--o.51.903--><a
+    class="Nav-link" href="/docs/native/stepcounter" c-id=274.0.0.0><!--s.274.1.1.0.--><span c-id=51.903.6.0><!--t.51.904.7.0-->Stepcounter</span></a></stencil-route-link></li><li
+    c-id=51.905.4.222><stencil-route-link class=hydrated c-id=51.906.5.0 s-id=275><!--r.275--><!--o.51.907--><a
+    class="Nav-link" href="/docs/native/streaming-media" c-id=275.0.0.0><!--s.275.1.1.0.--><span c-id=51.907.6.0><!--t.51.908.7.0-->Streaming Media</span></a></stencil-route-link></li><li
+    c-id=51.909.4.223><stencil-route-link class=hydrated c-id=51.910.5.0 s-id=276><!--r.276--><!--o.51.911--><a
+    class="Nav-link" href="/docs/native/stripe" c-id=276.0.0.0><!--s.276.1.1.0.--><span c-id=51.911.6.0><!--t.51.912.7.0-->Stripe</span></a></stencil-route-link></li><li
+    c-id=51.913.4.224><stencil-route-link class=hydrated c-id=51.914.5.0 s-id=277><!--r.277--><!--o.51.915--><a
+    class="Nav-link" href="/docs/native/sum-up" c-id=277.0.0.0><!--s.277.1.1.0.--><span c-id=51.915.6.0><!--t.51.916.7.0-->SumUp</span></a></stencil-route-link></li><li
+    c-id=51.917.4.225><stencil-route-link class=hydrated c-id=51.918.5.0 s-id=278><!--r.278--><!--o.51.919--><a
+    class="Nav-link" href="/docs/native/taptic-engine" c-id=278.0.0.0><!--s.278.1.1.0.--><span c-id=51.919.6.0><!--t.51.920.7.0-->Taptic Engine</span></a></stencil-route-link></li><li
+    c-id=51.921.4.226><stencil-route-link class=hydrated c-id=51.922.5.0 s-id=279><!--r.279--><!--o.51.923--><a
+    class="Nav-link" href="/docs/native/tealium" c-id=279.0.0.0><!--s.279.1.1.0.--><span c-id=51.923.6.0><!--t.51.924.7.0-->Tealium</span></a></stencil-route-link></li><li
+    c-id=51.925.4.227><stencil-route-link class=hydrated c-id=51.926.5.0 s-id=280><!--r.280--><!--o.51.927--><a
+    class="Nav-link" href="/docs/native/tealium-adidentifier" c-id=280.0.0.0><!--s.280.1.1.0.--><span c-id=51.927.6.0><!--t.51.928.7.0-->TealiumAdIdentifier</span></a></stencil-route-link></li><li
+    c-id=51.929.4.228><stencil-route-link class=hydrated c-id=51.930.5.0 s-id=281><!--r.281--><!--o.51.931--><a
+    class="Nav-link" href="/docs/native/tealium-installreferrer" c-id=281.0.0.0><!--s.281.1.1.0.--><span c-id=51.931.6.0><!--t.51.932.7.0-->TealiumInstallReferrer</span></a></stencil-route-link></li><li
+    c-id=51.933.4.229><stencil-route-link class=hydrated c-id=51.934.5.0 s-id=282><!--r.282--><!--o.51.935--><a
+    class="Nav-link" href="/docs/native/text-to-speech" c-id=282.0.0.0><!--s.282.1.1.0.--><span c-id=51.935.6.0><!--t.51.936.7.0-->Text To Speech</span></a></stencil-route-link></li><li
+    c-id=51.937.4.230><stencil-route-link class=hydrated c-id=51.938.5.0 s-id=283><!--r.283--><!--o.51.939--><a
+    class="Nav-link" href="/docs/native/theme-detection" c-id=283.0.0.0><!--s.283.1.1.0.--><span c-id=51.939.6.0><!--t.51.940.7.0-->Theme Detection</span></a></stencil-route-link></li><li
+    c-id=51.941.4.231><stencil-route-link class=hydrated c-id=51.942.5.0 s-id=284><!--r.284--><!--o.51.943--><a
+    class="Nav-link" href="/docs/native/themeable-browser" c-id=284.0.0.0><!--s.284.1.1.0.--><span c-id=51.943.6.0><!--t.51.944.7.0-->Themeable Browser</span></a></stencil-route-link></li><li
+    c-id=51.945.4.232><stencil-route-link class=hydrated c-id=51.946.5.0 s-id=285><!--r.285--><!--o.51.947--><a
+    class="Nav-link" href="/docs/native/toast" c-id=285.0.0.0><!--s.285.1.1.0.--><span c-id=51.947.6.0><!--t.51.948.7.0-->Toast</span></a></stencil-route-link></li><li
+    c-id=51.949.4.233><stencil-route-link class=hydrated c-id=51.950.5.0 s-id=286><!--r.286--><!--o.51.951--><a
+    class="Nav-link" href="/docs/native/touch-id" c-id=286.0.0.0><!--s.286.1.1.0.--><span c-id=51.951.6.0><!--t.51.952.7.0-->Touch ID</span></a></stencil-route-link></li><li
+    c-id=51.953.4.234><stencil-route-link class=hydrated c-id=51.954.5.0 s-id=287><!--r.287--><!--o.51.955--><a
+    class="Nav-link" href="/docs/native/twitter-connect" c-id=287.0.0.0><!--s.287.1.1.0.--><span c-id=51.955.6.0><!--t.51.956.7.0-->Twitter Connect</span></a></stencil-route-link></li><li
+    c-id=51.957.4.235><stencil-route-link class=hydrated c-id=51.958.5.0 s-id=288><!--r.288--><!--o.51.959--><a
+    class="Nav-link" href="/docs/native/uid" c-id=288.0.0.0><!--s.288.1.1.0.--><span c-id=51.959.6.0><!--t.51.960.7.0-->Uid</span></a></stencil-route-link></li><li
+    c-id=51.961.4.236><stencil-route-link class=hydrated c-id=51.962.5.0 s-id=289><!--r.289--><!--o.51.963--><a
+    class="Nav-link" href="/docs/native/unique-device-id" c-id=289.0.0.0><!--s.289.1.1.0.--><span c-id=51.963.6.0><!--t.51.964.7.0-->Unique Device ID</span></a></stencil-route-link></li><li
+    c-id=51.965.4.237><stencil-route-link class=hydrated c-id=51.966.5.0 s-id=290><!--r.290--><!--o.51.967--><a
+    class="Nav-link" href="/docs/native/unvired-cordova-sdk" c-id=290.0.0.0><!--s.290.1.1.0.--><span c-id=51.967.6.0><!--t.51.968.7.0-->Unvired Cordova SDK</span></a></stencil-route-link></li><li
+    c-id=51.969.4.238><stencil-route-link class=hydrated c-id=51.970.5.0 s-id=291><!--r.291--><!--o.51.971--><a
+    class="Nav-link" href="/docs/native/uptime" c-id=291.0.0.0><!--s.291.1.1.0.--><span c-id=51.971.6.0><!--t.51.972.7.0-->Uptime</span></a></stencil-route-link></li><li
+    c-id=51.973.4.239><stencil-route-link class=hydrated c-id=51.974.5.0 s-id=292><!--r.292--><!--o.51.975--><a
+    class="Nav-link" href="/docs/native/urbanairship" c-id=292.0.0.0><!--s.292.1.1.0.--><span c-id=51.975.6.0><!--t.51.976.7.0-->UrbanAirShip</span></a></stencil-route-link></li><li
+    c-id=51.977.4.240><stencil-route-link class=hydrated c-id=51.978.5.0 s-id=293><!--r.293--><!--o.51.979--><a
+    class="Nav-link" href="/docs/native/user-agent" c-id=293.0.0.0><!--s.293.1.1.0.--><span c-id=51.979.6.0><!--t.51.980.7.0-->User Agent</span></a></stencil-route-link></li><li
+    c-id=51.981.4.241><stencil-route-link class=hydrated c-id=51.982.5.0 s-id=294><!--r.294--><!--o.51.983--><a
+    class="Nav-link" href="/docs/native/vibration" c-id=294.0.0.0><!--s.294.1.1.0.--><span c-id=51.983.6.0><!--t.51.984.7.0-->Vibration</span></a></stencil-route-link></li><li
+    c-id=51.985.4.242><stencil-route-link class=hydrated c-id=51.986.5.0 s-id=295><!--r.295--><!--o.51.987--><a
+    class="Nav-link" href="/docs/native/video-capture-plus" c-id=295.0.0.0><!--s.295.1.1.0.--><span c-id=51.987.6.0><!--t.51.988.7.0-->Video Capture Plus</span></a></stencil-route-link></li><li
+    c-id=51.989.4.243><stencil-route-link class=hydrated c-id=51.990.5.0 s-id=296><!--r.296--><!--o.51.991--><a
+    class="Nav-link" href="/docs/native/video-editor" c-id=296.0.0.0><!--s.296.1.1.0.--><span c-id=51.991.6.0><!--t.51.992.7.0-->Video Editor</span></a></stencil-route-link></li><li
+    c-id=51.993.4.244><stencil-route-link class=hydrated c-id=51.994.5.0 s-id=297><!--r.297--><!--o.51.995--><a
+    class="Nav-link" href="/docs/native/video-player" c-id=297.0.0.0><!--s.297.1.1.0.--><span c-id=51.995.6.0><!--t.51.996.7.0-->Video Player</span></a></stencil-route-link></li><li
+    c-id=51.997.4.245><stencil-route-link class=hydrated c-id=51.998.5.0 s-id=298><!--r.298--><!--o.51.999--><a
+    class="Nav-link" href="/docs/native/web-intent" c-id=298.0.0.0><!--s.298.1.1.0.--><span c-id=51.999.6.0><!--t.51.1000.7.0-->Web Intent</span></a></stencil-route-link></li><li
+    c-id=51.1001.4.246><stencil-route-link class=hydrated c-id=51.1002.5.0 s-id=299><!--r.299--><!--o.51.1003--><a
+    class="Nav-link" href="/docs/native/web-server" c-id=299.0.0.0><!--s.299.1.1.0.--><span c-id=51.1003.6.0><!--t.51.1004.7.0-->Web Server</span></a></stencil-route-link></li><li
+    c-id=51.1005.4.247><stencil-route-link class=hydrated c-id=51.1006.5.0 s-id=300><!--r.300--><!--o.51.1007--><a
+    class="Nav-link" href="/docs/native/webengage" c-id=300.0.0.0><!--s.300.1.1.0.--><span c-id=51.1007.6.0><!--t.51.1008.7.0-->Webengage</span></a></stencil-route-link></li><li
+    c-id=51.1009.4.248><stencil-route-link class=hydrated c-id=51.1010.5.0 s-id=301><!--r.301--><!--o.51.1011--><a
+    class="Nav-link" href="/docs/native/wechat" c-id=301.0.0.0><!--s.301.1.1.0.--><span c-id=51.1011.6.0><!--t.51.1012.7.0-->Wechat</span></a></stencil-route-link></li><li
+    c-id=51.1013.4.249><stencil-route-link class=hydrated c-id=51.1014.5.0 s-id=302><!--r.302--><!--o.51.1015--><a
+    class="Nav-link" href="/docs/native/wheel-selector" c-id=302.0.0.0><!--s.302.1.1.0.--><span c-id=51.1015.6.0><!--t.51.1016.7.0-->WheelSelector Plugin</span></a></stencil-route-link></li><li
+    c-id=51.1017.4.250><stencil-route-link class=hydrated c-id=51.1018.5.0 s-id=303><!--r.303--><!--o.51.1019--><a
+    class="Nav-link" href="/docs/native/wonderpush" c-id=303.0.0.0><!--s.303.1.1.0.--><span c-id=51.1019.6.0><!--t.51.1020.7.0-->WonderPush</span></a></stencil-route-link></li><li
+    c-id=51.1021.4.251><stencil-route-link class=hydrated c-id=51.1022.5.0 s-id=304><!--r.304--><!--o.51.1023--><a
+    class="Nav-link" href="/docs/native/youtube-video-player" c-id=304.0.0.0><!--s.304.1.1.0.--><span c-id=51.1023.6.0><!--t.51.1024.7.0-->Youtube Video Player</span></a></stencil-route-link></li><li
+    c-id=51.1025.4.252><stencil-route-link class=hydrated c-id=51.1026.5.0 s-id=305><!--r.305--><!--o.51.1027--><a
+    class="Nav-link" href="/docs/native/zbar" c-id=305.0.0.0><!--s.305.1.1.0.--><span c-id=51.1027.6.0><!--t.51.1028.7.0-->ZBar</span></a></stencil-route-link></li><li
+    c-id=51.1029.4.253><stencil-route-link class=hydrated c-id=51.1030.5.0 s-id=306><!--r.306--><!--o.51.1031--><a
+    class="Nav-link" href="/docs/native/zeroconf" c-id=306.0.0.0><!--s.306.1.1.0.--><span c-id=51.1031.6.0><!--t.51.1032.7.0-->Zeroconf</span></a></stencil-route-link></li><li
+    c-id=51.1033.4.254><stencil-route-link class=hydrated c-id=51.1034.5.0 s-id=307><!--r.307--><!--o.51.1035--><a
+    class="Nav-link" href="/docs/native/zip" c-id=307.0.0.0><!--s.307.1.1.0.--><span c-id=51.1035.6.0><!--t.51.1036.7.0-->Zip</span></a></stencil-route-link></li><li
+    c-id=51.1037.4.255><stencil-route-link class=hydrated c-id=51.1038.5.0 s-id=308><!--r.308--><!--o.51.1039--><a
+    class="Nav-link" href="/docs/native/zoom" c-id=308.0.0.0><!--s.308.1.1.0.--><span c-id=51.1039.6.0><!--t.51.1040.7.0-->Zoom</span></a></stencil-route-link></li><li
+    c-id=51.1041.4.256><stencil-route-link class=hydrated c-id=51.1042.5.0 s-id=309><!--r.309--><!--o.51.1043--><a
+    class="Nav-link" href="/docs/native/hce" c-id=309.0.0.0><!--s.309.1.1.0.--><span c-id=51.1043.6.0><!--t.51.1044.7.0-->hce</span></a></stencil-route-link></li><li
+    c-id=51.1045.4.257><stencil-route-link class=hydrated c-id=51.1046.5.0 s-id=310><!--r.310--><!--o.51.1047--><a
+    class="Nav-link" href="/docs/native/document-picker" c-id=310.0.0.0><!--s.310.1.1.0.--><span c-id=51.1047.6.0><!--t.51.1048.7.0-->iOS DocumentPicker</span></a></stencil-route-link></li><li
+    c-id=51.1049.4.258><stencil-route-link class=hydrated c-id=51.1050.5.0 s-id=311><!--r.311--><!--o.51.1051--><a
+    class="Nav-link" href="/docs/native/file-picker" c-id=311.0.0.0><!--s.311.1.1.0.--><span c-id=51.1051.6.0><!--t.51.1052.7.0-->iOS File Picker</span></a></stencil-route-link></li><li
+    c-id=51.1053.4.259><stencil-route-link class=hydrated c-id=51.1054.5.0 s-id=312><!--r.312--><!--o.51.1055--><a
+    class="Nav-link" href="/docs/native/janalytics" c-id=312.0.0.0><!--s.312.1.1.0.--><span c-id=51.1055.6.0><!--t.51.1056.7.0-->jAnalytics</span></a></stencil-route-link></li></ul></section></li></ul></docs-nav></stencil-route><stencil-route
+    class=hydrated c-id=37.23.1.4 s-id=313 style="display: none;"><!--r.313--></stencil-route><stencil-route
+    class=hydrated c-id=37.24.1.5 s-id=314 style="display: none;"><!--r.314--></stencil-route><stencil-route
+    class=hydrated c-id=37.25.1.6 s-id=315 style="display: none;"><!--r.315--></stencil-route><stencil-route
+    class=hydrated c-id=37.26.1.7 s-id=316 style="display: none;"><!--r.316--></stencil-route></stencil-route-switch></docs-menu><stencil-route
+    class=hydrated c-id=1.4.1.3 s-id=317><!--r.317--><docs-page class="page-native-in-app-browser hydrated"
+    c-id=317.0.0.0 s-id=318><!--r.318--><main class="no-demo" c-id=318.0.0.0><article c-id=318.1.1.0><h1
+    c-id=318.2.2.0><!--t.318.3.3.0-->In App Browser</h1><docs-table-of-contents c-id=318.4.2.1></docs-table-of-contents><section
+    class="markdown-content" c-id=318.5.2.2><div c-id=318.6.3.0><p class=intro c-id=318.7.4.0><!--t.318.8.5.0-->Launches in app Browser</p></div></section><section
+    c-id=318.9.2.3><a href="https://github.com/apache/cordova-plugin-inappbrowser" class=outbound target=_blank
+    c-id=318.10.3.0><svg viewBox="0 0 512 512" c-id=318.11.4.0><path d="M416 160c0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.3 32 55.4v8.6c0 19.9-7.8 33.7-25.3 44.9-15.4 9.8-38.1 17.1-67.5 21.5-14 2.1-25.7 6-35.2 10.7V151.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64S96 60.7 96 96c0 23.7 12.9 44.3 32 55.4v209.2c-19.1 11.1-32 31.7-32 55.4 0 35.3 28.7 64 64 64s64-28.7 64-64c0-16.6-6.3-31.7-16.7-43.1 1.9-4.9 9.7-16.3 29.4-19.3 38.8-5.8 68.9-15.9 92.3-30.8 36-22.8 55-57 55-98.8v-8.6c19.1-11.1 32-31.7 32-55.4zM160 56c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm0 400c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-256c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"
+    c-id=318.12.5.0></path></svg><!--t.318.13.4.1--> https://github.com/apache/cordova-plugin-inappbrowser</a><h2
+    c-id=318.14.3.1><!--t.318.15.4.0-->Stuck on a Cordova issue?</h2><docs-card class="cordova-ee-card" c-id=318.16.3.2><div
+    c-id=318.17.4.0><img src="/docs/assets/icons/native-cordova-bot.png" class="cordova-ee-img" c-id=318.18.5.0><p
+    c-id=318.19.5.1><!--t.318.20.6.0-->If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic's experts offer official maintenance, support, and integration help.</p><docs-button
+    class="native-ee-detail" c-id=318.21.5.2><!--t.318.22.6.0-->Contact Us Today!</docs-button></div></docs-card></section><section
+    c-id=318.23.2.4><h2 id=installation c-id=318.24.3.0><a href=#installation c-id=318.25.4.0><!--t.318.26.5.0-->Installation</a></h2><docs-tabs
+    c-id=318.27.3.1><docs-tab c-id=318.28.4.0><command-line slot=Community c-id=318.29.5.0><command-prompt
+    c-id=318.30.6.0><!--t.318.31.7.0-->ionic cordova plugin add cordova-plugin-inappbrowser</command-prompt><command-prompt
+    c-id=318.32.6.1><!--t.318.33.7.0-->npm install @ionic-native/in-app-browser</command-prompt></command-line></docs-tab><docs-tab
+    c-id=318.34.4.1><blockquote c-id=318.35.5.0><!--t.318.36.6.0-->Ionic Native Enterprise comes with fully supported and maintained plugins from the Ionic Team.
+    <a
+    class=btn href="/docs/native#enterprise-edition" c-id=318.37.6.1><!--t.318.38.7.0-->Learn More</a><!--t.318.39.6.2--> or if you're interested in an enterprise version of this plugin
+    <a class=btn href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine"
+    c-id=318.40.6.3><!--t.318.41.7.0-->Contact Us</a></blockquote></docs-tab></docs-tabs></section><section
+    c-id=318.42.2.5><h2 id=platforms c-id=318.43.3.0><a href=#platforms c-id=318.44.4.0><!--t.318.45.5.0-->Supported Platforms</a></h2><ul
+    c-id=318.46.3.1><li c-id=318.47.4.0><!--t.318.48.5.0-->AmazonFire OS</li><li c-id=318.49.4.1><!--t.318.50.5.0-->Android</li><li
+    c-id=318.51.4.2><!--t.318.52.5.0-->Browser</li><li c-id=318.53.4.3><!--t.318.54.5.0-->iOS</li><li c-id=318.55.4.4><!--t.318.56.5.0-->macOS</li><li
+    c-id=318.57.4.5><!--t.318.58.5.0-->Windows</li></ul></section><section c-id=318.59.2.6><h2 id=usage c-id=318.60.3.0><a
+    href=#usage c-id=318.61.4.0><!--t.318.62.5.0-->Usage</a></h2><div c-id=318.63.3.1><docs-code c-id=318.64.4.0><!--t.318.65.5.0-->
+    <pre c-id=318.66.5.1><code c-id=318.67.6.0><span class="token keyword" c-id=318.68.7.0><!--t.318.69.8.0-->import</span><!--t.318.70.7.1--> <span
+    class="token punctuation" c-id=318.71.7.2><!--t.318.72.8.0-->{</span><!--t.318.73.7.3--> InAppBrowser <span
+    class="token punctuation" c-id=318.74.7.4><!--t.318.75.8.0-->}</span><!--t.318.76.7.5--> <span class="token keyword"
+    c-id=318.77.7.6><!--t.318.78.8.0-->from</span><!--t.318.79.7.7--> <span class="token string" c-id=318.80.7.8><!--t.318.81.8.0-->'@ionic-native/in-app-browser/ngx'</span><span
+    class="token punctuation" c-id=318.82.7.9><!--t.318.83.8.0-->;</span><!--t.318.84.7.10-->
+    
+    <span class="token keyword"
+    c-id=318.85.7.11><!--t.318.86.8.0-->constructor</span><span class="token punctuation" c-id=318.87.7.12><!--t.318.88.8.0-->(</span><span
+    class="token parameter" c-id=318.89.7.13><span class="token keyword" c-id=318.90.8.0><!--t.318.91.9.0-->private</span><!--t.318.92.8.1--> iab<span
+    class="token punctuation" c-id=318.93.8.2><!--t.318.94.9.0-->:</span><!--t.318.95.8.3--> InAppBrowser</span><span
+    class="token punctuation" c-id=318.96.7.14><!--t.318.97.8.0-->)</span><!--t.318.98.7.15--> <span class="token punctuation"
+    c-id=318.99.7.16><!--t.318.100.8.0-->{</span><!--t.318.101.7.17--> <span class="token punctuation" c-id=318.102.7.18><!--t.318.103.8.0-->}</span><!--t.318.104.7.19-->
+    
+    
+    <span
+    class="token operator" c-id=318.105.7.20><!--t.318.106.8.0-->...</span><!--t.318.107.7.21-->
+    
+    
+    <span
+    class="token keyword" c-id=318.108.7.22><!--t.318.109.8.0-->const</span><!--t.318.110.7.23--> browser <span
+    class="token operator" c-id=318.111.7.24><!--t.318.112.8.0-->=</span><!--t.318.113.7.25--> <span class="token keyword"
+    c-id=318.114.7.26><!--t.318.115.8.0-->this</span><span class="token punctuation" c-id=318.116.7.27><!--t.318.117.8.0-->.</span><!--t.318.118.7.28-->iab<span
+    class="token punctuation" c-id=318.119.7.29><!--t.318.120.8.0-->.</span><span class="token function" c-id=318.121.7.30><!--t.318.122.8.0-->create</span><span
+    class="token punctuation" c-id=318.123.7.31><!--t.318.124.8.0-->(</span><span class="token string" c-id=318.125.7.32><!--t.318.126.8.0-->'https://ionicframework.com/'</span><span
+    class="token punctuation" c-id=318.127.7.33><!--t.318.128.8.0-->)</span><span class="token punctuation"
+    c-id=318.129.7.34><!--t.318.130.8.0-->;</span><!--t.318.131.7.35-->
+    
+    browser<span class="token punctuation"
+    c-id=318.132.7.36><!--t.318.133.8.0-->.</span><span class="token function" c-id=318.134.7.37><!--t.318.135.8.0-->executeScript</span><span
+    class="token punctuation" c-id=318.136.7.38><!--t.318.137.8.0-->(</span><span class="token operator" c-id=318.138.7.39><!--t.318.139.8.0-->...</span><span
+    class="token punctuation" c-id=318.140.7.40><!--t.318.141.8.0-->)</span><span class="token punctuation"
+    c-id=318.142.7.41><!--t.318.143.8.0-->;</span><!--t.318.144.7.42-->
+    
+    browser<span class="token punctuation"
+    c-id=318.145.7.43><!--t.318.146.8.0-->.</span><span class="token function" c-id=318.147.7.44><!--t.318.148.8.0-->insertCSS</span><span
+    class="token punctuation" c-id=318.149.7.45><!--t.318.150.8.0-->(</span><span class="token operator" c-id=318.151.7.46><!--t.318.152.8.0-->...</span><span
+    class="token punctuation" c-id=318.153.7.47><!--t.318.154.8.0-->)</span><span class="token punctuation"
+    c-id=318.155.7.48><!--t.318.156.8.0-->;</span><!--t.318.157.7.49-->
+    browser<span class="token punctuation"
+    c-id=318.158.7.50><!--t.318.159.8.0-->.</span><span class="token function" c-id=318.160.7.51><!--t.318.161.8.0-->on</span><span
+    class="token punctuation" c-id=318.162.7.52><!--t.318.163.8.0-->(</span><span class="token string" c-id=318.164.7.53><!--t.318.165.8.0-->'loadstop'</span><span
+    class="token punctuation" c-id=318.166.7.54><!--t.318.167.8.0-->)</span><span class="token punctuation"
+    c-id=318.168.7.55><!--t.318.169.8.0-->.</span><span class="token function" c-id=318.170.7.56><!--t.318.171.8.0-->subscribe</span><span
+    class="token punctuation" c-id=318.172.7.57><!--t.318.173.8.0-->(</span><span class="token parameter"
+    c-id=318.174.7.58><!--t.318.175.8.0-->event</span><!--t.318.176.7.59--> <span class="token operator"
+    c-id=318.177.7.60><!--t.318.178.8.0-->=&gt;</span><!--t.318.179.7.61--> <span class="token punctuation"
+    c-id=318.180.7.62><!--t.318.181.8.0-->{</span><!--t.318.182.7.63-->
+       browser<span class="token punctuation"
+    c-id=318.183.7.64><!--t.318.184.8.0-->.</span><span class="token function" c-id=318.185.7.65><!--t.318.186.8.0-->insertCSS</span><span
+    class="token punctuation" c-id=318.187.7.66><!--t.318.188.8.0-->(</span><span class="token punctuation"
+    c-id=318.189.7.67><!--t.318.190.8.0-->{</span><!--t.318.191.7.68--> code<span class="token punctuation"
+    c-id=318.192.7.69><!--t.318.193.8.0-->:</span><!--t.318.194.7.70--> <span class="token string" c-id=318.195.7.71><!--t.318.196.8.0-->"body{color: red;"</span><!--t.318.197.7.72--> <span
+    class="token punctuation" c-id=318.198.7.73><!--t.318.199.8.0-->}</span><span class="token punctuation"
+    c-id=318.200.7.74><!--t.318.201.8.0-->)</span><span class="token punctuation" c-id=318.202.7.75><!--t.318.203.8.0-->;</span><!--t.318.204.7.76-->
+    <span
+    class="token punctuation" c-id=318.205.7.77><!--t.318.206.8.0-->}</span><span class="token punctuation"
+    c-id=318.207.7.78><!--t.318.208.8.0-->)</span><span class="token punctuation" c-id=318.209.7.79><!--t.318.210.8.0-->;</span><!--t.318.211.7.80-->
+    
+    browser<span
+    class="token punctuation" c-id=318.212.7.81><!--t.318.213.8.0-->.</span><span class="token function" c-id=318.214.7.82><!--t.318.215.8.0-->close</span><span
+    class="token punctuation" c-id=318.216.7.83><!--t.318.217.8.0-->(</span><span class="token punctuation"
+    c-id=318.218.7.84><!--t.318.219.8.0-->)</span><span class="token punctuation" c-id=318.220.7.85><!--t.318.221.8.0-->;</span><!--t.318.222.7.86-->
+    </code></pre><!--t.318.223.5.2-->
+    </docs-code></div></section></article></main></docs-page></stencil-route></stencil-router></docs-root>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44023830-1" importance=low></script>
+     <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-44023830-1");</script>
+     </body>
+    </html>

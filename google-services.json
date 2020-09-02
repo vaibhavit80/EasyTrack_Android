@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "874399430634",
+    "firebase_url": "https://easytrack-9ff9c.firebaseio.com",
+    "project_id": "easytrack-9ff9c",
+    "storage_bucket": "easytrack-9ff9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874399430634:android:132598e597c01496",
+        "android_client_info": {
+          "package_name": "com.shipmatrix.easytrack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "874399430634-20ejr2ri25g67rvdbqfl4kubso2mgg57.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shipmatrix.easytrack",
+            "certificate_hash": "6d5faa9db8f0647adbb5486145ede7ba8452a5eb"
+          }
+        },
+        {
+          "client_id": "874399430634-itvc462qobk6l77nghaberidgg9hmgio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDbLcko5w3IPkYmYrQGQShVjVysZvngrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "874399430634-itvc462qobk6l77nghaberidgg9hmgio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

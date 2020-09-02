@@ -1,0 +1,22 @@
+ion-card{border-block: 2px dotted #9906d8; border-block-color:#2d2e2e}
+ion-card-content{padding: 7px 0px 0px 0px;background-color: #f8e8ff;
+ ion-col{    
+    font-family: Verdana;
+    font-size: 12px;
+    color: #9906d8;
+    //font-weight: bolder;
+    padding: 2px;}
+}
+ion-item-divider{
+    background-color: #cf5fff;
+    font-size: 13px;
+    font-weight: bolder;
+    color: #ffffff;
+}
+.seperator{border-bottom: 3px dotted #9906d8; border-block-color:#2d2e2e}
+ion-tab-button{background: #f2e4ff}
+app-social-sharing {font-size: 22px !important;}
+ion-fab {    position: fixed !important;
+    bottom: 40px !important;
+    right: 15px !important;
+  }

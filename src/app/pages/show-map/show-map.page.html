@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-button (click)="goBack()">
+                <ion-icon slot="icon-only" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+            </ion-button>
+
+        </ion-buttons>
+        <ion-title>Map</ion-title>
+        <ion-buttons slot="end">
+
+            <ion-button title="Refresh Map" (click)="reloadMap()">
+                <ion-icon name="refresh"></ion-icon>
+            </ion-button>
+
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="map" style="width:100%; height:100%;">
+        <img *ngIf='isError' src="../../../assets/slicing/maps_error.png">
+    </div>
+</ion-content>

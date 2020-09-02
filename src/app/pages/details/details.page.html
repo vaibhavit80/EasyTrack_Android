@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+          <ion-icon slot="icon-only" ios="ios-arrow-back"  md="md-arrow-back"></ion-icon>
+        </ion-button>
+        
+    </ion-buttons>
+    <!-- <ion-title>Detail</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button title="Edit Package" *ngIf="isActive == true" (click)="editPackages()">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+        <ion-button title="Refresh Package" *ngIf="isActive == true" (click)="refPackages()">
+            <ion-icon name="refresh"></ion-icon>      
+        </ion-button>
+        <ion-button title="Share" *ngIf="isActive == true" (click)="share()">
+          <app-social-sharing [Key]="item"></app-social-sharing>     
+      </ion-button>
+
+          <ion-button size="small" title="More Options" (click)="presentPopover($event)">
+            <ion-icon name="more"></ion-icon>
+          </ion-button>
+            <!--  <ion-button title="Refresh Package" *ngIf="isActive == true" (click)="refPackages()">
+                <ion-icon name="refresh"></ion-icon>
+              </ion-button>
+           <ion-button title="More Options" (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+              </ion-button> -->
+        </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+    <ion-card><ion-item-divider>Tracking Details</ion-item-divider>
+        <ion-card-content *ngIf="hasData === false" >
+        <ion-grid><ion-row><ion-col>No Record Available</ion-col></ion-row></ion-grid> 
+        </ion-card-content>
+        <ion-card-content *ngIf="hasData === true">
+          
+            <ion-grid>
+                <ion-row><ion-col>Tracking No#:</ion-col><ion-col>{{trackingResult?.TrackingNo}}</ion-col></ion-row>
+                <ion-row><ion-col>Description:</ion-col><ion-col>{{trackingResult?.Description}}</ion-col></ion-row>
+                <ion-row><ion-col>Carrier:</ion-col><ion-col>{{trackingheader?.CarrierCode}}</ion-col></ion-row>
+                <ion-row><ion-col>Status:</ion-col><ion-col>{{trackingheader?.Status}}</ion-col></ion-row>
+                <ion-row><ion-col>Ship Date:</ion-col><ion-col>{{trackingheader?.ShipDate}}</ion-col></ion-row>
+                <ion-row><ion-col>Delivery Date:</ion-col><ion-col>{{trackingheader?.DeliveredDateTime}}</ion-col></ion-row>
+                <ion-row><ion-col>Pickup Location:</ion-col><ion-col>{{trackingheader?.OriginLocation}}</ion-col></ion-row>
+                <ion-row><ion-col>Delivery Location:</ion-col><ion-col>{{trackingheader?.DeliveryLocation}}</ion-col></ion-row>
+                <ion-row><ion-col>Carrier Phone:</ion-col><ion-col>{{trackingResult?.OriginZip}}</ion-col></ion-row>
+              </ion-grid>
+        
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+          <ion-item-divider >Tracking Scans  </ion-item-divider>
+          <ion-card-content *ngIf="trackingScans.length > 0" >
+      <ion-grid #scanGrid *ngFor="let scan of trackingScans">
+          <ion-row><ion-col>Scan Date:</ion-col><ion-col>{{scan?.scanDateTime}}</ion-col></ion-row>
+          <ion-row><ion-col>Location:</ion-col><ion-col>{{scan?.location}}</ion-col></ion-row>
+          <ion-row><ion-col>Activity:</ion-col><ion-col>{{scan?.activity}}</ion-col></ion-row>
+          <ion-row><ion-col>Scan Note:</ion-col><ion-col>{{scan?.scanNote}}</ion-col></ion-row>
+          <ion-row class="seperator"></ion-row>
+        </ion-grid>
+      </ion-card-content>
+      <ion-card-content *ngIf="trackingScans.length === 0" >
+          <ion-grid><ion-row><ion-col>No Scans Available</ion-col></ion-row></ion-grid> 
+      </ion-card-content>
+    </ion-card>
+    <!-- <app-help-fab></app-help-fab> -->
+    <ion-fab vertical="bottom" horizontal="end">
+
+      <!-- <ion-fab-button color="tertiary" size="small">
+          <ion-icon color="light" ios="ios-cog" md="md-cog"></ion-icon>
+      </ion-fab-button>
+
+      <ion-fab-list side="start">
+        <ion-fab-button color="tertiary" *ngIf="isActive == true"  (click)="archive()">
+          <ion-icon color="light" name="archive"></ion-icon></ion-fab-button>
+        <ion-fab-button color="tertiary" *ngIf="isArchive == true" (click)="retrack()">
+          <ion-icon color="light" ios="ios-repeat" md="md-repeat"></ion-icon></ion-fab-button>
+        <ion-fab-button color="tertiary" *ngIf="isActive == true" (click)="MarkasDelievered()">
+          <ion-icon color="light" name="checkmark-circle-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button color="tertiary" *ngIf="isActive == true" (click)="locate()">
+          <ion-icon color="light" name="locate"></ion-icon></ion-fab-button>
+        <ion-fab-button  color="tertiary" (click)="gotoSettings()">
+          <ion-icon color="light" name="construct"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    
+      <ion-fab-list side="top">
+        <ion-fab-button color="tertiary" *ngIf="hasData === true" title="Delete Package" (click)="delete()">
+          <ion-icon color="light" name="trash"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="tertiary" size="small">
+          <ion-icon color="light" *ngIf="isActive == true" (click)="share()" name="share">
+              <app-social-sharing [Key]="item"></app-social-sharing>
+          </ion-icon>
+        </ion-fab-button>
+      </ion-fab-list> -->
+    </ion-fab>
+</ion-content>
+<!--<ion-footer>
+    
+  <ion-toolbar>
+    <ion-tabs >
+     <ion-tab-bar>
+       <ion-tab-button *ngIf="isActive == true"  (click)="archive()">
+         <ion-icon color="tertiary" name="archive"></ion-icon>
+         <ion-label color="tertiary">Archive</ion-label>
+       </ion-tab-button>
+       <ion-tab-button  *ngIf="isArchive == true" (click)="retrack()">
+        <ion-icon color="tertiary" ios="ios-repeat" md="md-repeat"></ion-icon>
+        <ion-label color="tertiary">Re-Track</ion-label>
+      </ion-tab-button>
+       <ion-tab-button *ngIf="isActive == true" (click)="MarkasDelievered()">
+         <ion-icon color="tertiary" name="checkmark-circle-outline"></ion-icon>
+         <ion-label color="tertiary">Mark Delivered</ion-label>
+       </ion-tab-button>
+   
+       <ion-tab-button *ngIf="isActive == true" color="tertiary" (click)="locate()">
+         <ion-icon color="tertiary" name="locate"></ion-icon>
+         <ion-label color="tertiary">Show Map</ion-label>
+       </ion-tab-button>
+   
+       <ion-tab-button   color="tertiary" (click)="gotoSettings()">
+         <ion-icon color="tertiary" name="construct"></ion-icon>
+         <ion-label color="tertiary">Setting</ion-label>
+       </ion-tab-button>
+
+     </ion-tab-bar>
+   </ion-tabs>
+   </ion-toolbar>
+</ion-footer>-->

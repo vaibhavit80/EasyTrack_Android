@@ -1,0 +1,43 @@
+<ion-header>
+   <ion-toolbar color="tertiary">
+     <ion-buttons slot="start">
+       <ion-button (click)="goBack()">
+           <ion-icon slot="icon-only" ios="ios-arrow-back"  md="md-arrow-back"></ion-icon>
+         </ion-button>
+         
+     </ion-buttons>
+     <ion-buttons slot="end">
+         <ion-button (click)="refreshPackage()">
+             <ion-icon  name="refresh"></ion-icon>
+           </ion-button>
+         </ion-buttons>
+     <ion-title>Edit Package</ion-title>
+   </ion-toolbar>
+ </ion-header>
+ <ion-content>
+    <form *ngIf="edit_package_Form" [formGroup]="edit_package_Form" (submit)="editPackageDetails(edit_package_Form.value)">
+         <ion-card>
+           <ion-item-divider >Package Information</ion-item-divider>
+            <ion-card-content>
+             <ion-grid>
+                  <ion-row class="ionrow"><ion-col size="4" class="margincol">Tracking#</ion-col><ion-col size="8">{{TrackingNo}}</ion-col></ion-row>
+                  <ion-row class="ionrow"><ion-col size="4" class="margincol">Carrier</ion-col><ion-col size="8">{{Carrier}}</ion-col></ion-row>
+             </ion-grid>
+           </ion-card-content>
+         </ion-card>
+      <ion-card><ion-item-divider color="tertiary">Other Settings</ion-item-divider>
+         <ion-card-content>
+    <ion-grid>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkPS"></ion-checkbox>  Pick Up type scan</ion-col></ion-row>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkOD"></ion-checkbox>  Out for Delivery</ion-col></ion-row>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkDL"></ion-checkbox>  Delivered(includes lcoation)</ion-col></ion-row>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkNF"></ion-checkbox>  No Final Delivery Status</ion-col></ion-row>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkDM"></ion-checkbox>  Damages</ion-col></ion-row>
+      <ion-row><ion-col><ion-checkbox color="tertiary" formControlName="chkWD"></ion-checkbox>  Weather Delay</ion-col></ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card>
+  <ion-button class="submit-btn" color="tertiary"  type="submit" expand="block" [disabled]="!edit_package_Form.valid">Save</ion-button>
+ </form>
+ 
+ </ion-content>

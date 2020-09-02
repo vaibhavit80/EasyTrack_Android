@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+    <ion-button (click)="refreshList()">
+        <ion-icon name="help-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-searchbar placeholder="Search"
+    [(ngModel)]="searchTerm"
+    (ionChange)="searchPackages()"
+  ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-list>
+      <ion-segment *ngIf="sessionData" color="medium" scrollable="true" [(ngModel)]="daySelect" (ionChange)="segmentChanged()">
+          <ion-segment-button value="All"><p>All</p><ion-badge color="danger" *ngIf="sessionData.packages.All.length > 0" >{{sessionData.packages.All.length}}</ion-badge></ion-segment-button>
+          <ion-segment-button value="Today"><p>Today</p><ion-badge color="danger" *ngIf="sessionData.packages.Today.length > 0" >{{sessionData.packages.Today.length}}</ion-badge></ion-segment-button>
+          <ion-segment-button value="Yesterday"><p>Yesterday</p><ion-badge color="danger" *ngIf="sessionData.packages.Yesterday.length > 0" >{{sessionData.packages.Yesterday.length}}</ion-badge></ion-segment-button>
+          <ion-segment-button value="ThisWeek"><p>This week</p><ion-badge color="danger" *ngIf="sessionData.packages.ThisWeek.length > 0" >{{sessionData.packages.ThisWeek.length}}</ion-badge></ion-segment-button>
+          <ion-segment-button value="LastWeek"><p>Last week</p><ion-badge color="danger" *ngIf="sessionData.packages.LastWeek.length > 0" >{{sessionData.packages.LastWeek.length}}</ion-badge></ion-segment-button>
+        </ion-segment>
+      <!-- <ion-list-header>
+          <ion-label>Active Packages</ion-label>
+        </ion-list-header> -->
+        <ion-item-divider>
+          
+<p>
+<ion-select [(ngModel)]="sortBy" (ionChange)="sortByDates()" interface="popover" aria-placeholder="Sort By">
+    <ion-select-option value="1">Date Created</ion-select-option>
+    <ion-select-option value="2">Expected By</ion-select-option>
+    <ion-select-option value="3">Last Updated</ion-select-option>
+    </ion-select></p>
+    
+        <ion-icon style="cursor: pointer;padding-bottom: 9px;padding-right: 6px"  color="tertiary" title="Filter by Date" name="calendar" (click)="picker.open()" slot="end"></ion-icon>
+        <ion-datetime #picker [(ngModel)]="dateSelected" min="2010" max="2050" (ionChange)="searchByDate()" display-format="MM/DD/YYYY"></ion-datetime>
+        <ion-icon  color="tertiary" style="cursor: pointer;padding-bottom: 9px;" title="refresh" name="refresh" (click)="this.refreshList(true)" slot="end"></ion-icon>
+</ion-item-divider>
+          <ion-card *ngIf="activeItems.length === 0 && readyToLoad">
+          <ion-card-content  >
+            <ion-grid><ion-row><ion-col>No Package Available</ion-col></ion-row></ion-grid> 
+        </ion-card-content>
+      </ion-card>
+  
+          <ion-item-sliding *ngFor="let item of activeItems | orderBy: (sortBy === '1'? 'DateCreated':(sortBy === '2'? 'ExpectedDate':(sortBy === '3'? 'LastUpdated': 'DateCreated'))) ">
+
+          
+              <ion-item (click)="showDetail(item.Key)">
+    
+                  <ion-avatar slot="start">
+                    <img [src]="item.ImgUrl">
+                  </ion-avatar>
+                  <ion-label>
+                      <p style="color:black">Tracking #: <span style="color: #8810a9 !important;line-height: 25px;">{{item.TrackingNo}}</span></p>
+                      <p>Status: {{item.Status}}</p>
+                      <p>{{sortbyDate}}: {{(sortBy === '1'? item.DateCreated:(sortBy === '2'? item.ExpectedDate:(sortBy === '3'? item.LastUpdated:item.DateCreated))) | date:'MM/dd/yyyy'}}</p>
+                      
+                    </ion-label>
+                </ion-item>
+          
+              <ion-item-options side="end">
+                  <ion-item-option color="tertiary" (click)="archive(item.Key)"><ion-icon title="Archive" name="archive"></ion-icon></ion-item-option>
+                  <ion-item-option color="tertiary" (click)="MarkasDelievered(item.Key)"><ion-icon title="Mark Delivered" name="checkmark-circle-outline"></ion-icon></ion-item-option>
+                  <ion-item-option color="tertiary" (click)="share()" ><app-social-sharing [Key]="item"></app-social-sharing></ion-item-option>
+                <ion-item-option color="tertiary" (click)="editPackages(item.Key)"><ion-icon  title="Edit"  name="create"></ion-icon></ion-item-option>
+                <ion-item-option color="tertiary" (click)="delete(item.Key)"><ion-icon title="Remove"  name="trash"></ion-icon></ion-item-option>
+                <ion-item-option color="tertiary" (click)="locate(item.Key)"><ion-icon title="Locate" name="locate"></ion-icon></ion-item-option>
+                <ion-item-option color="tertiary" (click)="retrack(item.Key)"><ion-icon ios="ios-repeat" md="md-repeat"></ion-icon></ion-item-option>
+              </ion-item-options>
+            </ion-item-sliding>
+ 
+</ion-list>
+<app-help-fab></app-help-fab>
+</ion-content>
+<!-- <ion-footer>
+<app-footertab></app-footertab>
+</ion-footer> -->
